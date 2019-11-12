@@ -98,9 +98,9 @@
                 return this.deleteClicked = false;
             },
             DeleteArea(index){
-                axios.delete('/api/areas/'+this.item.id)
+                axios.delete('/api/zones/'+this.item.id)
                     .then(res => {
-                        this.areas.splice(this.index, 1)
+                        this.zones.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',

@@ -20,7 +20,7 @@ class ZoneResource extends JsonResource
             'warehouse_id' => $this->warehouse_id,
             'zone_code' => $this->zone_code,
             'attribute' => $this->attribute,
-            'warehouse_name' => Warehouse::where('id',$this->warehouse_id)->pluck('warehouse_name'),
+            'warehouse_name' => Warehouse::where('id',$this->warehouse_id)->pluck('warehouse_name')[0],
         ];
     }
 }

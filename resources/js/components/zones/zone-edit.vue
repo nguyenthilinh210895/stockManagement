@@ -1,7 +1,7 @@
 <template>
     <section class="wrapper site-min-height">
         <section class="panel">
-            <header class="panel-heading">Add Zone</header>
+            <header class="panel-heading">Edit Zone</header>
             <div class="panel-body">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -13,7 +13,7 @@
                                 class="form-control cs-select-form"
                                 id="warehouse"
                                 name="warehouse"
-                                v-model="zone.warehouse"
+                                v-model="zones.warehouse"
                             >
                                 <option v-for="ware in warehouse" :value="ware.id">{{ ware.warehouse_name }}</option>
                             </select>
@@ -31,7 +31,7 @@
                             <select
                                 class="form-control cs-select-form"
                                 id="attribute"
-                                name="attribute" v-model="zone.attribute"
+                                name="attribute" v-model="zones.attribute"
                             >
                                 <option value="empty">empty</option>
                                 <option value="full">full</option>
@@ -53,43 +53,56 @@
                                 id="zone_code"
                                 class="form-control label-size-19"
                                 name="zone_code" placeholder="Zone Code"
-                                v-model="zone.zone_code" required
+                                v-model="zones.zone_code" required
                             />
                         </div>
                     </div>
                     <p class="errMessage" v-if="errors.zone_code">{{ errors.zone_code[0]}}</p>
                 </div>
-                <div class="col-md-11 offset-1 clearfix">
-                    <div class="form-group-cs d-flex">
-                        <button style="margin-left: 40%;" @click="handleCreate">Save</button>
-                    </div>
+
+            <div class="col-md-11 offset-1 clearfix">
+                <div class="form-group-cs d-flex">
+                    <button style="margin-left: 40%;" @click="handleEdit">Save</button>
                 </div>
             </div>
+        </div>
         </section>
     </section>
 </template>
 <script>
     export default {
-        name: "zone-create",
+        name: "zone-edit",
         props: {
             warehouse: { type: Array, required: true },
+            zone_id: {type: Number, required: true},
         },
         data() {
             return {
-                zone: {
-                    zone_code: '',
-                    attribute: '',
-                },
+                zones: null,
                 errors: []
             };
         },
+        created(){
+            this.fetchZone();
+        },
         methods: {
-            handleCreate() {
+            fetchZone() {
+                axios.get('/api/zones/'+ this.zone_id)
+                    .then(res => {
+                        this.zones = res.data.data;
+                        this.zones.warehouse = this.zones.warehouse_id;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            },
+            handleEdit() {
                 let formData = new FormData();
-                formData.append("zone_code", this.zone.zone_code);
-                formData.append("attribute", this.zone.attribute);
-                formData.append("warehouse_id", this.zone.warehouse);
-                axios.post("/api/zones", formData)
+                formData.append("zone_code", this.zones.zone_code);
+                formData.append("attribute", this.zones.attribute);
+                formData.append("warehouse_id", this.zones.warehouse);
+                formData.append("_method", 'PUT');
+                axios.post("/api/zones/"+ this.zone_id, formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;

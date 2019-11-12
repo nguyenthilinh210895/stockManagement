@@ -19,7 +19,10 @@ Vue.component('warehouse-edit-component', require('./components/warehouses/edit.
 //component zones
 Vue.component('zone-create-component', require('./components/zones/zone-create.vue').default);
 Vue.component('zone-show-component', require('./components/zones/zone-show.vue').default);
-
+Vue.component('zone-edit-component', require('./components/zones/zone-edit.vue').default);
+//calculation unit
+//Vue.component('calculation-create-component', require('./components/calculationUnit/calculation-create.vue').default);
+// Vue.component('calculation-edit-component', require('./components/calculationUnit/calculation-edit.vue').default);
 
 
 

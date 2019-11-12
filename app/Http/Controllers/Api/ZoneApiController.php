@@ -61,9 +61,16 @@ class ZoneApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ZoneRequest $request, $id)
     {
-        //
+        $zone = Zone::find($id);
+        $zone->zone_code = $request->zone_code;
+        $zone->attribute = $request->attribute;
+        $zone->warehouse_id =$request->warehouse_id;
+        $zone->save();
+
+        $message = ['status' => 'success', 'content' => 'Edit zone successfully'];
+        return response()->json(['url'=> route('zones.index'), 'message' => $message], 200);
     }
 
     /**
@@ -74,6 +81,8 @@ class ZoneApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Zone::find($id)->delete();
+        $message = ['status' => 'success', 'content' => 'Delete zone successfully'];
+        return response()->json(['url'=> route('zones.index'), 'message' => $message], 200);
     }
 }
