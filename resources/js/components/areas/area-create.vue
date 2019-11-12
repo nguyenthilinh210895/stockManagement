@@ -78,15 +78,6 @@
 </script>
 
 <style lang="scss" scoped>
-.adv-table{
-    width: 70% !important;
-}
-.adv-table table tr td{
-    width: 20% !important;
-}
-.adv-table table tr :nth-child(3){
-    width: 3% !important;
-}
 .form-group-cs {
     padding-top: 20px;
 }

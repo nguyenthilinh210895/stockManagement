@@ -49,9 +49,10 @@ class AreaApiControlller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($area_id)
     {
-        //
+        $area =Area::find($area_id);
+        return new AreaResource($area);
     }
     /**
      * Update the specified resource in storage.
@@ -60,9 +61,15 @@ class AreaApiControlller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AreaRequest $request, $id)
     {
-        //
+        $area = Area::find($id);
+        $area->area_code = $request->area_code;
+        $area->area_name = $request->area_name;
+        $area->save();
+
+        $message = ['status' => 'success', 'content' => 'Edit area successfully'];
+        return response()->json(['url'=> route('areas.index', $area->id), 'message' => $message], 200);
     }
 
     /**

@@ -1,8 +1,8 @@
 <template>
     <section class="wrapper site-min-height">
         <section class="panel">
-            <header class="panel-heading">Add Warehouse</header>
-            <div class="panel-body">
+            <header class="panel-heading">Edit Warehouse</header>
+            <div class="panel-body" v-if="warehouse">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
@@ -122,23 +122,23 @@
             fetchWare() {
                 axios.get('/api/warehouses/'+ this.warehouse_id)
                     .then(res => {
-                        console.log(res.data.data);
                         this.warehouse = res.data.data;
-                        // this.plan = this.option_plans.filter(plan => plan.name === this.form.plan)[0].id
-                    }).catch(error => {
+                        this.warehouse.area = this.warehouse.area_id;
+                    })
+                    .catch(error => {
                     console.log(error);
-                });
+                    });
             },
             handleCreate() {
                 let formData = new FormData();
-                formData.append(" warehouse_name", this.warehouse.warehouse_name);
+                formData.append("warehouse_name", this.warehouse.warehouse_name);
                 formData.append("ware_manage", this.warehouse.ware_manage);
                 formData.append("ware_phone", this.warehouse.ware_phone);
                 formData.append("ware_email", this.warehouse.ware_email);
                 formData.append("area_id", this.warehouse.area);
-
+                formData.append("_method",  'PUT');
                 axios
-                    .post("/api/warehouses", formData)
+                    .post("/api/warehouses/" + this.warehouse_id, formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;

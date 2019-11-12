@@ -15,7 +15,7 @@
                       <a href="{{route('warehouses.index')}}">Warehouse</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#">Zone</a>
+                      <a href="{{route('zones.index')}}">Zone</a>
                   </li>
                   <li class="sub-menu">
                       <a href="#">Product </a>

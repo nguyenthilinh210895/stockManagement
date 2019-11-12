@@ -32,8 +32,8 @@
                                   <td>{{ware. warehouse_name}}</td>
                                   <td>{{ware.ware_manage}}</td>
                                    <td>{{ware.ware_phone}}</td>
-                                   <td>{{ware. ware_email}}</td>
-                                  <td><button><a href="'warehouses/'+ ware.id+'/edit'"> {{editButton}}</a></button></td>
+                                   <td>{{ware.ware_email}}</td>
+                                  <td><button><a :href="'/warehouses/'+ ware.id+'/edit'"> {{editButton}}</a></button></td>
                                   <td><button @click="handleDelete(ware,index)">×{{deleteButton}}</button></td>
                               </tr>
                               </tbody>
@@ -63,7 +63,7 @@
 </template>
 <script>
     export default {
-        name: 'area-show',
+        name: 'show',
         data(){
             return {
                 warehouses: {

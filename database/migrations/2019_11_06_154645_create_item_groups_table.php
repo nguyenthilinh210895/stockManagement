@@ -17,9 +17,6 @@ class CreateItemGroupsTable extends Migration
             $table->bigIncrements('id');
             $table->string('group_code');
             $table->string('group_name');
-            $table->unsignedBigInteger('zone_id');
-
-            $table->foreign('zone_id')->references('id')->on('zones')->onDelete('cascade');
         });
     }
 

@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('areas', 'Api\AreaApiControlller')->except(['create', 'edit']);
 
 Route::resource('warehouses', 'Api\WarehouseApiController')->except(['create', 'edit']);
+
+Route::resource('zones', 'Api\ZoneApiController')->except(['create', 'edit']);

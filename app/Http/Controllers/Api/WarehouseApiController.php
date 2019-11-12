@@ -52,7 +52,9 @@ class WarehouseApiController extends Controller
      */
     public function show($ware_id)
     {
-        $ware = Warehouse::find($ware_id);}
+        $ware = Warehouse::find($ware_id);
+        return new WarehouseResource($ware);
+    }
 
 
     /**
@@ -62,9 +64,18 @@ class WarehouseApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(WarehouseRequest $request, $id)
     {
-        //
+        $ware = Warehouse::find($id);
+        $ware->warehouse_name = $request ->warehouse_name;
+        $ware->ware_manage =$request->ware_manage;
+        $ware->ware_phone = $request->ware_phone;
+        $ware->ware_email = $request->ware_email;
+        $ware->area_id =  $request->area_id;
+        $ware->save();
+
+        $message = ['status' => 'success', 'content' => 'Edit warehouse successfully'];
+        return response()->json(['url'=> route('warehouses.index'), 'message' => $message], 200);
     }
 
     /**

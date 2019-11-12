@@ -4,26 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Compartment extends Model
+class Zone extends Model
 {
-    protected $table = 'warehouses';
-    
+    protected $table = 'zones';
+
     protected $fillable = [
         'id',
-       'zone_code', 
-       'attribue ', 
-       'item_group_id',
+       'zone_code',
+       'attribute ',
     ];
 
     public $timestamps = false;
-    
+
     public function warehoues()
     {
     return $this->belongsTo('App\Models\Warehouse');
     }
     public function item_groups()
     {
-    return $this->hasMany('App\Models\ItemGroup');
+    return $this->belongsToMany('App\Models\ItemGroup');
     }
-    
+
 }

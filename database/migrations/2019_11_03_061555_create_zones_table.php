@@ -16,13 +16,11 @@ class CreateZonesTable extends Migration
         Schema::create('zones', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('zone_code');
-            $table->string('attribue');
+            $table->enum('attribute',['empty','full','not_full'])->default('empty');
             $table->unsignedBigInteger('warehouse_id');
-            $table->unsignedBigInteger('item_group_id');
             $table->timestamps();
 
             $table->foreign('warehouse_id')->references('id')->on('warehouses')->onDelete('cascade');
-            $table->foreign('item_group_id')->references('id')->on('item_groups')->onDelete('cascade');
         });
     }
 

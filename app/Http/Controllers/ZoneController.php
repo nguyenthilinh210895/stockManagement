@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Warehouse;
 use Illuminate\Http\Request;
-use App\Models\Area;
 
-class WarehouseController extends Controller
+class ZoneController extends Controller
 {
-      /**
+    /**
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('content.warehouse.show');
+        return view('content.zone.zone_show');
     }
 
     /**
@@ -23,19 +24,19 @@ class WarehouseController extends Controller
      */
     public function create()
     {
-        $area = Area::all();
-        return view('content.warehouse.create', compact('area'));
+        $warehouse = Warehouse::all();
+        return view('content.zone.zone_create',compact('warehouse'));
     }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($warehouse_id)
+    public function edit($id)
     {
-        $area = Area::all();
-        return view('content.warehouse.edit',compact(['warehouse_id','area']));
+        //
     }
 
 }

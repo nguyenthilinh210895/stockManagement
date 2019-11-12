@@ -18,7 +18,7 @@
             </select>
             </div>
           </div>
-          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
+<!--          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>-->
         </div>
 
 
@@ -122,7 +122,7 @@ export default {
   methods: {
     handleCreate() {
       let formData = new FormData();
-      formData.append(" warehouse_name", this.warehouse.warehouse_name);
+      formData.append("warehouse_name", this.warehouse.warehouse_name);
       formData.append("ware_manage", this.warehouse.ware_manage);
       formData.append("ware_phone", this.warehouse.ware_phone);
       formData.append("ware_email", this.warehouse.ware_email);

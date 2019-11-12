@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('areas', 'AreaController')->except(['store', 'update','destroy','show']);
 
 Route::resource('warehouses', 'WarehouseController')->except(['store', 'update','destroy','show']);
+
+Route::resource('zones', 'ZoneController')->except(['store', 'update','destroy','show']);
