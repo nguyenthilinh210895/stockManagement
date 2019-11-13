@@ -37,7 +37,7 @@ class WarehouseApiController extends Controller
         $ware->ware_manage =$request->ware_manage;
         $ware->ware_phone = $request->ware_phone;
         $ware->ware_email = $request->ware_email;
-        $ware->area_id =  $request->area_id;
+        $ware->area_id =  $request->area;
         $ware->save();
 
         $message = ['status' => 'success', 'content' => 'Create warehouse successfully'];
@@ -71,7 +71,7 @@ class WarehouseApiController extends Controller
         $ware->ware_manage =$request->ware_manage;
         $ware->ware_phone = $request->ware_phone;
         $ware->ware_email = $request->ware_email;
-        $ware->area_id =  $request->area_id;
+        $ware->area_id =  $request->area;
         $ware->save();
 
         $message = ['status' => 'success', 'content' => 'Edit warehouse successfully'];

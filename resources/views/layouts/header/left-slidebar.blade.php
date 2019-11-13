@@ -18,6 +18,9 @@
                       <a href="{{route('zones.index')}}">Zone</a>
                   </li>
                   <li class="sub-menu">
+                      <a href="{{route('items.index')}}">Item Group</a>
+                  </li>
+                  <li class="sub-menu">
                       <a href="#">Product </a>
                   </li>
                   <li class="sub-menu">

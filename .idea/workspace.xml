@@ -3,13 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/WarehouseApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/WarehouseApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ZoneApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ZoneApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ZoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ZoneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ZoneResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ZoneResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/WarehouseRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/WarehouseRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ZoneRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ZoneRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_12_082245_create_zone_item_group_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_12_082245_create_item_group_zone_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/show.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,6 +176,7 @@
       <workItem from="1573526917531" duration="5171000" />
       <workItem from="1573534781137" duration="21298000" />
       <workItem from="1573567307552" duration="4059000" />
+      <workItem from="1573621457365" duration="16119000" />
     </task>
     <servers />
   </component>

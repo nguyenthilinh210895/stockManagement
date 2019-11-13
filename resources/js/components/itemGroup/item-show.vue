@@ -3,14 +3,14 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Zone
+                Item Group
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/zones/create">
+                                <a href="/items/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -20,20 +20,18 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Zone code</th>
-                            <th>Zone attribute</th>
-                            <th>Warehouse</th>
+                            <th>Group code</th>
+                            <th>Group name</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(zone, index) in zones">
-                            <td>{{zone.zone_code}}</td>
-                            <td>{{zone.attribute}}</td>
-                            <td>{{zone.warehouse_name}}</td>
-                            <td><button><a :href="'/zones/'+ zone.id+'/edit'"> {{editButton}}</a></button></td>
-                            <td><button @click="handleDelete(zone,index)">×{{deleteButton}}</button></td>
+                        <tr v-for="(group, index) in groups">
+                            <td>{{group.group_code}}</td>
+                            <td>{{group.group_name}}</td>
+                            <td><button><a :href="'/items/'+ group.id+'/edit'"> {{editButton}}</a></button></td>
+                            <td><button @click="handleDelete(group,index)">×{{deleteButton}}</button></td>
                         </tr>
                         </tbody>
                     </table>
@@ -41,12 +39,12 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Do you want delete zone？</span>
+                    <span>Do you want delete Item group？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>Code：{{item.zone_code || ''}}</td>
-                                <td>Warehouse：{{item.warehouse_name || ''}}</td>
+                                <td>Code：{{item.group_code || ''}}</td>
+                                <td>Name：{{item.group_name || ''}}</td>
                             </tr>
                         </table>
                         <hr>
@@ -63,10 +61,10 @@
 </template>
 <script>
     export default {
-        name: 'zone-show',
+        name:'item-show',
         data(){
             return {
-                zones: {},
+               groups: {},
                 editButton: 'Edit',
                 deleteButton: 'Delete',
                 deleteClicked: false,
@@ -76,9 +74,9 @@
             }
         },
         created(){
-            axios.get('/api/zones')
+            axios.get('/api/items')
                 .then(res => {
-                    this.zones = res.data.data;
+                    this.groups = res.data.data;
                     console.log(this.zones);
                 }).catch(error => {
                 console.log(error);
@@ -99,9 +97,9 @@
                 return this.deleteClicked = false;
             },
             DeleteArea(index){
-                axios.delete('/api/zones/'+this.item.id)
+                axios.delete('/api/items/'+this.item.id)
                     .then(res => {
-                        this.zones.splice(this.index, 1)
+                        this.groups.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',

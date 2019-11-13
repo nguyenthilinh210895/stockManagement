@@ -1,5 +1,6 @@
 <template>
-<section class="wrapper site-min-height">
+    <section class="wrapper site-min-height" id="app">
+        <notifications group="notifi" position="top left" />
               <section class="panel">
                   <header class="panel-heading">
                     Warehouse
@@ -110,7 +111,7 @@
                             group: "notifi",
                             type: 'success',
                             text: res.data.message.content,
-                            duration: 5000
+                            duration: 6000
                         });
                         this.deleteClicked = false;
                     }).catch(error => {

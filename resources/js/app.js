@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-import Vue from 'vue';
+import Vue from 'vue'
 import Notifications from 'vue-notification'
 
 export const eventBus = new Vue();
@@ -24,6 +24,11 @@ Vue.component('zone-edit-component', require('./components/zones/zone-edit.vue')
 //Vue.component('calculation-create-component', require('./components/calculationUnit/calculation-create.vue').default);
 // Vue.component('calculation-edit-component', require('./components/calculationUnit/calculation-edit.vue').default);
 
+//item-group
+Vue.component('item-create-component', require('./components/itemGroup/item-create.vue').default);
+Vue.component('item-show-component', require('./components/itemGroup/item-show.vue').default);
+Vue.component('item-edit-component', require('./components/itemGroup/item-edit.vue').default);
+
 
 
 const app = new Vue({
@@ -34,7 +39,7 @@ const app = new Vue({
           group: "notifi",
           type: type,
           text: message,
-          duration: 5000
+          duration: 6000
         });
       },
     },

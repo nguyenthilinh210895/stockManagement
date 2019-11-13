@@ -8,8 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-
-class WarehouseRequest extends FormRequest
+class ItemGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,11 +28,9 @@ class WarehouseRequest extends FormRequest
     public function rules()
     {
         return [
-            'warehouse_name' => 'required|max:25',
-            'ware_manage' => 'required|max:20',
-            'ware_phone' => 'required|max:12',
-            'ware_email' => 'required|email',
-            'area' =>'required',
+            'group_name' => 'required|max:25',
+            'group_code' => 'required|max:12',
+            'zone' =>'required',
         ];
     }
 

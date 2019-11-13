@@ -68,7 +68,7 @@
                 formData.append('area_name', this.area.area_name);
                 axios.post('/api/areas', formData)
                 .then(res => {
-                        // localStorage.setItem(res.data.message.status, res.data.message.content);
+                        localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;
                  })
             }

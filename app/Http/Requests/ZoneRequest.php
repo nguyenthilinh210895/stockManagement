@@ -28,7 +28,7 @@ class ZoneRequest extends FormRequest
     public function rules()
     {
         return [
-            'warehouse_id' => 'required',
+            'warehouse' => 'required',
             'attribute' => 'required',
             'zone_code' => 'required|max:12',
         ];

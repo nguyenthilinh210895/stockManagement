@@ -35,7 +35,7 @@ class ZoneApiController extends Controller
         $zone = new Zone();
         $zone->zone_code = $request->zone_code;
         $zone->attribute = $request->attribute;
-        $zone->warehouse_id = $request->warehouse_id;
+        $zone->warehouse_id = $request->warehouse;
         $zone->save();
 
         $message = ['status' => 'success', 'content' => 'Create zone successfully'];
@@ -66,7 +66,7 @@ class ZoneApiController extends Controller
         $zone = Zone::find($id);
         $zone->zone_code = $request->zone_code;
         $zone->attribute = $request->attribute;
-        $zone->warehouse_id =$request->warehouse_id;
+        $zone->warehouse_id =$request->warehouse;
         $zone->save();
 
         $message = ['status' => 'success', 'content' => 'Edit zone successfully'];

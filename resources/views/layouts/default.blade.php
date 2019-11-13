@@ -43,7 +43,7 @@
               <!-- page -->
               @yield('content')
           </section>
-          <notifications group="notifi" position="top left" />
+{{--          <notifications group="notifi" position="top left" />--}}
       </section>
       <!--footer-->
       <footer class="site-footer">

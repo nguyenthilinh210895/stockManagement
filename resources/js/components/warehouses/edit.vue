@@ -135,7 +135,7 @@
                 formData.append("ware_manage", this.warehouse.ware_manage);
                 formData.append("ware_phone", this.warehouse.ware_phone);
                 formData.append("ware_email", this.warehouse.ware_email);
-                formData.append("area_id", this.warehouse.area);
+                formData.append("area", this.warehouse.area);
                 formData.append("_method",  'PUT');
                 axios
                     .post("/api/warehouses/" + this.warehouse_id, formData)
