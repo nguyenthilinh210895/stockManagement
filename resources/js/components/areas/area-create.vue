@@ -70,8 +70,12 @@
                 .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;
+                        this.errors = [];
                  })
-            }
+                .catch(error => {
+                    this.errors = error.response.data.error;
+                });
+        }
         }
 
     }

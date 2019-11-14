@@ -39,10 +39,8 @@
 
       <!--main content-->
       <section id="main-content">
-          <section class="wrapper site-min-height">
               <!-- page -->
               @yield('content')
-          </section>
 {{--          <notifications group="notifi" position="top left" />--}}
       </section>
       <!--footer-->

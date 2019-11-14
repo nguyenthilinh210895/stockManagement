@@ -110,7 +110,7 @@
                     })
                     .catch(error => {
                         console.log(this.error);
-                        this.errors = error.response.data.errors;
+                        this.errors = error.response.data.error;
 
                     });
             }

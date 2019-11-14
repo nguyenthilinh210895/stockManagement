@@ -82,10 +82,10 @@
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;
+                        this.errors = [];
                     })
                     .catch(error => {
-                        console.log(this.error);
-                        this.errors = error.response.data.errors;
+                        this.errors = error.response.data.error;
 
                     });
             }

@@ -7,20 +7,20 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="warehouse" class="label-size-20">Zone</label>
+                            <label for="zone" class="label-size-20">Zone</label>
                         </div>
                         <div class="col-md-8">
                             <select
                                 class="form-control cs-select-form"
-                                id="warehouse"
-                                name="warehouse"
+                                id="zone"
+                                name="zone"
                                 v-model="group.zone"
                             >
                                 <option v-for="zone in zone" :value="zone.id">{{ zone.zone_code }}</option>
                             </select>
                         </div>
                     </div>
-                    <!--          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>-->
+                              <p class="errMessage" v-if="errors.zone">{{ errors.zone[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -34,7 +34,7 @@
                                 id="group_code"
                                 class="form-control label-size-19"
                                 name="group_code" placeholder="Group Code"
-                                v-model="group.group_code" required
+                                v-model="group.group_code"
                             />
                         </div>
                     </div>
@@ -52,11 +52,11 @@
                                 id="group_name"
                                 class="form-control label-size-19"
                                 name="group_name" placeholder="Group Name"
-                                v-model="group.group_name" required
+                                v-model="group.group_name"
                             />
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.group_code">{{ errors.zone_code[0]}}</p>
+                    <p class="errMessage" v-if="errors.group_name">{{ errors.group_name[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -78,8 +78,9 @@
                 group: {
                     group_code: '',
                     group_name: '',
+                    zone: '',
                 },
-                errors: []
+                errors: [],
             };
         },
         methods: {
@@ -95,8 +96,7 @@
                         this.errors = [];
                     })
                     .catch(error => {
-                        console.log(this.error);
-                        this.errors = error.response.data.errors;
+                        this.errors = error.response.data.error;
 
                     });
             }

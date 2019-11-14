@@ -19,7 +19,7 @@
                             </select>
                         </div>
                     </div>
-                    <!--          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>-->
+                    <p class="errMessage" v-if="errors.warehouse">{{ errors.warehouse[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -39,7 +39,7 @@
                             </select>
                         </div>
                     </div>
-                    <!--          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>-->
+                              <p class="errMessage" v-if="errors.attribute">{{ errors.attribute[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -79,8 +79,9 @@
                 zone: {
                     zone_code: '',
                     attribute: '',
+                    warehouse:'',
                 },
-                errors: []
+                errors: [],
             };
         },
         methods: {
@@ -97,7 +98,7 @@
                     })
                     .catch(error => {
                         console.log(this.error);
-                        this.errors = error.response.data.errors;
+                        this.errors = error.response.data.error;
 
                     });
             }

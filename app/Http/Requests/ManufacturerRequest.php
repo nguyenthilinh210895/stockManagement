@@ -2,15 +2,13 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Warehouse;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-
-class WarehouseRequest extends FormRequest
+class ManufacturerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,11 +28,11 @@ class WarehouseRequest extends FormRequest
     public function rules()
     {
         return [
-            'warehouse_name' => 'required|max:25',
-            'ware_manage' => 'required|max:20',
-            'ware_phone' => 'required|numeric|max:1000000000000',
-            'ware_email' => 'required|email|unique:warehouses,ware_email,'. $this->route('warehouse').",id",
-            'area' =>'required',
+            'name' => 'required|max:50',
+            'address' => 'max:50',
+            'phone' =>'required|numeric|max:1000000000000',
+            'email' => 'required|email|unique:manufacturers,email,'. $this->route('manufacturer').",id",
+            'fax' => 'max:15',
         ];
     }
 

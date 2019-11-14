@@ -22,3 +22,5 @@ Route::resource('warehouses', 'WarehouseController')->except(['store', 'update',
 Route::resource('zones', 'ZoneController')->except(['store', 'update','destroy','show']);
 
 Route::resource('items', 'ItemGroupController')->except(['store', 'update','destroy','show']);
+
+Route::resource('manufacturers', 'ManufacturerController')->except(['store', 'update','destroy','show']);

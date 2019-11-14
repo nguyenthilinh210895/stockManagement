@@ -28,8 +28,10 @@ Vue.component('zone-edit-component', require('./components/zones/zone-edit.vue')
 Vue.component('item-create-component', require('./components/itemGroup/item-create.vue').default);
 Vue.component('item-show-component', require('./components/itemGroup/item-show.vue').default);
 Vue.component('item-edit-component', require('./components/itemGroup/item-edit.vue').default);
-
-
+// manufacturer
+Vue.component('manu-create-component', require('./components/Manufacturers/manu-create.vue').default);
+Vue.component('manu-edit-component', require('./components/Manufacturers/manu-edit.vue').default);
+Vue.component('manu-show-component', require('./components/Manufacturers/manu-show.vue').default);
 
 const app = new Vue({
     el: '#app',

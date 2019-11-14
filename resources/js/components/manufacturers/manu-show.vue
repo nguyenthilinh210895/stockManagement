@@ -1,75 +1,82 @@
 <template>
     <section class="wrapper site-min-height" id="app">
         <notifications group="notifi" position="top left" />
-
         <section class="panel">
-        <header class="panel-heading">
-            Area
-        </header>
-                  <div class="panel-body">
-                      <div class="adv-table editable-table ">
-                          <div class="clearfix">
-                              <div class="btn-group">
-                                  <button id="editable-sample_new" class="btn green">
-                                       <a href="/areas/create">
-                                      Add New <i class="fa fa-plus"></i>
-                                       </a>
-                                  </button>
-                              </div>
-                          </div>
-                          <div class="space15"></div>
-                          <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                              <thead>
-                              <tr>
-                                  <th>Area code</th>
-                                  <th>Area name</th>
-                                  <th>Edit</th>
-                                  <th>Delete</th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                             <tr v-for="(area, index) in areas">
-                                  <td>{{area.area_code}}</td>
-                                  <td>{{area.area_name}}</td>
-                                  <td><button><a :href="'/areas/'+ area.id+'/edit'"> {{editButton}}</a></button></td>
-                                  <td><button @click="handleDelete(area,index)">×{{deleteButton}}</button></td>
-                              </tr>
-                              </tbody>
-                          </table>
-                      </div>
+            <header class="panel-heading">
+                Manufacturer
+            </header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                <a href="/manufacturers/create">
+                                    Add New <i class="fa fa-plus"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space15"></div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Fax</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(manu, index) in manufacturers">
+                            <td>{{manu.name}}</td>
+                            <td>{{manu.address}}</td>
+                            <td>{{manu.phone}}</td>
+                            <td>{{manu.email}}</td>
+                            <td>{{manu.fax}}</td>
+                            <td><button><a :href="'/manufacturers/'+ manu.id+'/edit'"> {{editButton}}</a></button></td>
+                            <td><button @click="handleDelete(manu,index)">×{{deleteButton}}</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        <div class="deleteContainer" v-if="deleteClicked"></div>
-        <div class="notification-delete" v-if="deleteClicked">
-            <span>Do you want delete area？</span>
-            <div>
-                <table class="table-notify">
-                    <tr class="show-infor">
-                        <td >Code：{{item.area_code || ''}}</td>
-                        <td>Name：{{item.area_name || ''}}</td>
-                    </tr>
-                </table>
-                <hr>
-            </div>
-            <div class="button-message">
-                <button class="accept" @click="DeleteArea">Delete</button>
-                <button class="cancel" @click="cancelDelete">Cancel</button>
-            </div>
-        </div>
-                  </div>
-    </section>
-    </section>
+                <div class="deleteContainer" v-if="deleteClicked"></div>
+                <div class="notification-delete" v-if="deleteClicked">
+                    <span>Do you want delete Manufacturer？</span>
+                    <div>
+                        <table class="table-notify">
+                            <tr class="show-infor">
+                                <td>Name：{{item.name || ''}}</td>
+                            </tr>
+                        </table>
+                        <hr>
+                    </div>
+                    <div class="button-message">
+                        <button class="accept" @click="DeleteManu">Delete</button>
+                        <button class="cancel" @click="cancelDelete">Cancel</button>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+    </section>
 </template>
 <script>
     export default {
-        name: 'area-show',
+        name: 'manu-show',
         data(){
             return {
-                areas: {
-                    area_code: '',
-                    area_name: ''
+                manufacturers: {
+                   name: '',
+                    address: '',
+                    phone: '',
+                    email: '',
+                    fax: '',
                 },
-                 editButton: 'Edit',
+                editButton: 'Edit',
                 deleteButton: 'Delete',
                 deleteClicked: false,
                 item:'',
@@ -77,13 +84,13 @@
                 isActive: false,
             }
         },
-          created(){
-                axios.get('/api/areas')
-                    .then(res => {
-                        this.areas = res.data.data;
-                    }).catch(error => {
-                    console.log(error);
-                });
+        created(){
+            axios.get('/api/manufacturers')
+                .then(res => {
+                    this.manufacturers = res.data.data;
+                }).catch(error => {
+                console.log(error);
+            });
         },
         methods:{
             handleDelete(item, index){
@@ -99,10 +106,10 @@
             cancelDelete(){
                 return this.deleteClicked = false;
             },
-            DeleteArea(index){
-                axios.delete('/api/areas/'+this.item.id)
+            DeleteManu(index){
+                axios.delete('/api/manufacturers/'+this.item.id)
                     .then(res => {
-                        this.areas.splice(this.index, 1)
+                        this.manufacturers.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',
@@ -120,19 +127,16 @@
 </script>
 
 <style lang="scss" scoped>
-.adv-table{
-    width: 80% !important;
-}
-.adv-table table tr td{
-    width: 30% !important;
-}
-.adv-table table tr :nth-child(3){
-    width: 3% !important;
-}
-.adv-table table tr :nth-child(4){
-    width: 3% !important;
-}
-.background {
+    .adv-table table tr td{
+        width: 25% !important;
+    }
+    .adv-table table tr :nth-child(7){
+        width: 2% !important;
+    }
+    .adv-table table tr :nth-child(6){
+        width: 2% !important;
+    }
+    .background {
         height: 750px;
         h1 {
             color: #43425D;

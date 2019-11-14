@@ -21,6 +21,9 @@
                       <a href="{{route('items.index')}}">Item Group</a>
                   </li>
                   <li class="sub-menu">
+                      <a href="{{route('manufacturers.index')}}">Manufacturer</a>
+                  </li>
+                  <li class="sub-menu">
                       <a href="#">Product </a>
                   </li>
                   <li class="sub-menu">

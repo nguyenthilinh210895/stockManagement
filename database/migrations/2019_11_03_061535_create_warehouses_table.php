@@ -19,11 +19,11 @@ class CreateWarehousesTable extends Migration
             $table->unsignedBigInteger('area_id');
             $table->string('ware_manage');
             $table->integer('ware_phone');
-            $table->string('ware_email');
+            $table->string('ware_email')->unique();
             $table->timestamps();
 
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
-    
+
         });
     }
 

@@ -18,7 +18,7 @@
             </select>
             </div>
           </div>
-<!--          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>-->
+          <p class="errMessage" v-if="errors.area">{{ errors.area[0]}}</p>
         </div>
 
 
@@ -37,13 +37,13 @@
               />
             </div>
           </div>
-          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
+          <p class="errMessage" v-if="errors.warehouse_name">{{ errors.warehouse_name[0]}}</p>
         </div>
 
         <div class="col-md-11 offset-1 clearfix">
           <div class="form-group-cs d-flex">
             <div class="col-md-2">
-              <label for="manager" class="label-size-20">Mangager</label>
+              <label for="manager" class="label-size-20">Manager</label>
             </div>
             <div class="col-md-8">
               <input
@@ -96,8 +96,6 @@
                   <button style="margin-left: 40%;" @click="handleCreate">Save</button>
               </div>
           </div>
-
-
       </div>
     </section>
   </section>
@@ -114,9 +112,10 @@ export default {
         warehouse_name: "",
         ware_manage: "",
         ware_phone: "",
-        ware_email: ""
+        ware_email: "",
+        area: '',
       },
-      errors: []
+      errors: [],
     };
   },
   methods: {
@@ -128,8 +127,7 @@ export default {
       formData.append("ware_email", this.warehouse.ware_email);
       formData.append("area", this.warehouse.area);
 
-      axios
-        .post("/api/warehouses", formData)
+      axios.post("/api/warehouses", formData)
         .then(res => {
           localStorage.setItem(res.data.message.status, res.data.message.content);
           window.location.href = res.data.url;
@@ -137,7 +135,7 @@ export default {
         })
         .catch(error => {
             console.log(this.error);
-          this.errors = error.response.data.errors;
+          this.errors = error.response.data.error;
 
         });
     }

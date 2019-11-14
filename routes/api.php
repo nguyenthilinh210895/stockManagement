@@ -23,3 +23,5 @@ Route::resource('warehouses', 'Api\WarehouseApiController')->except(['create', '
 Route::resource('zones', 'Api\ZoneApiController')->except(['create', 'edit']);
 
 Route::resource('items', 'Api\ItemGroupApiController')->except(['create', 'edit']);
+
+Route::resource('manufacturers', 'Api\ManufacturerApiController')->except(['create', 'edit']);

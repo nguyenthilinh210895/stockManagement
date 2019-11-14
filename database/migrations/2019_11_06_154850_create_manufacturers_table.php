@@ -17,9 +17,9 @@ class CreateManufacturersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
-            $table->integer('phone');
-            $table->integer('fax');
-            $table->string('email');
+            $table->integer('phone')->unique();
+            $table->integer('fax')->nullable();
+            $table->string('email')->unique();
         });
     }
 
