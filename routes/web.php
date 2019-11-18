@@ -24,3 +24,7 @@ Route::resource('zones', 'ZoneController')->except(['store', 'update','destroy',
 Route::resource('items', 'ItemGroupController')->except(['store', 'update','destroy','show']);
 
 Route::resource('manufacturers', 'ManufacturerController')->except(['store', 'update','destroy','show']);
+
+Route::resource('qualitys', 'QualityController')->except(['store', 'update','destroy','show','create']);
+
+Route::resource('calculations', 'CaculationUnitController')->except(['store', 'update','destroy','show','create']);

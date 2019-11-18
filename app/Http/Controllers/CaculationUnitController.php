@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QualityController extends Controller
+class CaculationUnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class QualityController extends Controller
      */
     public function index()
     {
-       return view('content.quality.quality_create');
+        return view('content.calculation.calculation');
     }
 
 }

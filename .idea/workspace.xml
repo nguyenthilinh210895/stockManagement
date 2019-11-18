@@ -3,22 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/WarehouseRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/WarehouseRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_03_061535_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_03_061535_create_warehouses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QualityApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QualityApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QualityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QualityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Quality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Quality.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -179,7 +173,9 @@
       <workItem from="1573687867321" duration="660000" />
       <workItem from="1573711510076" duration="13953000" />
       <workItem from="1573727445561" duration="230000" />
-      <workItem from="1573739091459" duration="2475000" />
+      <workItem from="1573739091459" duration="2623000" />
+      <workItem from="1573896083208" duration="10278000" />
+      <workItem from="1573952482146" duration="9469000" />
     </task>
     <servers />
   </component>

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quality extends Model
 {
-    protected $table = 'qualitys';
-    
+    protected $table = 'qualities';
+
     protected $fillable = [
         'id',
-        'quality_name ',   
+        'quality_name ',
         'quality_code',
     ];
 

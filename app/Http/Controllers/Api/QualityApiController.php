@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Quality;
 use Illuminate\Http\Request;
+use App\Http\Resources\QualityResource as QualityResource;
 
 class QualityApiController extends Controller
 {
@@ -14,17 +16,11 @@ class QualityApiController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response([
+            'data' => Quality::all()->map(function ($quality) {
+                return new QualityResource($quality);
+            })
+        ]);
     }
 
     /**
@@ -35,7 +31,12 @@ class QualityApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $quality = new Quality();
+        $quality->quality_name = $request->quality_name;
+        $quality->quality_code = $request->quality_code;
+        $quality-> save();
+        $message = ['status' => 'success', 'content' => 'Add quality successfully'];
+        return response()->json(['url'=> route('qualitys.index'), 'message' => $message], 200);
     }
 
     /**
@@ -46,6 +47,8 @@ class QualityApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Quality::find($id)->delete();
+        $message = ['status' => 'success', 'content' => 'Delete quality successfully'];
+        return response()->json(['url'=> route('qualitys.index'), 'message' => $message], 200);
     }
 }

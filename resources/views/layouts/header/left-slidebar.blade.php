@@ -24,6 +24,12 @@
                       <a href="{{route('manufacturers.index')}}">Manufacturer</a>
                   </li>
                   <li class="sub-menu">
+                      <a href="{{route('qualitys.index')}}">Quality</a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="{{route('calculations.index')}}">Calculation Unit</a>
+                  </li>
+                  <li class="sub-menu">
                       <a href="#">Product </a>
                   </li>
                   <li class="sub-menu">

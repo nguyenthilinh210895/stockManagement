@@ -4,6 +4,8 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import Notifications from 'vue-notification'
 
+import 'font-awesome/css/font-awesome.min.css'
+
 export const eventBus = new Vue();
 
 Vue.use(Notifications);
@@ -29,9 +31,13 @@ Vue.component('item-create-component', require('./components/itemGroup/item-crea
 Vue.component('item-show-component', require('./components/itemGroup/item-show.vue').default);
 Vue.component('item-edit-component', require('./components/itemGroup/item-edit.vue').default);
 // manufacturer
-Vue.component('manu-create-component', require('./components/Manufacturers/manu-create.vue').default);
-Vue.component('manu-edit-component', require('./components/Manufacturers/manu-edit.vue').default);
-Vue.component('manu-show-component', require('./components/Manufacturers/manu-show.vue').default);
+Vue.component('manu-create-component', require('./components/manufacturers/manu-create.vue').default);
+Vue.component('manu-edit-component', require('./components/manufacturers/manu-edit.vue').default);
+Vue.component('manu-show-component', require('./components/manufacturers/manu-show.vue').default);
+//quality
+Vue.component('quality-create-component', require('./components/quality/quality-create.vue').default);
+//calculation
+Vue.component('calculation-create-component', require('./components/calculationUnit/calculation-create.vue').default);
 
 const app = new Vue({
     el: '#app',

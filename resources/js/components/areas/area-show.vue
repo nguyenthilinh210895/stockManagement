@@ -55,7 +55,7 @@
                 <button class="cancel" @click="cancelDelete">Cancel</button>
             </div>
         </div>
-                  </div>
+      </div>
     </section>
     </section>
 

@@ -11,8 +11,8 @@
                     <div class="clearfix">
                         <div class="btn-group">
                             <button @click="addQuality"
-                                    id="editable-sample_new" class="btn green">
-                                Add New <i class="fa fa-plus"></i>
+                                id="editable-sample_new" class="btn green">
+                                    Add New <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -20,28 +20,39 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th style="text-align: center !important;">Unit name</th>
+                            <th>Quality name</th>
+                            <th>Quality code</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(i, index) in unit">
+                        <tr v-for="(i, index) in quality">
                             <td> <input
                                 type="text"
                                 id="quality"
                                 class="form-control label-size-19"
                                 name="quality_name"  placeholder="Quality Name"
-                                v-model="unit.unit_name = i.unit_name"
+                                v-model="quality.quality_name = i.quality_name"
                             /></td>
-                            <td><button @click="saveUnit">
+                            <td>
+                                <input
+                                    type="text"
+                                    id="quality_code"
+                                    class="form-control label-size-19"
+                                    name="quality_code"  placeholder="Quality code"
+                                    v-model="quality.quality_code = i.quality_code "
+                                />
+                            </td>
+                            <td><button @click="saveQuality">
                                 <i class="fa fa-check-circle" style="color:blue"></i>
                             </button></td>
                             <td><button @click="removeQuality(index)">
                                 <i class="fa fa-remove" style="color:red"></i>
                             </button></td>
                         </tr>
-                        <tr v-for="(unit, k) in units">
-                            <td>{{unit.unit_name}}</td>
-                            <td><button @click="Delete(unit,k)"> <i class="fa fa-remove" style="color:red"></i></button></td>
+                        <tr v-for="(qual, k) in qualitys">
+                            <td>{{qual.quality_name}}</td>
+                            <td>{{qual.quality_code}}</td>
+                            <td><button @click="Delete(qual,k)"> <i class="fa fa-remove" style="color:red"></i></button></td>
                         </tr>
                         </tbody>
                     </table>
@@ -53,35 +64,36 @@
 </template>
 <script>
     export default {
-        name: 'calculation-create',
+        name: 'quality-create',
         data(){
             return {
-                units: [],
-                unit: [],
+                qualitys: [],
+                quality: [],
                 k:0,
                 index: 0,
                 item: '',
             }
         },
         created(){
-            axios.get('/api/calculations')
+            axios.get('/api/qualitys')
                 .then(res => {
-                    this.units = res.data.data;
+                    this.qualitys = res.data.data;
                 }).catch(error => {
                 console.log(error);
             });
         },
         methods:{
             removeQuality(index){
-                this.unit.splice(index, 1);
+                this.quality.splice(index, 1);
             },
             addQuality(index){
-                this.unit.push({unit_name: ''});
+                    this.quality.push({quality_name: '',quality_code: ''});
             },
-            saveUnit(){
+            saveQuality(){
                 let formData = new FormData();
-                formData.append('unit_name', this.unit.unit_name);
-                axios.post('/api/calculations', formData)
+                formData.append('quality_code', this.quality.quality_code);
+                formData.append('quality_name', this.quality.quality_name);
+                axios.post('/api/qualitys', formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
                         window.location.href = res.data.url;
@@ -94,9 +106,9 @@
             Delete(item,k){
                 this.item = item;
                 this.k = k;
-                axios.delete('/api/calculations/'+this.item.id)
+                axios.delete('/api/qualitys/'+this.item.id)
                     .then(res => {
-                        this.units.splice(this.k, 1)
+                        this.qualitys.splice(this.k, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',
@@ -114,9 +126,15 @@
 
 <style lang="scss" scoped>
     .adv-table{
-        width: 50% !important;
+        width: 80% !important;
     }
-    .adv-table table tr :nth-child(2){
+    .adv-table table tr td{
+        width: 30% !important;
+    }
+    .adv-table table tr :nth-child(3){
+        width: 3% !important;
+    }
+    .adv-table table tr :nth-child(4){
         width: 3% !important;
     }
 
