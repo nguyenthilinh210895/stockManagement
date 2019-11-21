@@ -16,9 +16,10 @@
                                 name="name" placeholder="Name"
                                 v-model="manufacture.name" required
                             />
+                            <p class="errMessage" v-if="errors.name">{{ errors.name[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.name">{{ errors.name[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -34,9 +35,10 @@
                                 name="address"  placeholder="Address"
                                 v-model="manufacture.address"
                             />
+                            <p class="errMessage" v-if="errors.address">{{ errors.address[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.address">{{ errors.address[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -51,9 +53,10 @@
                                 name="ware_phone"  placeholder="Phone number"
                                 v-model="manufacture.phone"
                             />
+                            <p class="errMessage" v-if="errors.phone">{{ errors.phone[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.phone">{{ errors.phone[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -68,9 +71,10 @@
                                 name="email"  placeholder="Email"
                                 v-model="manufacture.email"
                             />
+                            <p class="errMessage" v-if="errors.email">{{ errors.email[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.email">{{ errors.email[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -85,9 +89,10 @@
                                 name="fax"  placeholder="Fax"
                                 v-model="manufacture.fax"
                             />
+                            <p class="errMessage" v-if="errors.fax">{{ errors.fax[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.email">{{ errors.email[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">

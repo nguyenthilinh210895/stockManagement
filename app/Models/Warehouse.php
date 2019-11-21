@@ -29,4 +29,9 @@ class Warehouse extends Model
     return $this->hasMany('App\Models\Zone');
     }
 
+    public function users()
+    {
+        return $this->hasMany('App\Models\User');
+    }
+
 }

@@ -30,6 +30,9 @@
                       <a href="{{route('calculations.index')}}">Calculation Unit</a>
                   </li>
                   <li class="sub-menu">
+                      <a href="{{route('users.create')}}">Employee</a>
+                  </li>
+                  <li class="sub-menu">
                       <a href="#">Product </a>
                   </li>
                   <li class="sub-menu">

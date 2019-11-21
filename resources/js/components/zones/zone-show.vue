@@ -1,8 +1,8 @@
 <template>
     <section class="wrapper site-min-height" id="app">
-        <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
+                <notifications group="notifi" position="top left" margin-left="50px"/>
                 Zone
             </header>
             <div class="panel-body">
@@ -32,8 +32,12 @@
                             <td>{{zone.zone_code}}</td>
                             <td>{{zone.attribute}}</td>
                             <td>{{zone.warehouse_name}}</td>
-                            <td><button><a :href="'/zones/'+ zone.id+'/edit'"> {{editButton}}</a></button></td>
-                            <td><button @click="handleDelete(zone,index)">×{{deleteButton}}</button></td>
+                            <td><a :href="'/zones/'+ zone.id+'/edit'">
+                                <i class="fa fa-edit" style="color:blue"></i>
+                            </a></td>
+                            <td>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer"  @click="handleDelete(zone,index)"></i>
+                               </td>
                         </tr>
                         </tbody>
                     </table>

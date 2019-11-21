@@ -28,3 +28,12 @@ Route::resource('manufacturers', 'ManufacturerController')->except(['store', 'up
 Route::resource('qualitys', 'QualityController')->except(['store', 'update','destroy','show','create']);
 
 Route::resource('calculations', 'CaculationUnitController')->except(['store', 'update','destroy','show','create']);
+
+Route::resource('users', 'UserController')->except(['store', 'update','destroy','show']);
+
+Route::get('/home', function () {
+    return view('content.index');
+});
+Route::get('/login', function () {
+    return view('login');
+});

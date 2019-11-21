@@ -18,9 +18,10 @@
                             >
                                 <option v-for="zone in zone" :value="zone.id">{{ zone.zone_code }}</option>
                             </select>
+                            <p class="errMessage" v-if="errors.zone">{{ errors.zone[0]}}</p>
                         </div>
                     </div>
-                              <p class="errMessage" v-if="errors.zone">{{ errors.zone[0]}}</p>
+
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -36,9 +37,10 @@
                                 name="group_code" placeholder="Group Code"
                                 v-model="group.group_code"
                             />
+                            <p class="errMessage" v-if="errors.group_code">{{ errors.group_code[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.group_code">{{ errors.group_code[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -54,9 +56,10 @@
                                 name="group_name" placeholder="Group Name"
                                 v-model="group.group_name"
                             />
+                            <p class="errMessage" v-if="errors.group_name">{{ errors.group_name[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.group_name">{{ errors.group_name[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">

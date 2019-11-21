@@ -38,7 +38,12 @@ Vue.component('manu-show-component', require('./components/manufacturers/manu-sh
 Vue.component('quality-create-component', require('./components/quality/quality-create.vue').default);
 //calculation
 Vue.component('calculation-create-component', require('./components/calculationUnit/calculation-create.vue').default);
+//users
+ Vue.component('user-create-component', require('./components/users/user-create.vue').default);
+Vue.component('user-show-component', require('./components/users/user-show.vue').default);
+Vue.component('user-edit-component', require('./components/users/user-edit.vue').default);
 
+Vue.component('index-component', require('./components/index.vue').default);
 const app = new Vue({
     el: '#app',
     methods: {

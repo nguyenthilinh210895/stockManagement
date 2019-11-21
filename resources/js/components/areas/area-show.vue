@@ -31,9 +31,14 @@
                              <tr v-for="(area, index) in areas">
                                   <td>{{area.area_code}}</td>
                                   <td>{{area.area_name}}</td>
-                                  <td><button><a :href="'/areas/'+ area.id+'/edit'"> {{editButton}}</a></button></td>
-                                  <td><button @click="handleDelete(area,index)">×{{deleteButton}}</button></td>
-                              </tr>
+                                  <td>
+                                      <a :href="'/areas/'+ area.id+'/edit'">
+                                      <i class="fa fa-edit" style="color:blue"></i>
+                                      </a>
+                                  <td>
+                                 <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(area,index)"></i>
+                             </td>
+                             </tr>
                               </tbody>
                           </table>
                       </div>

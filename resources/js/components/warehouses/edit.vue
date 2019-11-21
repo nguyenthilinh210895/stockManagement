@@ -16,9 +16,10 @@
                             >
                                 <option v-for="area in area" :value="area.id">{{ area.area_name }}</option>
                             </select>
+                            <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
                 </div>
 
 
@@ -35,9 +36,10 @@
                                 name="warehouse_name" placeholder="Warehouse Name"
                                 v-model="warehouse.warehouse_name" required
                             />
+                            <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -53,9 +55,10 @@
                                 name="ware_manager"  placeholder="Manager"
                                 v-model="warehouse.ware_manage"
                             />
+                            <p class="errMessage" v-if="errors.ware_manage">{{ errors.ware_manage[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.ware_manage">{{ errors.ware_manage[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -70,9 +73,10 @@
                                 name="ware_phone"  placeholder="Phone number"
                                 v-model="warehouse.ware_phone"
                             />
+                            <p class="errMessage" v-if="errors.ware_phone">{{ errors.ware_phone[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.ware_phone">{{ errors.ware_phone[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -87,9 +91,10 @@
                                 name="ware_email"  placeholder="Email"
                                 v-model="warehouse.ware_email"
                             />
+                            <p class="errMessage" v-if="errors.ware_email">{{ errors.ware_email[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.ware_email">{{ errors.ware_email[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">

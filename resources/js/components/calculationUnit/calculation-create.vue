@@ -32,16 +32,16 @@
                                 name="quality_name"  placeholder="Quality Name"
                                 v-model="unit.unit_name = i.unit_name"
                             /></td>
-                            <td><button @click="saveUnit">
-                                <i class="fa fa-check-circle" style="color:blue"></i>
-                            </button></td>
-                            <td><button @click="removeQuality(index)">
-                                <i class="fa fa-remove" style="color:red"></i>
-                            </button></td>
+                            <td>
+                                <i class="fa fa-check-circle" style="color:blue; cursor:pointer" @click="saveUnit"></i>
+                           </td>
+                            <td>
+                                <i class="fa fa-trash" style="color:red;cursor:pointer" @click="removeQuality(index)"></i>
+                          </td>
                         </tr>
                         <tr v-for="(unit, k) in units">
                             <td>{{unit.unit_name}}</td>
-                            <td><button @click="Delete(unit,k)"> <i class="fa fa-remove" style="color:red"></i></button></td>
+                            <td>  <i class="fa fa-trash-o" style="color:red; cursor:pointer"@click="Delete(unit,k)"></i></td>
                         </tr>
                         </tbody>
                     </table>

@@ -42,17 +42,19 @@
                                     v-model="quality.quality_code = i.quality_code "
                                 />
                             </td>
-                            <td><button @click="saveQuality">
-                                <i class="fa fa-check-circle" style="color:blue"></i>
-                            </button></td>
-                            <td><button @click="removeQuality(index)">
-                                <i class="fa fa-remove" style="color:red"></i>
-                            </button></td>
+                            <td>
+                                <i @click="saveQuality" class="fa fa-check-circle" style="color:blue;cursor:pointer"></i>
+                            </td>
+                            <td>
+                                <i @click="removeQuality(index)" class="fa fa-remove" style="color:red;cursor:pointer"></i>
+                            </td>
                         </tr>
                         <tr v-for="(qual, k) in qualitys">
                             <td>{{qual.quality_name}}</td>
                             <td>{{qual.quality_code}}</td>
-                            <td><button @click="Delete(qual,k)"> <i class="fa fa-remove" style="color:red"></i></button></td>
+                            <td>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer"  @click="Delete(qual,k)"></i>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -126,7 +128,7 @@
 
 <style lang="scss" scoped>
     .adv-table{
-        width: 80% !important;
+        width: 70% !important;
     }
     .adv-table table tr td{
         width: 30% !important;

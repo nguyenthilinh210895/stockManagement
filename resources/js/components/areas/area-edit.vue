@@ -18,9 +18,10 @@
                                 name="area_code" placeholder="Area Code"
                                 v-model="area.area_code"
                             />
+                            <p class="errMessage" v-if="errors.area_code">{{ errors.area_code[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.area_code">{{ errors.area_code[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -35,9 +36,10 @@
                                 name="area_name" placeholder="Area Name"
                                 v-model="area.area_name"
                             />
+                            <p class="errMessage" v-if="errors.area_name">{{ errors.area_name[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.area_name">{{ errors.area_name[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">

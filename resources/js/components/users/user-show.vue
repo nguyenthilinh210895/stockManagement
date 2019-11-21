@@ -3,14 +3,14 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Item Group
+                Warehouse
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/items/create">
+                                <a href="/warehouses/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -20,22 +20,32 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Group code</th>
-                            <th>Group name</th>
+                            <th>Employ_id</th>
+                            <th>Fullname</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Birthday</th>
+                            <th>Warehouse</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(group, index) in groups">
-                            <td>{{group.group_code}}</td>
-                            <td>{{group.group_name}}</td>
-                            <td><a :href="'/items/'+ group.id+'/edit'">
-                                <i class="fa fa-edit" style="color:blue"></i>
-                               </a>
-                            </td>
+                        <tr v-for="(user, index) in users">
+                            <td>{{user.employee_id}}</td>
+                            <td>{{user.fullname}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone_number}}</td>
+                            <td>{{user.address}}</td>
+                            <td>{{user.gender}}</td>
+                            <td>{{user.birthday}}</td>
+                            <td>{{user.warehouse_name}}</td>
+                            <td><a :href="'/users/' +user.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
                             <td>
-                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(group,index)"></i>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(user,index)"></i>
+
                             </td>
                         </tr>
                         </tbody>
@@ -44,18 +54,17 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Do you want delete Item group？</span>
+                    <span>Do you want delete this employee？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>Code：{{item.group_code || ''}}</td>
-                                <td>Name：{{item.group_name || ''}}</td>
+                                <td>User Name：{{item.fullname || ''}}</td>
                             </tr>
                         </table>
                         <hr>
                     </div>
                     <div class="button-message">
-                        <button class="accept" @click="DeleteArea">Delete</button>
+                        <button class="accept" @click="DeleteWare">Delete</button>
                         <button class="cancel" @click="cancelDelete">Cancel</button>
                     </div>
                 </div>
@@ -66,12 +75,10 @@
 </template>
 <script>
     export default {
-        name:'item-show',
+        name: 'user-show',
         data(){
             return {
-               groups: {},
-                editButton: 'Edit',
-                deleteButton: 'Delete',
+                users: {},
                 deleteClicked: false,
                 item:'',
                 index: 0,
@@ -79,10 +86,9 @@
             }
         },
         created(){
-            axios.get('/api/items')
+            axios.get('/api/users')
                 .then(res => {
-                    this.groups = res.data.data;
-                    console.log(this.zones);
+                    this.users = res.data.data;
                 }).catch(error => {
                 console.log(error);
             });
@@ -101,10 +107,10 @@
             cancelDelete(){
                 return this.deleteClicked = false;
             },
-            DeleteArea(index){
-                axios.delete('/api/items/'+this.item.id)
+            DeleteWare(index){
+                axios.delete('/api/users/'+this.item.id)
                     .then(res => {
-                        this.groups.splice(this.index, 1)
+                        this.users.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',
@@ -122,13 +128,13 @@
 </script>
 
 <style lang="scss" scoped>
-    .table{
-        width: 70% !important;
+    .adv-table table tr td{
+        width: 25% !important;
     }
-    .adv-table table tr :nth-child(4){
+    .adv-table table tr :nth-child(5){
         width: 3% !important;
     }
-    .adv-table table tr :nth-child(3){
+    .adv-table table tr :nth-child(6){
         width: 3% !important;
     }
     .background {

@@ -17,9 +17,10 @@
                             >
                                 <option v-for="ware in warehouse" :value="ware.id">{{ ware.warehouse_name }}</option>
                             </select>
+                            <p class="errMessage" v-if="errors.warehouse">{{ errors.warehouse[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.warehouse">{{ errors.warehouse[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -37,9 +38,10 @@
                                 <option value="full">full</option>
                                 <option value="not_full">not full</option>
                             </select>
+                            <p class="errMessage" v-if="errors.attribute">{{ errors.attribute[0]}}</p>
+
                         </div>
                     </div>
-                              <p class="errMessage" v-if="errors.attribute">{{ errors.attribute[0]}}</p>
                 </div>
 
                 <div class="col-md-11 offset-1 clearfix">
@@ -55,9 +57,10 @@
                                 name="zone_code" placeholder="Zone Code"
                                 v-model="zone.zone_code" required
                             />
+                            <p class="errMessage" v-if="errors.zone_code">{{ errors.zone_code[0]}}</p>
+
                         </div>
                     </div>
-                    <p class="errMessage" v-if="errors.zone_code">{{ errors.zone_code[0]}}</p>
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">

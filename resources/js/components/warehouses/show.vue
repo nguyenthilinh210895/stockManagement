@@ -34,8 +34,11 @@
                                   <td>{{ware.ware_manage}}</td>
                                    <td>{{ware.ware_phone}}</td>
                                    <td>{{ware.ware_email}}</td>
-                                  <td><button><a :href="'/warehouses/'+ ware.id+'/edit'"> {{editButton}}</a></button></td>
-                                  <td><button @click="handleDelete(ware,index)">×{{deleteButton}}</button></td>
+                                  <td><a :href="'/warehouses/'+ ware.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
+                                  <td>
+                                      <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(ware,index)"></i>
+
+                                  </td>
                               </tr>
                               </tbody>
                           </table>

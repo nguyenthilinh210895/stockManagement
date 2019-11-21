@@ -36,8 +36,11 @@
                             <td>{{manu.phone}}</td>
                             <td>{{manu.email}}</td>
                             <td>{{manu.fax}}</td>
-                            <td><button><a :href="'/manufacturers/'+ manu.id+'/edit'"> {{editButton}}</a></button></td>
-                            <td><button @click="handleDelete(manu,index)">×{{deleteButton}}</button></td>
+                            <td><a :href="'/manufacturers/'+ manu.id+'/edit'">
+                                <i class="fa fa-edit" style="color:blue"></i></a></td>
+                            <td>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(manu,index)"></i>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
