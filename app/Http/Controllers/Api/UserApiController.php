@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Mail\initialPassMail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Mail;
 use  Illuminate\Support\Str;
 use App\Http\Resources\UserResource as UserResource;
 
@@ -43,7 +45,7 @@ class UserApiController extends Controller
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
         $user->save();
-
+        Mail::to($request->email)->send(new initialPassMail($user,$password_random));
         $message = ['status' => 'success', 'content' => 'Add employee successfully'];
         return response()->json(['url'=> route('users.index'), 'message' => $message], 200);
 
@@ -94,6 +96,8 @@ class UserApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        $message = ['status' => 'success', 'content' => 'Delete employee successfully'];
+        return response()->json(['url'=> route('users.index'), 'message' => $message], 200);
     }
 }

@@ -3,14 +3,14 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Warehouse
+                Employee Manage
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/warehouses/create">
+                                <a href="/manager/users/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -42,7 +42,7 @@
                             <td>{{user.gender}}</td>
                             <td>{{user.birthday}}</td>
                             <td>{{user.warehouse_name}}</td>
-                            <td><a :href="'/users/' +user.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
+                            <td><a :href="'/manager/users/' +user.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
                             <td>
                                 <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(user,index)"></i>
 

@@ -4,7 +4,7 @@
 
         <section class="panel">
             <header class="panel-heading">
-                Quality
+                Calculation Unit
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">

@@ -10,7 +10,7 @@
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/zones/create">
+                                <a href="/manager/zones/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -32,7 +32,7 @@
                             <td>{{zone.zone_code}}</td>
                             <td>{{zone.attribute}}</td>
                             <td>{{zone.warehouse_name}}</td>
-                            <td><a :href="'/zones/'+ zone.id+'/edit'">
+                            <td><a :href="'/manager/zones/'+ zone.id+'/edit'">
                                 <i class="fa fa-edit" style="color:blue"></i>
                             </a></td>
                             <td>

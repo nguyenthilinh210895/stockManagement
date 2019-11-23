@@ -57,20 +57,23 @@
           </ul>
           </div>
           <div class="top-nav ">
+              @if(Auth::check())
               <ul class="nav pull-right top-menu">
                   <li>
                       <input type="text" class="form-control search" placeholder="Search">
                   </li>
                   <!-- user login dropdown start-->
                   <li class="dropdown">
-                      <a href="#">
+                      <a href="{{ route('api.adminLogout') }}">
                           <img alt="" src="{{ asset('img/account.png')}}">
                       </a>
                   </li>
                   <!-- user login dropdown end -->
-                  <li class="sb-toggle-right">
-                  <a href="#" style=" margin-top: -10px; padding: 8px;"> Logout <i class="fa fa-sign-out"></i></a>
+                  <li class="dropdown">
+                  <a href="{{ route('api.adminLogout') }}"> Logout <i class="fa fa-sign-out"></i></a>
                   </li>
               </ul>
+              @endif
           </div>
       </header>
+

@@ -9,7 +9,7 @@
                         </div>
                         <div class="value">
                             <h1 class="count">
-                                0
+                                100
                             </h1>
                             <p>New Users</p>
                         </div>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count2">
-                                0
+                                100
                             </h1>
                             <p>Sales</p>
                         </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count3">
-                                0
+                               100
                             </h1>
                             <p>New Order</p>
                         </div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="value">
                             <h1 class=" count4">
-                                0
+                                100
                             </h1>
                             <p>Total Profit</p>
                         </div>
@@ -683,6 +683,22 @@
     export default {
         name: "index.vue"
     }
+    $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+            navigation : true,
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem : true,
+            autoPlay:true
+
+        });
+    });
+
+    //custom select box
+
+    $(function(){
+        $('select.styled').customSelect();
+    });
 </script>
 
 <style scoped>

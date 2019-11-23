@@ -10,6 +10,10 @@ Website: http://thevectorlab.net/
 .errMessage{
     color: red;
 }
+.vue-notification-group {
+    margin-top: 60px;
+    margin-left: 15%;
+}
 body {
     color: #000000;
     background: #f1f2f7;
@@ -175,11 +179,15 @@ a, a:hover, a:focus {
 
 /*sidebar navigation*/
 
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
 #sidebar {
     width: 210px;
     height: 100%;
     position: fixed;
     background: #00868B;
+    overflow: scroll;
 }
 
 #sidebar ul li {

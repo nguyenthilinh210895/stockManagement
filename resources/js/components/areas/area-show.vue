@@ -1,8 +1,9 @@
 <template>
-    <section class="wrapper site-min-height" id="app">
-        <notifications group="notifi" position="top left" />
-
+    <section class="wrapper site-min-height">
         <section class="panel">
+            <div id="app">
+                <notifications group="notifi" position="top left" />
+            </div>
         <header class="panel-heading">
             Area
         </header>
@@ -11,7 +12,7 @@
                           <div class="clearfix">
                               <div class="btn-group">
                                   <button id="editable-sample_new" class="btn green">
-                                       <a href="/areas/create">
+                                       <a href="/manager/areas/create">
                                       Add New <i class="fa fa-plus"></i>
                                        </a>
                                   </button>
@@ -32,7 +33,7 @@
                                   <td>{{area.area_code}}</td>
                                   <td>{{area.area_name}}</td>
                                   <td>
-                                      <a :href="'/areas/'+ area.id+'/edit'">
+                                      <a :href="'/manager/areas/'+ area.id+'/edit'">
                                       <i class="fa fa-edit" style="color:blue"></i>
                                       </a>
                                   <td>

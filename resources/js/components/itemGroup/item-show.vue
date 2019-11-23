@@ -10,7 +10,7 @@
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/items/create">
+                                <a href="/manager/items/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -30,7 +30,7 @@
                         <tr v-for="(group, index) in groups">
                             <td>{{group.group_code}}</td>
                             <td>{{group.group_name}}</td>
-                            <td><a :href="'/items/'+ group.id+'/edit'">
+                            <td><a :href="'/manager/items/'+ group.id+'/edit'">
                                 <i class="fa fa-edit" style="color:blue"></i>
                                </a>
                             </td>

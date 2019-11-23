@@ -10,7 +10,7 @@
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/manufacturers/create">
+                                <a href="/manager/manufacturers/create">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -36,7 +36,7 @@
                             <td>{{manu.phone}}</td>
                             <td>{{manu.email}}</td>
                             <td>{{manu.fax}}</td>
-                            <td><a :href="'/manufacturers/'+ manu.id+'/edit'">
+                            <td><a :href="'/manager/manufacturers/'+ manu.id+'/edit'">
                                 <i class="fa fa-edit" style="color:blue"></i></a></td>
                             <td>
                                 <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(manu,index)"></i>

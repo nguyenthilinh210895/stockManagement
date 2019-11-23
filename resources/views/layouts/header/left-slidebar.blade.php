@@ -1,9 +1,9 @@
-
+<aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a href="#">
+                      <a href="{{route('home')}}">
                           <i class="fa fa-home"></i>
                           <span >Home</span>
                       </a>
@@ -30,13 +30,19 @@
                       <a href="{{route('calculations.index')}}">Calculation Unit</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('users.create')}}">Employee</a>
+                      <a href="{{route('users.index')}}">Employee</a>
                   </li>
                   <li class="sub-menu">
                       <a href="#">Product </a>
                   </li>
                   <li class="sub-menu">
                       <a href="#" >Input Warehouse</a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="#" >Output Warehouse</a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="#" >Output Warehouse</a>
                   </li>
                   <li class="sub-menu">
                       <a href="#" >Output Warehouse</a>
