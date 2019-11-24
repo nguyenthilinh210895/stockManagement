@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Warehouse;
 use Illuminate\Http\Request;
+use Auth;
 
 class UserController extends Controller
 {
@@ -41,5 +42,10 @@ class UserController extends Controller
         return view('content.users.user_edit',compact('user_id','warehouse'));
     }
 
+    public function editProfile()
+    {
+      $user = Auth::user();
+        return view("content.users.user_profile",compact('user'));
+    }
 
 }

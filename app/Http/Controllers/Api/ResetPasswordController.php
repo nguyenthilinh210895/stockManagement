@@ -3,7 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
+use App\Models\User;
+use App\Http\Requests\ResetPasswordRequest as ResetPassRequest;
 use Illuminate\Http\Request;
+use App\Models\PasswordReset;
+use App\Notifications\ResetPasswordRequest;
+use DB;
+
+
 
 class ResetPasswordController extends Controller
 {
@@ -18,14 +28,14 @@ class ResetPasswordController extends Controller
         if (!$user = User::where('email', $request->email)->first())
             return response()->json([
                 'status' => false,
-                'message' => 'メールが終了しません。'
+                'message' => 'Email address not found'
             ], 200);
 
         if ($passwordReset = PasswordReset::updateOrCreate(['email' => $user->email], ['token' => Str::random(60)])) {
             $user->notify(new ResetPasswordRequest($passwordReset->token,$user->email));
         }
 
-        return response()->json(['status' => true, 'message' => 'メールを正常に送信しました。確認してください。'], 200);
+        return response()->json(['status' => true, 'message' => 'The email was sent successfully. Please confirm.'], 200);
     }
 
     /**
@@ -48,7 +58,7 @@ class ResetPasswordController extends Controller
 
         DB::table('users')->where('email', $passwordReset->email)->update(['password' => bcrypt($request->password)]);
         $passwordReset->delete();
-        $message = ['status' => 'success', 'content' => 'パスワードが変更されました。'];
+        $message = ['status' => 'success', 'content' => 'Password changed'];
         return response()->json(['url'=> route('login'), 'message' => $message], 200);
     }
 

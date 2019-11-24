@@ -62,6 +62,17 @@ class UserApiController extends Controller
         $user = User::find($user_id);
         return new UserResource($user);
     }
+    /**
+     * Display the specified resource.
+     *
+     * @param $email
+     * @return UserResource
+     */
+    public function showProfile($email)
+    {
+        $user = User::where('users.email', $email)->first();
+        return new UserResource($user);
+    }
 
 
     /**

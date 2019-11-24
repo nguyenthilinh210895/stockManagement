@@ -31,3 +31,4 @@ Route::resource('qualitys', 'Api\QualityApiController')->except(['create', 'edit
 Route::resource('calculations', 'Api\CaculationUnitApiController')->except(['create', 'edit', 'show', 'update']);
 
 Route::resource('users', 'Api\UserApiController')->except(['create', 'edit']);
+Route::get('showProfile/{email}', 'Api\UserApiController@showProfile')->name('api.showProfile');
