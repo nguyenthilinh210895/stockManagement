@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = 'products';
-    
+
     protected $fillable = [
         'id',
-        'product_name',   
+        'product_name',
         'product_code',
         'product_price',
         'out_of_date',
     ];
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function detail_input_wares()
     {
@@ -47,5 +47,5 @@ class Product extends Model
     {
     return $this->hasMany('App\Models\CalculationUnit');
     }
-    
+
 }

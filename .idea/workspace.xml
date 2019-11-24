@@ -2,16 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stock-management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stock-management.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ResetPasswordController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar1_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/chat-avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/chat-avatar2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/email-img/image2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/email-img/image3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/email-img/image4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/email-img/main-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/fb-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/follower-avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/lock-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mail-avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/corner_image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/mega_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photos/user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photos/user2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photos/user3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photos/user4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/photos/user5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pro-ac-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/pro-ac-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/profile-avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ring.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/slider/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/sm-img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/sm-img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/sm-img-3.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/users/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/users/user_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -144,6 +194,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TUuII7men32dDaO2XMBFBVGvs2" />
@@ -207,7 +265,8 @@
       <workItem from="1574430946226" duration="2276000" />
       <workItem from="1574466370905" duration="20666000" />
       <workItem from="1574501785066" duration="5158000" />
-      <workItem from="1574553658459" duration="19419000" />
+      <workItem from="1574553658459" duration="19504000" />
+      <workItem from="1574586434384" duration="25017000" />
     </task>
     <servers />
   </component>

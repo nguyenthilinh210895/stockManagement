@@ -8,7 +8,8 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-class UserRequest extends FormRequest
+
+class EditAccountRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,11 +33,14 @@ class UserRequest extends FormRequest
             'address' => 'max:50',
             'phone_number' =>'bail|required|numeric|max:1000000000000',
             'email' => 'bail|required|email|unique:users,email,' .$this->id.",id",
-            'birthday' => 'max:15',
+            'birthday' => 'nullable|date',
             'employee_id' => 'bail|required|max:10',
             'warehouse_id' => 'required',
+            'new_password'     => 'same:retype_password|max:32|min:8',
+
         ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         $errors = (new ValidationException($validator))->errors();
@@ -46,4 +50,5 @@ class UserRequest extends FormRequest
                 'status_code' => 422,
             ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY));
     }
+
 }

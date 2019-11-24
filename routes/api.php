@@ -31,4 +31,7 @@ Route::resource('qualitys', 'Api\QualityApiController')->except(['create', 'edit
 Route::resource('calculations', 'Api\CaculationUnitApiController')->except(['create', 'edit', 'show', 'update']);
 
 Route::resource('users', 'Api\UserApiController')->except(['create', 'edit']);
+Route::post('/edit-account', 'Api\UserApiController@editAccount')->name('user.editAccount');
 Route::get('showProfile/{email}', 'Api\UserApiController@showProfile')->name('api.showProfile');
+
+Route::resource('products', 'Api\ProductApiController')->except(['create', 'edit']);

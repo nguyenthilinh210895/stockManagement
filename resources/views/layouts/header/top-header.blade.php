@@ -64,7 +64,7 @@
                   </li>
                   <!-- user login dropdown start-->
                   <li class="dropdown">
-                      <a href="{{ route('api.adminLogout') }}">
+                      <a href="{{ route('user.profile') }}">
                           <img alt="" src="{{ asset('img/account.png')}}">
                       </a>
                   </li>

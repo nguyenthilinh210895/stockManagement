@@ -4,15 +4,26 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\EditAccountRequest;
 use App\Mail\initialPassMail;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Mail;
+use Hash;
+use Illuminate\Support\Facades\Storage;
 use  Illuminate\Support\Str;
 use App\Http\Resources\UserResource as UserResource;
 
 class UserApiController extends Controller
 {
+    protected $SERVER_NAME;
+
+    public function __construct()
+    {
+        $this->SERVER_NAME = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : env('MANAGE_APP_URL', 'local');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -72,6 +83,62 @@ class UserApiController extends Controller
     {
         $user = User::where('users.email', $email)->first();
         return new UserResource($user);
+    }
+    /**
+     *  editAccount function
+     *  function for user edit account
+     * @param EditAccountRequest $request
+     * @return void
+     */
+    public function editAccount(EditAccountRequest $request)
+    {
+        $user = User::find($request->id);
+        if($request->new_password)
+        {
+            if(Hash::check($request->old_password,$user->password))
+                $user->update([
+                    'password' => bcrypt($request->new_password),
+                    'email_verified_at' => Carbon::now()
+                ]);
+            else
+                return response()->json(
+                    [
+                        'error' => ['old_password' => ['The old password is incorrect']],
+                        'status_code' => 422,
+                    ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
+
+        }
+        $user->update([
+            'fullname' => $request->fullname,
+            'employee_id' => $request->employee_id,
+            'phone_number' => $request->phone_number,
+            'address' => $request->address,
+            'birthday' =>  date("Y-m-d", strtotime(request('birthday'))),
+            'email' => $request->email,
+            'warehouse_id' => $request->warehouse_id,
+        ]);
+        // create image
+        if ($request->hasFile('image_url'))
+        {
+            if ($user->image_url) {
+                $fullSrc = $this->SERVER_NAME . '/uploads/' . $user->image_url;
+                if (Storage::disk('s3')->exists($fullSrc)) {
+                    Storage::disk('s3')->delete($fullSrc);
+                }
+
+            }
+            $file = $request->file('image_url');
+            $fileName = str_replace(' ', '-', $file->getClientOriginalName());
+            $filename_hash = substr(hash('md5', date("mdYhms")), 0, 10) . '-' . $fileName;
+
+            $fullpath = $this->SERVER_NAME . '/uploads/' . $filename_hash;
+            Storage::disk('local')->put($fullpath, file_get_contents($file), 'public');
+            $user->image_url = $filename_hash;
+            $user->save();
+        }
+
+        $message = ['status' => 'success', 'content' => 'I edited my account information.'];
+        return response()->json(['url'=> route('user.profile'), 'message' => $message], 200);
     }
 
 

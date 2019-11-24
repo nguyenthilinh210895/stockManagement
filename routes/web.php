@@ -49,6 +49,8 @@ $manageRoutes = function () {
         Route::resource('users', 'UserController')->except(['store', 'update','destroy','show']);
         Route::get('profile', 'UserController@editProfile')->name('user.profile');
 
+        Route::resource('products', 'ProductController')->except(['store', 'update','destroy','show']);
+
         Route::get('/home', 'HomeController@index')->name('home');
     });
 };

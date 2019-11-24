@@ -8,7 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 
-class UserRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,16 +27,20 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'fullname' => 'bail|required|max:20',
-            'address' => 'max:50',
-            'phone_number' =>'bail|required|numeric|max:1000000000000',
-            'email' => 'bail|required|email|unique:users,email,' .$this->id.",id",
-            'birthday' => 'max:15',
-            'employee_id' => 'bail|required|max:10',
-            'warehouse_id' => 'required',
-        ];
+            return [
+                'zone' => 'required',
+                'group' => 'required',
+                'manufact' =>'required',
+                'unit' => 'required',
+                'quality' => 'required',
+                'product_code' => 'bail|required|max:12',
+                'product_name' =>  'bail|required|max:32',
+                'product_price'     => 'required',
+                'out_of_date' => 'required',
+
+            ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         $errors = (new ValidationException($validator))->errors();

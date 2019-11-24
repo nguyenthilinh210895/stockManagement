@@ -66,6 +66,9 @@ Vue.component('user-profile-component', require('./components/users/user-profile
 
 Vue.component('index-component', require('./components/index.vue').default);
 
+Vue.component('create-product-component', require('./components/product/create-product.vue').default);
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
