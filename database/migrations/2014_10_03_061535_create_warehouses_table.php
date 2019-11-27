@@ -15,10 +15,10 @@ class CreateWarehousesTable extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('warehouse_name');
+            $table->string('warehouse_name')->nullable();
             $table->unsignedBigInteger('area_id');
-            $table->string('ware_manage');
-            $table->integer('ware_phone');
+            $table->string('ware_manage')->nullable();
+            $table->integer('ware_phone')->nullable();
             $table->string('ware_email')->unique();
             $table->timestamps();
 

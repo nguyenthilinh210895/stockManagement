@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProductResource as ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
@@ -16,7 +17,11 @@ class ProductApiController extends Controller
      */
     public function index()
     {
-        //
+        return response([
+            'data' => Product::all()->map(function ($product){
+                return new ProductResource($product);
+            })
+        ]);
     }
 
 
@@ -40,7 +45,7 @@ class ProductApiController extends Controller
         $product->save();
 
         $message = ['status' => 'success', 'content' => 'Add new product successfully.'];
-        return response()->json(['url'=> route('products.create'), 'message' => $message], 200);
+        return response()->json(['url'=> route('products.index'), 'message' => $message], 200);
 
     }
 
@@ -50,9 +55,10 @@ class ProductApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($product_id)
     {
-        //
+        $product = Product::find($product_id);
+        return new ProductResource($product);
     }
 
 
@@ -76,6 +82,8 @@ class ProductApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        $message = ['status' => 'success', 'content' => 'Delete product successfully'];
+        return response()->json(['url'=> route('products.index'), 'message' => $message], 200);
     }
 }

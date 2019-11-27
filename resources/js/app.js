@@ -67,6 +67,8 @@ Vue.component('user-profile-component', require('./components/users/user-profile
 Vue.component('index-component', require('./components/index.vue').default);
 
 Vue.component('create-product-component', require('./components/product/create-product.vue').default);
+Vue.component('product-show-component', require('./components/product/product-show.vue').default);
+Vue.component('product-edit-component', require('./components/product/product-edit.vue').default);
 
 
 /**

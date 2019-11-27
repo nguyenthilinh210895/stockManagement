@@ -5,7 +5,7 @@
                 <notifications group="notifi" position="top left" />
             </div>
         <header class="panel-heading">
-            Area
+            Danh sách khu vực
         </header>
                   <div class="panel-body">
                       <div class="adv-table editable-table ">
@@ -13,7 +13,7 @@
                               <div class="btn-group">
                                   <button id="editable-sample_new" class="btn green">
                                        <a href="/manager/areas/create">
-                                      Add New <i class="fa fa-plus"></i>
+                                      Thêm mới <i class="fa fa-plus"></i>
                                        </a>
                                   </button>
                               </div>
@@ -22,10 +22,10 @@
                           <table class="table table-striped table-hover table-bordered" id="editable-sample">
                               <thead>
                               <tr>
-                                  <th>Area code</th>
-                                  <th>Area name</th>
-                                  <th>Edit</th>
-                                  <th>Delete</th>
+                                  <th>Mã khu vực</th>
+                                  <th>Tên khu vực</th>
+                                  <th>Chỉnh sửa</th>
+                                  <th>Xóa</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -46,19 +46,19 @@
 
         <div class="deleteContainer" v-if="deleteClicked"></div>
         <div class="notification-delete" v-if="deleteClicked">
-            <span>Do you want delete area？</span>
+            <span>Bạn thực sự muốn xóa khu vực này？</span>
             <div>
                 <table class="table-notify">
                     <tr class="show-infor">
-                        <td >Code：{{item.area_code || ''}}</td>
-                        <td>Name：{{item.area_name || ''}}</td>
+                        <td >Mã khu vực：{{item.area_code || ''}}</td>
+                        <td>Tên khu vực：{{item.area_name || ''}}</td>
                     </tr>
                 </table>
                 <hr>
             </div>
             <div class="button-message">
-                <button class="accept" @click="DeleteArea">Delete</button>
-                <button class="cancel" @click="cancelDelete">Cancel</button>
+                <button class="accept" @click="DeleteArea">Xóa</button>
+                <button class="cancel" @click="cancelDelete">Hủy</button>
             </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
     width: 30% !important;
 }
 .adv-table table tr :nth-child(3){
-    width: 3% !important;
+    width: 10% !important;
 }
 .adv-table table tr :nth-child(4){
     width: 3% !important;

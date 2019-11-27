@@ -15,7 +15,7 @@ class CreateCalculationUnitsTable extends Migration
     {
         Schema::create('calculation_units', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('unit_name');
+            $table->string('unit_name')->nullable();
         });
     }
 

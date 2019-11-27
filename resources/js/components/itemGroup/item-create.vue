@@ -2,7 +2,7 @@
     <section class="wrapper site-min-height" id="app">
         <notifications group="notify" position="top left" />
         <section class="panel">
-            <header class="panel-heading">Add Item Group</header>
+            <header class="panel-heading">Thêm loại sản phẩm</header>
             <div class="panel-body">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -27,14 +27,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_code" class="label-size-20">Group Code</label>
+                            <label for="group_code" class="label-size-20">Mã loại sản phẩm</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="group_code"
                                 class="form-control label-size-19"
-                                name="group_code" placeholder="Group Code"
+                                name="group_code" placeholder=" Nhập mã loại sản phẩm"
                                 v-model="group.group_code"
                             />
                             <p class="errMessage" v-if="errors.group_code">{{ errors.group_code[0]}}</p>
@@ -46,7 +46,7 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_name" class="label-size-20">Group name</label>
+                            <label for="group_name" class="label-size-20">Tên loại sản phẩm</label>
                         </div>
                         <div class="col-md-8">
                             <input
@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
-                        <button style="margin-left: 40%;" @click="handleCreate">Save</button>
+                        <button style="margin-left: 40%;" @click="handleCreate">Lưu</button>
                     </div>
                 </div>
             </div>

@@ -15,10 +15,10 @@ class CreateInputWaresTable extends Migration
     {
         Schema::create('input_wares', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('input_code');
-            $table->string('input_content');
-            $table->timestamp('input_date');
-            $table->integer('input_total_money');
+            $table->string('input_code')->nullable();
+            $table->string('input_content')->nullable();
+            $table->timestamp('input_date')->nullable();
+            $table->integer('input_total_money')->nullable();
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

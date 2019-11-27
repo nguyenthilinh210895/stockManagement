@@ -4,7 +4,7 @@
 
         <section class="panel">
             <header class="panel-heading">
-                Calculation Unit
+               Đơn vị tính
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -12,7 +12,7 @@
                         <div class="btn-group">
                             <button @click="addQuality"
                                     id="editable-sample_new" class="btn green">
-                                Add New <i class="fa fa-plus"></i>
+                                Thêm mới <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th style="text-align: center !important;">Unit name</th>
+                            <th style="text-align: center !important;">Tên đơn vị</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,7 +29,7 @@
                                 type="text"
                                 id="quality"
                                 class="form-control label-size-19"
-                                name="quality_name"  placeholder="Quality Name"
+                                name="unit_name"  placeholder="Nhập vào đơn vị tính"
                                 v-model="unit.unit_name = i.unit_name"
                             /></td>
                             <td>

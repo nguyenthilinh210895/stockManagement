@@ -16,7 +16,7 @@ class CreateZonesTable extends Migration
         Schema::create('zones', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('zone_code');
-            $table->enum('attribute',['empty','full','not_full'])->default('empty');
+            $table->enum('attribute',['sử dụng','dừng xuất/nhập','thi công'])->default('sử dụng');
             $table->unsignedBigInteger('warehouse_id');
             $table->timestamps();
 

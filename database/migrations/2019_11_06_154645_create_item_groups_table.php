@@ -15,8 +15,8 @@ class CreateItemGroupsTable extends Migration
     {
         Schema::create('item_groups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('group_code');
-            $table->string('group_name');
+            $table->string('group_code')->nullable();
+            $table->string('group_name')->nullable();
         });
     }
 

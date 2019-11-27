@@ -3,7 +3,7 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Employee Manage
+               Danh sách nhân viên
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -11,7 +11,7 @@
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
                                 <a href="/manager/users/create">
-                                    Add New <i class="fa fa-plus"></i>
+                                    Thêm mới <i class="fa fa-plus"></i>
                                 </a>
                             </button>
                         </div>
@@ -20,16 +20,15 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Employ_id</th>
-                            <th>Fullname</th>
+                            <th>Mã nhân viên</th>
+                            <th>Họ và tên</th>
                             <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Gender</th>
-                            <th>Birthday</th>
-                            <th>Warehouse</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                            <th>Chỉnh sửa</th>
+                            <th>Xóa</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -41,7 +40,6 @@
                             <td>{{user.address}}</td>
                             <td>{{user.gender}}</td>
                             <td>{{user.birthday}}</td>
-                            <td>{{user.warehouse_name}}</td>
                             <td><a :href="'/manager/users/' +user.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
                             <td>
                                 <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(user,index)"></i>
@@ -54,18 +52,18 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Do you want delete this employee？</span>
+                    <span>Bạn muốn xóa nhân viên này ra khỏi danh sách？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>User Name：{{item.fullname || ''}}</td>
+                                <td>Tên nhân viên：{{item.fullname || ''}}</td>
                             </tr>
                         </table>
                         <hr>
                     </div>
                     <div class="button-message">
-                        <button class="accept" @click="DeleteWare">Delete</button>
-                        <button class="cancel" @click="cancelDelete">Cancel</button>
+                        <button class="accept" @click="DeleteWare">Xóa</button>
+                        <button class="cancel" @click="cancelDelete">Hủy</button>
                     </div>
                 </div>
 
@@ -128,15 +126,6 @@
 </script>
 
 <style lang="scss" scoped>
-    .adv-table table tr td{
-        width: 25% !important;
-    }
-    .adv-table table tr :nth-child(5){
-        width: 3% !important;
-    }
-    .adv-table table tr :nth-child(6){
-        width: 3% !important;
-    }
     .background {
         height: 750px;
         h1 {

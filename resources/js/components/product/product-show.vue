@@ -3,15 +3,15 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Loại sản phẩm
+                Danh sách sản phẩm
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/manager/items/create">
-                                    Thêm mới <i class="fa fa-plus"></i>
+                                <a href="/manager/products/create">
+                                    Thêm mới<i class="fa fa-plus"></i>
                                 </a>
                             </button>
                         </div>
@@ -20,22 +20,33 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Mã loại sản phẩm</th>
-                            <th>Tên loại sản phẩm</th>
+                            <th>tên sản phẩm</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Ngày hết hạn</th>
+                            <th>Đơn vị</th>
+                            <th>Chất lượng</th>
+                            <th>Loại sản phẩm</th>
+                            <th>Nhà cung cấp</th>
                             <th>Chỉnh sửa</th>
                             <th>Xóa</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(group, index) in groups">
-                            <td>{{group.group_code}}</td>
-                            <td>{{group.group_name}}</td>
-                            <td><a :href="'/manager/items/'+ group.id+'/edit'">
-                                <i class="fa fa-edit" style="color:blue"></i>
-                               </a>
-                            </td>
+                        <tr v-for="(product, index) in products">
+                            <td>{{product.product_name}}</td>
+                            <td>{{product.product_code}}</td>
+                            <td>{{product.product_price}}</td>
+                            <td>{{product.out_of_date}}</td>
+                            <td>{{product.unit}}</td>
+                            <td>{{product.quality}}</td>
+                            <td>{{product.group}}</td>
+                            <td>{{product.manufacturer}}</td>
+<!--                            <td>{{product.zone}}</td>-->
+                            <td><a :href="'/manager/products/'+ product.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
                             <td>
-                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(group,index)"></i>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(product,index)"></i>
+
                             </td>
                         </tr>
                         </tbody>
@@ -44,18 +55,17 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Bạn có thực sự muốn xóa loại sản phẩm này？</span>
+                    <span>Bạn thực sự muốn xóa sản phẩm？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>Mã：{{item.group_code || ''}}</td>
-                                <td>Tên：{{item.group_name || ''}}</td>
+                                <td>Tên sản phẩm：{{item.product_name || ''}}</td>
                             </tr>
                         </table>
                         <hr>
                     </div>
                     <div class="button-message">
-                        <button class="accept" @click="DeleteArea">Xóa</button>
+                        <button class="accept" @click="DeleteWare">Xóa</button>
                         <button class="cancel" @click="cancelDelete">Hủy</button>
                     </div>
                 </div>
@@ -66,10 +76,20 @@
 </template>
 <script>
     export default {
-        name:'item-show',
+        name: 'product-show',
         data(){
             return {
-               groups: {},
+                products: {
+                    product_name: '',
+                    product_code: '',
+                    product_price: '',
+                    out_of_date: '',
+                    zone:'',
+                    manufacturer:'',
+                    quality:'',
+                    item_group:'',
+                    calculation_unit:'',
+                },
                 deleteClicked: false,
                 item:'',
                 index: 0,
@@ -77,10 +97,9 @@
             }
         },
         created(){
-            axios.get('/api/items')
+            axios.get('/api/products')
                 .then(res => {
-                    this.groups = res.data.data;
-                    console.log(this.zones);
+                    this.products = res.data.data;
                 }).catch(error => {
                 console.log(error);
             });
@@ -99,10 +118,10 @@
             cancelDelete(){
                 return this.deleteClicked = false;
             },
-            DeleteArea(index){
-                axios.delete('/api/items/'+this.item.id)
+            DeleteWare(index){
+                axios.delete('/api/products/'+this.item.id)
                     .then(res => {
-                        this.groups.splice(this.index, 1)
+                        this.products.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',
@@ -120,15 +139,15 @@
 </script>
 
 <style lang="scss" scoped>
-    .table{
-        width: 70% !important;
-    }
-    .adv-table table tr :nth-child(4){
-        width: 3% !important;
-    }
-    .adv-table table tr :nth-child(3){
-        width: 13% !important;
-    }
+    /*.adv-table table tr td{*/
+    /*    width: 25% !important;*/
+    /*}*/
+    /*.adv-table table tr :nth-child(5){*/
+    /*    width: 3% !important;*/
+    /*}*/
+    /*.adv-table table tr :nth-child(6){*/
+    /*    width: 3% !important;*/
+    /*}*/
     .background {
         height: 750px;
         h1 {

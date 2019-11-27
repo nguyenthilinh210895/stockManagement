@@ -5,31 +5,31 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                          Add employee
+                          Thêm nhân viên
                         </header>
                         <div class="panel-body">
                             <div class="form">
                                 <form class="cmxform form-horizontal tasi-form" id="signupForm" onsubmit="return false;">
+<!--                                    <div class="form-group ">-->
+<!--                                        <label for="employee_id" class="control-label col-lg-2">Warehouse</label>-->
+
+<!--                                        <div class="col-lg-8">-->
+<!--                                            <select-->
+<!--                                                class="form-control cs-select-form"-->
+<!--                                                id="warehouse_id"-->
+<!--                                                name="warehouse"-->
+<!--                                                v-model="user.warehouse"-->
+<!--                                            >-->
+<!--                                                <option v-for="ware in warehouses" :value="ware.id">{{ ware.warehouse_name }}</option>-->
+<!--                                            </select>-->
+<!--                                            <p class="errMessage" v-if="errors.warehouse">{{ errors.warehouse[0]}}</p>-->
+<!--                                        </div>-->
+
+<!--                                    </div>-->
+
+
                                     <div class="form-group ">
-                                        <label for="employee_id" class="control-label col-lg-2">Warehouse</label>
-
-                                        <div class="col-lg-8">
-                                            <select
-                                                class="form-control cs-select-form"
-                                                id="warehouse_id"
-                                                name="warehouse"
-                                                v-model="user.warehouse"
-                                            >
-                                                <option v-for="ware in warehouses" :value="ware.id">{{ ware.warehouse_name }}</option>
-                                            </select>
-                                            <p class="errMessage" v-if="errors.warehouse">{{ errors.warehouse[0]}}</p>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="form-group ">
-                                        <label for="employee_id" class="control-label col-lg-2">Employee_Id</label>
+                                        <label for="employee_id" class="control-label col-lg-2">Mã nhân viên</label>
                                         <div class="col-lg-8">
                                             <input class=" form-control" id="employee_id" name="employee_id" v-model="user.employee_id" type="text" />
                                             <p class="errMessage" v-if="errors.employee_id">{{ errors.employee_id[0]}}</p>
@@ -38,7 +38,7 @@
 
                                     </div>
                                     <div class="form-group ">
-                                        <label for="fullname" class="control-label col-lg-2">Fullname</label>
+                                        <label for="fullname" class="control-label col-lg-2">Họ và tên</label>
                                         <div class="col-lg-8">
                                             <input class=" form-control" id="fullname" name="fullname" v-model="user.fullname" type="text" />
                                             <p class="errMessage" v-if="errors.fullname">{{ errors.fullname[0]}}</p>
@@ -56,14 +56,14 @@
 
                                     </div>
                                     <div class="form-group ">
-                                        <label for="phone_number" class="control-label col-lg-2">Phone number</label>
+                                        <label for="phone_number" class="control-label col-lg-2">Số điện thoại</label>
                                         <div class="col-lg-8">
                                             <input class="form-control " id="phone_number" name="phone_number" v-model="user.phone_number" type="text" />
                                             <p class="errMessage" v-if="errors.email">{{ errors.phone_number[0]}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="address" class="control-label col-lg-2">Address</label>
+                                        <label for="address" class="control-label col-lg-2">Địa chỉ</label>
                                         <div class="col-lg-8">
                                             <input class="form-control " id="address" name="address" v-model="user.address" type="text" />
                                             <p class="errMessage" v-if="errors.address">{{ errors.address[0]}}</p>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn " @click="handleCreate">Save</button>
+                                            <button class="btn " @click="handleCreate">Lưu</button>
                                         </div>
                                     </div>
                                 </form>
@@ -95,7 +95,7 @@
         data(){
             return {
                 user:{
-                    warehouse:'',
+                    // warehouse:'',
                     employee_id: '',
                     fullname: '',
                     email: '',

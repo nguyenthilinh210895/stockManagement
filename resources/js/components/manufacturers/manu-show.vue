@@ -3,7 +3,7 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Manufacturer
+                Nhà cung cấp
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -11,7 +11,7 @@
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
                                 <a href="/manager/manufacturers/create">
-                                    Add New <i class="fa fa-plus"></i>
+                                   Thêm mới <i class="fa fa-plus"></i>
                                 </a>
                             </button>
                         </div>
@@ -20,13 +20,13 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Phone</th>
+                            <th>Tên nhà cung cấp</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
                             <th>Email</th>
                             <th>Fax</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Chỉnh sửa</th>
+                            <th>Xóa</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -48,18 +48,18 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Do you want delete Manufacturer？</span>
+                    <span>Bạn có chắc muốn xóa nhà cung cấp này？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>Name：{{item.name || ''}}</td>
+                                <td>Tên nhà cung cấp：{{item.name || ''}}</td>
                             </tr>
                         </table>
                         <hr>
                     </div>
                     <div class="button-message">
-                        <button class="accept" @click="DeleteManu">Delete</button>
-                        <button class="cancel" @click="cancelDelete">Cancel</button>
+                        <button class="accept" @click="DeleteManu">Xóa</button>
+                        <button class="cancel" @click="cancelDelete">Hủy</button>
                     </div>
                 </div>
 
@@ -130,15 +130,6 @@
 </script>
 
 <style lang="scss" scoped>
-    .adv-table table tr td{
-        width: 25% !important;
-    }
-    .adv-table table tr :nth-child(7){
-        width: 2% !important;
-    }
-    .adv-table table tr :nth-child(6){
-        width: 2% !important;
-    }
     .background {
         height: 750px;
         h1 {

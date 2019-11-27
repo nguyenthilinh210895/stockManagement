@@ -15,8 +15,8 @@ class CreateQualitiesTable extends Migration
     {
         Schema::create('qualities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('quality_name');
-            $table->string('quality_code');
+            $table->string('quality_name')->nullable();
+            $table->string('quality_code')->nullable();
         });
     }
 

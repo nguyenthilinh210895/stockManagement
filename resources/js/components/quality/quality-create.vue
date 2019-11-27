@@ -4,7 +4,7 @@
 
         <section class="panel">
             <header class="panel-heading">
-                Quality
+                Chất lượng
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -12,7 +12,7 @@
                         <div class="btn-group">
                             <button @click="addQuality"
                                 id="editable-sample_new" class="btn green">
-                                    Add New <i class="fa fa-plus"></i>
+                                    Thêm mới <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -20,8 +20,8 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Quality name</th>
-                            <th>Quality code</th>
+                            <th>Tên chất lượng</th>
+                            <th>Mã chất lượng</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,7 +30,7 @@
                                 type="text"
                                 id="quality"
                                 class="form-control label-size-19"
-                                name="quality_name"  placeholder="Quality Name"
+                                name="quality_name"  placeholder="Tên chất lượng"
                                 v-model="quality.quality_name = i.quality_name"
                             /></td>
                             <td>
@@ -38,7 +38,7 @@
                                     type="text"
                                     id="quality_code"
                                     class="form-control label-size-19"
-                                    name="quality_code"  placeholder="Quality code"
+                                    name="quality_code"  placeholder="Mã chất lượng"
                                     v-model="quality.quality_code = i.quality_code "
                                 />
                             </td>

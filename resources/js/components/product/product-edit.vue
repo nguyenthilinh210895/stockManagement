@@ -5,7 +5,7 @@
             <aside class="profile-info col-lg-9">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                      Thêm sản phẩm mới
+                       Chỉnh sửa thông tin sản phẩm
                     </div>
                     <div class="panel-body bio-graph-info">
                         <h1>Thông tin sản phẩm</h1>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="bio-row">
                                 <div class="col-md-3">
-                                    <label for="group" class="label-size-20">Loại sản phẩm</label>
+                                    <label for="group" class="label-size-20">Loại mặt hàng</label>
                                 </div>
                                 <div class="col-md-6">
                                     <select
@@ -148,31 +148,38 @@
 
 <script>
     export default {
-        name: "create-product",
+        name: "product-edit",
         props: {
             zone: { type: Array, required: true },
             manufacturer:{ type: Array, required: true },
             item_group:{ type: Array, required: true },
             quality:{ type: Array, required: true },
             calculation_unit:{ type: Array, required: true },
+            product_id:{type:Number, required:true},
         },
         data() {
             return {
-               product: {
-                    product_code: '',
-                    product_name: '',
-                    product_price:'',
-                    out_of_date:'',
-                    zone: '',
-                    group:'',
-                    manufact:'',
-                   unit:'',
-                   quality:'',
-                },
+                product: null,
                 errors: [],
             };
         },
+        created() {
+            this.fetchProduct();
+            },
         methods: {
+            fetchProduct() {
+                axios.get('/api/products/'+ this.product_id)
+                    .then(res => {
+                        this.product = res.data.data;
+                        this.product.manufact = this.product.manufacturer_id;
+                        this.product.group = this.product.item_group_id;
+                        this.product.unit = this.product.calculation_unit_id;
+                        this.product.quality = this.product.quality_id;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            },
             handleCreate(){
                 var formData = new FormData();
                 //Add the form data we need to submit
@@ -206,13 +213,13 @@
 </script>
 
 <style scoped>
-.row{
-    margin-right: -340px;
-}
-.bio-row {
-    width: 40%;
-}
-.bio-graph-heading {
-    font-weight: 600;
-}
+    .row{
+        margin-right: -340px;
+    }
+    .bio-row {
+        width: 40%;
+    }
+    .bio-graph-heading {
+        font-weight: 600;
+    }
 </style>

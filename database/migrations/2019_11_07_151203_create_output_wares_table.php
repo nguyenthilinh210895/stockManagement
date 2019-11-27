@@ -15,10 +15,10 @@ class CreateOutputWaresTable extends Migration
     {
         Schema::create('output_wares', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('output_code');
-            $table->string('output_content');
-            $table->timestamp('output_date');
-            $table->integer('output_total_money');
+            $table->string('output_code')->nullable();
+            $table->string('output_content')->nullable();
+            $table->timestamp('output_date')->nullable();
+            $table->integer('output_total_money')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

@@ -34,7 +34,7 @@ class UserRequest extends FormRequest
             'email' => 'bail|required|email|unique:users,email,' .$this->id.",id",
             'birthday' => 'max:15',
             'employee_id' => 'bail|required|max:10',
-            'warehouse_id' => 'required',
+//            'warehouse_id' => 'required',
         ];
     }
     protected function failedValidation(Validator $validator)

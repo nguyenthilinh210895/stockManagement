@@ -2,68 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/stock-management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stock-management.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/avatar1_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/chat-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/chat-avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/email-img/image2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/email-img/image3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/email-img/image4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/email-img/main-img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/favicon-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/favicon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/fb-img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/follower-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gallery/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/lock-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mail-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/corner_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega-menu/mega-menu-images6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega_icon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/mega_icon4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/photos/user1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/photos/user2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/photos/user3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/photos/user4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/photos/user5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/pro-ac-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/pro-ac-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/product1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/product2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/product3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/profile-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/ring.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/slider/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/sm-img-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/sm-img-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/sm-img-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_03_061502_create_areas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_03_061502_create_areas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_03_061535_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_03_061535_create_warehouses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_03_061555_create_zones_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_03_061555_create_zones_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154357_create_calculation_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154357_create_calculation_units_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154522_create_qualities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154522_create_qualities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154645_create_item_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154645_create_item_groups_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/quality/quality-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/quality/quality-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/users/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/users/user_profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/top-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +239,10 @@
       <workItem from="1574466370905" duration="20666000" />
       <workItem from="1574501785066" duration="5158000" />
       <workItem from="1574553658459" duration="19504000" />
-      <workItem from="1574586434384" duration="25017000" />
+      <workItem from="1574586434384" duration="25537000" />
+      <workItem from="1574636885443" duration="5820000" />
+      <workItem from="1574650341956" duration="599000" />
+      <workItem from="1574839998655" duration="8304000" />
     </task>
     <servers />
   </component>

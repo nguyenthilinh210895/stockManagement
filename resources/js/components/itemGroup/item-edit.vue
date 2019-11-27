@@ -1,7 +1,7 @@
 <template>
     <section class="wrapper site-min-height">
         <section class="panel">
-            <header class="panel-heading">Edit Item Group</header>
+            <header class="panel-heading">Sửa loại sản phẩm</header>
             <div class="panel-body">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -26,14 +26,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_code" class="label-size-20">Item group Code</label>
+                            <label for="group_code" class="label-size-20">Mã loại sản phẩm</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="group_code"
                                 class="form-control label-size-19"
-                                name="group_code" placeholder="Item group Code"
+                                name="group_code" placeholder="Nhập mã loại sản phẩm"
                                 v-model="groups.group_code" required
                             />
                             <p class="errMessage" v-if="errors.group_code">{{ errors.group_code[0]}}</p>
@@ -44,14 +44,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_name" class="label-size-20">Item group name</label>
+                            <label for="group_name" class="label-size-20">Tên loại sản phẩm</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="group_name"
                                 class="form-control label-size-19"
-                                name="group_name" placeholder="Item group name"
+                                name="group_name" placeholder="Nhập tên loại sản phẩm"
                                 v-model="groups.group_name" required
                             />
                             <p class="errMessage" v-if="errors.group_name">{{ errors.group_name[0]}}</p>
@@ -63,7 +63,7 @@
 
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
-                        <button style="margin-left: 40%;" @click="handleEdit">Save</button>
+                        <button style="margin-left: 40%;" @click="handleEdit">Lưu</button>
                     </div>
                 </div>
             </div>

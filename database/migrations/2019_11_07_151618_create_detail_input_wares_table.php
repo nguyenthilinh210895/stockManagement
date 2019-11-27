@@ -15,9 +15,9 @@ class CreateDetailInputWaresTable extends Migration
     {
         Schema::create('detail_input_wares', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('detail_input_quantity');
-            $table->integer('detail_input_amount');
-            $table->unsignedBigInteger('product_id');
+            $table->integer('detail_input_quantity')->nullable();
+            $table->integer('detail_input_amount')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('inputWare_id');
             $table->timestamps();
 

@@ -5,47 +5,47 @@
                   <li>
                       <a href="{{route('home')}}">
                           <i class="fa fa-home"></i>
-                          <span >Home</span>
+                          <span> Trang chủ</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('areas.index')}}">Area</a>
+                      <a href="{{route('areas.index')}}">Khu vực</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('warehouses.index')}}">Warehouse</a>
+                      <a href="{{route('warehouses.index')}}">Kho hàng</a>
                   </li>
                   <li class="sub-menu">
                       <a href="{{route('zones.index')}}">Zone</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('items.index')}}">Item Group</a>
+                      <a href="{{route('items.index')}}">Nhóm hàng</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('manufacturers.index')}}">Manufacturer</a>
+                      <a href="{{route('manufacturers.index')}}">Nhà cung cấp</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('qualitys.index')}}">Quality</a>
+                      <a href="{{route('qualitys.index')}}">Chất lượng</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('calculations.index')}}">Calculation Unit</a>
+                      <a href="{{route('calculations.index')}}">Đơn vị tính</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('users.index')}}">Employee</a>
+                      <a href="{{route('users.index')}}">Nhân viên</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#">Product </a>
+                      <a href="{{route('products.index')}}">Sản phẩm </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Input Warehouse</a>
+                      <a href="#" >Nhập kho</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Output Warehouse</a>
+                      <a href="#" >Xuất kho</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Output Warehouse</a>
+                      <a href="#" >Detail Output Warehouse</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Output Warehouse</a>
+                      <a href="#" >Detail Output Warehouse</a>
                   </li>
                   <!-- <li>
                       <a href="google_maps.html" > Google Maps </a>

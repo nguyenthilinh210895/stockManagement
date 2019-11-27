@@ -5,10 +5,10 @@
             <aside class="profile-nav col-lg-3">
                 <section class="panel">
                     <div class="user-heading round">
-<!--                        <input type="hidden" name="csrf" value="csrf">-->
+                        <input type="hidden" name="csrf" value="csrf">
                         <input type="hidden" name="_method" >
-                            <img src="/img/account.png" alt="Update Avatar" class="icon-svg icon-add">
-                        <img v-if="user.image_url " :src="user.image_url" class="photo-menu" style="display: none">
+<!--                            <img src="/img/account.png" alt="Update Avatar" class="icon-svg icon-add">-->
+                        <img v-if="user.image_url " :src="user.image_url" class="preview">
                         <h1>{{users.fullname}}</h1>
                         <p>{{users.email}}</p>
                     </div>
@@ -20,31 +20,31 @@
             <aside class="profile-info col-lg-9">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                        Your personal information is below. Please update the information when there is a change.
+                        Đây là thông tin cá nhân của bạn. Vui lòng sửa lại khi thông tin của bạn có sự thay đổi.
                     </div>
                     <div class="panel-body bio-graph-info">
                         <h1> Profile Info</h1>
                         <form class="form-horizontal" role="form" onsubmit="return false;">
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Employee_id</label>
+                                <label  class="col-lg-2 control-label">Mã nhân viên</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="employee_id" v-model="user.employee_id" class="form-control" id="f-name" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Full Name</label>
+                                <label  class="col-lg-2 control-label">Họ và tên</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="fullname" v-model="user.fullname" class="form-control" id="fullname" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Address</label>
+                                <label  class="col-lg-2 control-label">Địa chỉ</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="address" v-model="user.address" class="form-control" id="address" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Birthday</label>
+                                <label  class="col-lg-2 control-label">Ngày sinh</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="birthday" v-model="user.birthday" class="form-control" id="b-day" placeholder=" ">
                                 </div>
@@ -62,50 +62,50 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Phone</label>
+                                <label  class="col-lg-2 control-label">Số điện thoại </label>
                                 <div class="col-lg-6">
                                     <input type="text" name="phone_number" v-model="users.phone_number" class="form-control" id="phone" placeholder=" ">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Warehouse</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="warehouse_id" v-model="user.warehouse_name" class="form-control" id="warehouse" placeholder=" ">
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label  class="col-lg-2 control-label">Warehouse</label>-->
+<!--                                <div class="col-lg-6">-->
+<!--                                    <input type="text" name="warehouse_id" v-model="user.warehouse_name" class="form-control" id="warehouse" placeholder=" ">-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="row">
                                 <label class="col-md-3 mixin-label">
                                     <div class="row">
-                                        <div class="col-md-9 label-input">Set Password</div>
+                                        <div class="col-md-9 label-input">Thay đổi mật khẩu</div>
                                     </div>
                                 </label>
                                 <div class="col-md-9">
-                                    <input class="radio-edit" type="radio" name="editPassword" v-model="required" :value="false" checked> Unchanged
-                                    <input class="radio-edit" type="radio" name="editPassword" v-model="required" :value="true"> Change
+                                    <input class="radio-edit" type="radio" name="editPassword" v-model="required" :value="false" checked> Không đổi
+                                    <input class="radio-edit" type="radio" name="editPassword" v-model="required" :value="true"> Thay đổi
                                 </div>
                             </div>
                             <section v-if="required">
                                 <div class="panel panel-primary">
-                                    <div class="panel-heading"> Sets New Password</div>
+                                    <div class="panel-heading"> Thay đổi mật khẩu</div>
                                     <div class="panel-body">
                                         <form class="form-horizontal" role="form">
                                             <div class="form-group">
-                                                <label  class="col-lg-2 control-label">Current Password</label>
+                                                <label  class="col-lg-2 control-label">Mật khẩu hiện tại</label>
                                                 <div class="col-lg-6">
-                                                    <input type="password" name="old_password" v-model="password.old" class="form-control" id="c-pwd" placeholder=" ">
+                                                    <input type="password" name="old_password" v-model="password.old" class="form-control" id="c-pwd" placeholder="Nhập mật khẩu hiện tại">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label  class="col-lg-2 control-label">New Password</label>
+                                                <label  class="col-lg-2 control-label">Mật khẩu mới</label>
                                                 <div class="col-lg-6">
-                                                    <input type="password" name="new_password" v-model="password.new" class="form-control" id="n-pwd" placeholder=" ">
+                                                    <input type="password" name="new_password" v-model="password.new" class="form-control" id="n-pwd" placeholder="Nhập mật khẩu mới ">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label  class="col-lg-2 control-label">Re-type New Password</label>
+                                                <label  class="col-lg-2 control-label">Nhập lại mật khẩu mới</label>
                                                 <div class="col-lg-6">
-                                                    <input type="password" name="retype_password" v-model="password.re_new" class="form-control" id="rt-pwd" placeholder=" ">
+                                                    <input type="password" name="retype_password" v-model="password.re_new" class="form-control" id="rt-pwd" placeholder="Nhập lại mật khẩu mới ">
                                                 </div>
                                             </div>
                                         </form>
@@ -115,7 +115,7 @@
 
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button @click="editAccount" class="btn btn-success">Edit</button>
+                                    <button @click="editAccount" class="btn btn-success">Chỉnh sửa</button>
                                 </div>
                             </div>
                         </form>
