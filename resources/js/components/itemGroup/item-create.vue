@@ -2,7 +2,7 @@
     <section class="wrapper site-min-height" id="app">
         <notifications group="notify" position="top left" />
         <section class="panel">
-            <header class="panel-heading">Thêm loại sản phẩm</header>
+            <header class="panel-heading">Thêm nhóm vật tư</header>
             <div class="panel-body">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
@@ -27,14 +27,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_code" class="label-size-20">Mã loại sản phẩm</label>
+                            <label for="group_code" class="label-size-20">Mã nhóm vật tư</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="group_code"
                                 class="form-control label-size-19"
-                                name="group_code" placeholder=" Nhập mã loại sản phẩm"
+                                name="group_code" placeholder=" Nhập mã nhóm vật tư"
                                 v-model="group.group_code"
                             />
                             <p class="errMessage" v-if="errors.group_code">{{ errors.group_code[0]}}</p>
@@ -46,14 +46,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="group_name" class="label-size-20">Tên loại sản phẩm</label>
+                            <label for="group_name" class="label-size-20">Tên nhóm vật tư</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="group_name"
                                 class="form-control label-size-19"
-                                name="group_name" placeholder="Group Name"
+                                name="group_name" placeholder="Nhập tên nhóm vật tư"
                                 v-model="group.group_name"
                             />
                             <p class="errMessage" v-if="errors.group_name">{{ errors.group_name[0]}}</p>

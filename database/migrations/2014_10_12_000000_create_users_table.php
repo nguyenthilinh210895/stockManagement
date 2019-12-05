@@ -24,10 +24,10 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('warehouse_id');
+//            $table->unsignedBigInteger('warehouse_id');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('warehouse_id')->references('id')->on('warehouses')->onDelete('cascade');
+//            $table->foreign('warehouse_id')->references('id')->on('warehouses')->onDelete('cascade');
         });
     }
 

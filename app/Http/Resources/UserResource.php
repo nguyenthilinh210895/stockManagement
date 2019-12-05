@@ -24,9 +24,9 @@ class UserResource extends JsonResource
             'birthday' => $this->birthday,
             'gender' => $this->gender,
             'employee_id' => $this->employee_id,
-            'warehouse_id' => $this->warehouse_id,
+//            'warehouse_id' => $this->warehouse_id,
             'image_url' => $this->image_url,
-            'warehouse_name' => Warehouse::where('id',$this->warehouse_id)->pluck('warehouse_name')[0],
+            //'warehouse_name' => Warehouse::where('id',$this->warehouse_id)->pluck('warehouse_name')[0],
         ];
     }
 }

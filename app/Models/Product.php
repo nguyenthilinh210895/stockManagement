@@ -38,11 +38,14 @@ class Product extends Model
     return $this->belongsTo('App\Models\Manufacturer');
     }
 
-    public function qualitys()
+    public function qualities()
     {
-    return $this->hasMany('App\Models\Quality');
+        return $this->belongsToMany('App\Models\Quality');
     }
-
+    public function zones()
+    {
+        return $this->belongsToMany('App\Models\Zone');
+    }
     public function calculation_units()
     {
     return $this->hasMany('App\Models\CalculationUnit');

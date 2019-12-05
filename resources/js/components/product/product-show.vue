@@ -3,7 +3,7 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Danh sách sản phẩm
+                Danh sách vật tư
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -20,13 +20,13 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>tên sản phẩm</th>
-                            <th>Mã sản phẩm</th>
+                            <th>Tên vật tư</th>
+                            <th>Mã vật tư</th>
                             <th>Giá</th>
                             <th>Ngày hết hạn</th>
                             <th>Đơn vị</th>
                             <th>Chất lượng</th>
-                            <th>Loại sản phẩm</th>
+                            <th>Nhóm vật tư</th>
                             <th>Nhà cung cấp</th>
                             <th>Chỉnh sửa</th>
                             <th>Xóa</th>
@@ -55,11 +55,11 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Bạn thực sự muốn xóa sản phẩm？</span>
+                    <span>Bạn thực sự muốn xóa vật tư này？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td>Tên sản phẩm：{{item.product_name || ''}}</td>
+                                <td>Tên vật tư：{{item.product_name || ''}}</td>
                             </tr>
                         </table>
                         <hr>
@@ -100,6 +100,7 @@
             axios.get('/api/products')
                 .then(res => {
                     this.products = res.data.data;
+                    console.log(this.products)
                 }).catch(error => {
                 console.log(error);
             });

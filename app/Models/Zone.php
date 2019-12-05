@@ -24,5 +24,9 @@ class Zone extends Model
     {
     return $this->belongsToMany('App\Models\ItemGroup');
     }
+    public function products()
+    {
+        return $this->belongsToMany('App\Models\Product');
+    }
 
 }

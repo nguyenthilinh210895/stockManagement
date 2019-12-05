@@ -30,7 +30,7 @@ class ProductRequest extends FormRequest
             return [
                 'zone' => 'required',
                 'group' => 'required',
-                'manufact' =>'required',
+                //'manufact' =>'required',
                 'unit' => 'required',
                 'quality' => 'required',
                 'product_code' => 'bail|required|max:12',

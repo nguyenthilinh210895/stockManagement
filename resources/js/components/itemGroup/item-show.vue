@@ -3,7 +3,7 @@
         <notifications group="notifi" position="top left" />
         <section class="panel">
             <header class="panel-heading">
-                Loại sản phẩm
+                Danh sách nhóm vật tư
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -20,8 +20,8 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                         <tr>
-                            <th>Mã loại sản phẩm</th>
-                            <th>Tên loại sản phẩm</th>
+                            <th>Mã nhóm vật tư</th>
+                            <th>Tên nhóm vật tư</th>
                             <th>Chỉnh sửa</th>
                             <th>Xóa</th>
                         </tr>
@@ -44,7 +44,7 @@
 
                 <div class="deleteContainer" v-if="deleteClicked"></div>
                 <div class="notification-delete" v-if="deleteClicked">
-                    <span>Bạn có thực sự muốn xóa loại sản phẩm này？</span>
+                    <span>Bạn có thực sự muốn xóa nhóm vật tư này？</span>
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">

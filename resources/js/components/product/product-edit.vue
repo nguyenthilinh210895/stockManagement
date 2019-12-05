@@ -5,10 +5,10 @@
             <aside class="profile-info col-lg-9">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                       Chỉnh sửa thông tin sản phẩm
+                       Chỉnh sửa thông tin vật tư
                     </div>
                     <div class="panel-body bio-graph-info">
-                        <h1>Thông tin sản phẩm</h1>
+                        <h1>Thông tin vật tư</h1>
                         <div class="row">
                             <div class="bio-row">
                                 <div class="col-md-3">
@@ -42,7 +42,7 @@
                             </div>
                             <div class="bio-row">
                                 <div class="col-md-3">
-                                    <label for="group" class="label-size-20">Loại mặt hàng</label>
+                                    <label for="group" class="label-size-20">Nhóm vật tư</label>
                                 </div>
                                 <div class="col-md-6">
                                     <select
@@ -94,19 +94,19 @@
                     <div class="panel-body bio-graph-info">
                         <form class="form-horizontal" role="form" onsubmit="return false;">
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Tên sản phẩm</label>
+                                <label  class="col-lg-2 control-label">Tên vật tư</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="product_name" v-model="product.product_name" class="form-control" id="p-name" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Mã sản phẩm</label>
+                                <label  class="col-lg-2 control-label">Mã vật tư</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="product_code" v-model="product.product_code" class="form-control" id="code" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Giá sản phẩm</label>
+                                <label  class="col-lg-2 control-label">Giá</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="product_price" v-model="product.product_price"  class="form-control" id="price" placeholder=" ">
                                 </div>

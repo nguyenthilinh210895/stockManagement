@@ -4,39 +4,28 @@
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_03_061502_create_areas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_03_061502_create_areas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_03_061535_create_warehouses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_03_061535_create_warehouses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_03_061555_create_zones_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_03_061555_create_zones_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154357_create_calculation_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154357_create_calculation_units_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154522_create_qualities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154522_create_qualities_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154645_create_item_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154645_create_item_groups_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154850_create_manufacturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AreaRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AreaRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ItemGroupRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ItemGroupRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Quality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Quality.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Zone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Zone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/areas/area-show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/calculationUnit/calculation-create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/manufacturers/manu-show.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/quality/quality-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/quality/quality-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -242,7 +231,16 @@
       <workItem from="1574586434384" duration="25537000" />
       <workItem from="1574636885443" duration="5820000" />
       <workItem from="1574650341956" duration="599000" />
-      <workItem from="1574839998655" duration="8304000" />
+      <workItem from="1574839998655" duration="8541000" />
+      <workItem from="1574851338186" duration="59000" />
+      <workItem from="1574852203229" duration="889000" />
+      <workItem from="1575162550686" duration="797000" />
+      <workItem from="1575373814128" duration="599000" />
+      <workItem from="1575382786989" duration="1043000" />
+      <workItem from="1575469301677" duration="2147000" />
+      <workItem from="1575471959492" duration="3656000" />
+      <workItem from="1575551887585" duration="11115000" />
+      <workItem from="1575589313580" duration="665000" />
     </task>
     <servers />
   </component>

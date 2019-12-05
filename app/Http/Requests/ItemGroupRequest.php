@@ -28,9 +28,8 @@ class ItemGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'group_name' => 'required|max:25',
-            'group_code' => 'required|max:12',
-            'zone' =>'required',
+            'group_name' => 'max:25',
+            'group_code' => 'max:12',
         ];
     }
 

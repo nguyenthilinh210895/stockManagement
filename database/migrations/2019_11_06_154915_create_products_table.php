@@ -18,16 +18,13 @@ class CreateProductsTable extends Migration
             $table->string('product_name')->nullable();
             $table->string('product_code')->nullable();
             $table->string('quatity')->nullable();
-            $table->integer('product_price')->nullable();
             $table->timestamp('out_of_date')->nullable();
-            $table->unsignedBigInteger('manufacturer_id');
-            $table->unsignedBigInteger('calculation_unit_id');
-            $table->unsignedBigInteger('quality_id');
-            $table->unsignedBigInteger('item_group_id');
+            $table->unsignedBigInteger('manufacturer_id')->nullable();
+            $table->unsignedBigInteger('calculation_unit_id')->nullable();
+            $table->unsignedBigInteger('item_group_id')->nullable();
 
             $table->foreign('calculation_unit_id')->references('id')->on('calculation_units')->onDelete('cascade');
             $table->foreign('manufacturer_id')->references('id')->on('manufacturers')->onDelete('cascade');
-            $table->foreign('quality_id')->references('id')->on('qualities')->onDelete('cascade');
             $table->foreign('item_group_id')->references('id')->on('item_groups')->onDelete('cascade');
         });
     }

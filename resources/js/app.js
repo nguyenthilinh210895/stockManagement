@@ -63,12 +63,14 @@ Vue.component('user-create-component', require('./components/users/user-create.v
 Vue.component('user-show-component', require('./components/users/user-show.vue').default);
 Vue.component('user-edit-component', require('./components/users/user-edit.vue').default);
 Vue.component('user-profile-component', require('./components/users/user-profile.vue').default);
-
+//daboard
 Vue.component('index-component', require('./components/index.vue').default);
-
+//Product
 Vue.component('create-product-component', require('./components/product/create-product.vue').default);
 Vue.component('product-show-component', require('./components/product/product-show.vue').default);
 Vue.component('product-edit-component', require('./components/product/product-edit.vue').default);
+//Input warehouse
+Vue.component('input-create-component', require('./components/inputWarehouse/input-warehouse-create.vue').default);
 
 
 /**

@@ -23,7 +23,7 @@ class InputWareController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.inputWahouse.input_wahouse_create');
     }
 
 
