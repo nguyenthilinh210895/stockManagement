@@ -3,29 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/InputWareApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/InputWareApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/AreaRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AreaRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ItemGroupRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ItemGroupRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DetailInputWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DetailInputWare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/InputWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/InputWare.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Quality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Quality.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Zone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Zone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154818_create_input_wares_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_154915_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151203_create_output_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_05_204124_create_product_zone_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_05_225122_create_product_quality_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/itemGroup/item-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/warehouses/show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/warehouses/show.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/zones/zone-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/zones/zone-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +244,8 @@
       <workItem from="1575469301677" duration="2147000" />
       <workItem from="1575471959492" duration="3656000" />
       <workItem from="1575551887585" duration="11115000" />
-      <workItem from="1575589313580" duration="665000" />
+      <workItem from="1575589313580" duration="1548000" />
+      <workItem from="1575679094553" duration="33515000" />
     </task>
     <servers />
   </component>

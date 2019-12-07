@@ -19,6 +19,7 @@ class CreateInputWaresTable extends Migration
             $table->string('input_content')->nullable();
             $table->timestamp('input_date')->nullable();
             $table->integer('input_total_money')->nullable();
+            $table->boolean('status')->default(0);
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -16,6 +16,7 @@ class CreateDetailOutputWaresTable extends Migration
         Schema::create('detail_output_wares', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('detail_output_quantity')->nullable();
+            $table->integer('detail_estimate_quantity')->nullable();
             $table->integer('detail_output_amount')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('outputWare_id');

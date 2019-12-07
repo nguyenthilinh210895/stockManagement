@@ -28,8 +28,8 @@ class AreaRequest extends FormRequest
     public function rules()
     {
         return [
-            'area_code' => 'max:15',
-            'area_name' => 'max:50',
+            'area_code' => 'required|max:15',
+            'area_name' => 'required|max:50',
         ];
     }
 

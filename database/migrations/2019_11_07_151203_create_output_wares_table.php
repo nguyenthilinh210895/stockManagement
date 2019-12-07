@@ -19,6 +19,7 @@ class CreateOutputWaresTable extends Migration
             $table->string('output_content')->nullable();
             $table->timestamp('output_date')->nullable();
             $table->integer('output_total_money')->nullable();
+            $table->boolean('status')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

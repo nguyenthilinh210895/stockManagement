@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductQualityTable extends Migration
+class CreateProductZoneTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateProductQualityTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_quality', function (Blueprint $table) {
+        Schema::create('product_zone', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
-            $table->integer('product_price')->nullable();
-            $table->unsignedBigInteger('quality_id');
-            $table->foreign('quality_id')->references('id')->on('qualities')->onDelete('cascade');
+            $table->integer('quantity_input')->nullable();
+            $table->integer('quantity_output')->nullable();
+            $table->integer('quantity_stock')->nullable();
+            $table->unsignedBigInteger('zone_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('zone_id')->references('id')->on('zones')->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateProductQualityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_quality');
+        Schema::dropIfExists('product_zone');
     }
 }

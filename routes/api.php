@@ -35,3 +35,4 @@ Route::post('/edit-account', 'Api\UserApiController@editAccount')->name('user.ed
 Route::get('showProfile/{email}', 'Api\UserApiController@showProfile')->name('api.showProfile');
 
 Route::resource('products', 'Api\ProductApiController')->except(['create', 'edit']);
+Route::resource('inputs', 'Api\InputWareApiController')->except(['create', 'edit']);

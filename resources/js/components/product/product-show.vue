@@ -100,7 +100,6 @@
             axios.get('/api/products')
                 .then(res => {
                     this.products = res.data.data;
-                    console.log(this.products)
                 }).catch(error => {
                 console.log(error);
             });

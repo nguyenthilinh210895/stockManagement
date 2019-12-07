@@ -3,7 +3,7 @@
         <notifications group="notifi" position="top left" />
               <section class="panel">
                   <header class="panel-heading">
-                    Warehouse
+                    Danh sách kho hàng
                   </header>
                   <div class="panel-body">
                       <div class="adv-table editable-table ">
@@ -11,7 +11,7 @@
                               <div class="btn-group">
                                   <button id="editable-sample_new" class="btn green">
                                        <a href="/manager/warehouses/create">
-                                      Add New <i class="fa fa-plus"></i>
+                                      Thêm mới <i class="fa fa-plus"></i>
                                        </a>
                                   </button>
                               </div>
@@ -20,12 +20,12 @@
                           <table class="table table-striped table-hover table-bordered" id="editable-sample">
                               <thead>
                               <tr>
-                                  <th>Name</th>
-                                  <th>Manger</th>
-                                  <th>Phone</th>
+                                  <th>Tên kho</th>
+                                  <th>Người quản lý</th>
+                                  <th>Điện thoại</th>
                                    <th>Email</th>
-                                  <th>Edit</th>
-                                  <th>Delete</th>
+                                  <th>Chỉnh sửa</th>
+                                  <th>Xóa</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -131,7 +131,7 @@
     width: 25% !important;
 }
 .adv-table table tr :nth-child(5){
-    width: 3% !important;
+    width: 9% !important;
 }
 .adv-table table tr :nth-child(6){
     width: 3% !important;

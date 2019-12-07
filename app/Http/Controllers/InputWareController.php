@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class InputWareController extends Controller
@@ -23,7 +25,8 @@ class InputWareController extends Controller
      */
     public function create()
     {
-        return view('content.inputWahouse.input_wahouse_create');
+        $employee =User::all();
+        return view('content.inputWahouse.input_wahouse_create',compact('employee'));
     }
 
 

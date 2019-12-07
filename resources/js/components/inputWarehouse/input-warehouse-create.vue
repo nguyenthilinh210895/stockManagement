@@ -19,7 +19,7 @@
                                         class="form-control cs-select-form"
                                         id="input_code"
                                         name="input_code"
-
+                                        v-model="input.input_code"
                                     >
                                 </div>
                             </div>
@@ -31,9 +31,10 @@
                                     <select
                                         class="form-control cs-select-form"
                                         id="employee"
-                                        name="user"
+                                        name="employee"
+                                        v-model="input.employee"
                                     >
-                                        <!--                                        <option v-for="quality in quality" :value="quality.id">{{ quality.quality_name }}</option>-->
+                                       <option v-for="employ in employees" :value="employ.id">{{employ.fullname}}({{employ.employee_id}})</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -46,6 +47,7 @@
                                         class="form-control cs-select-form"
                                         id="input_date"
                                         name="input_date"
+                                        v-model="input.input_date"
                                     >
                                 </div>
                             </div>
@@ -58,6 +60,7 @@
                                         class="form-control cs-select-form"
                                         id="input_content"
                                         name="input_content"
+                                        v-model="input.input_content"
                                     >
                                     </textarea>
                                 </div>
@@ -71,49 +74,63 @@
                     <div class="panel-body bio-graph-info">
                         <form class="form-horizontal" role="form" onsubmit="return false;">
                             <h1>Danh sách vật tư</h1>
-
-                            <div class="row">
-                                    <div class="col-md-1">
-                                        <label for="zone" class="label-size-20">Mã phiếu</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input
-                                            class="form-control cs-select-form"
-                                            id="zone"
-                                            name="zone"
-
-                                        >
-                                    </div>
-                                <div class="col-md-1">
-                                    <label for="unit" class="label-size-20">Đơn vị</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input
+                            <div class="space15"></div>
+                            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                <tbody>
+                                <tr>
+                                    <th>Vật tư</th>
+                                    <th>Giá</th>
+                                    <th>Đơn vị tính</th>
+                                    <th>Số lượng</th>
+                                </tr>
+                                <tr v-for="(i, index) in product">
+                                    <td>  <select
+                                        class="form-control cs-select-form"
+                                        id="product"
+                                        name="product"
+                                        v-model="product.product_code=i.product_code">
+                                       <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
+                                    </select></td>
+                                    <td>  <select
+                                        class="form-control cs-select-form"
+                                        id="price"
+                                        name="product_price"
+                                        v-model="product.product_code=i.product_code">
+                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_price }}</option>
+                                    </select></td>
+                                    <td> <select
                                         class="form-control cs-select-form"
                                         id="unit"
                                         name="unit"
-
-                                    >
-                                </div>
-
-                            </div>
-
-
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Tên vật tư</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="product_name" class="form-control" id="p-name" placeholder=" ">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Mã vật tư</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="product_code" class="form-control" id="code" placeholder=" ">
+                                        v-model="product.product_code=i.product_code">
+                                        <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
+                                    </select></td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            id="quatity"
+                                            class="form-control label-size-19"
+                                            name="estimate_quatity"  placeholder="Số lượng"
+                                            v-model="product.estimate_quatity = i.estimate_quatity"
+                                        />
+                                    </td>
+                                    <td>
+                                        <i @click="removeProduct(index)" class="fa fa-remove" style="color:red;cursor:pointer"></i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                    <button @click="addProduct"
+                                            id="editable-sample_new" class="btn green">
+                                        Thêm mới <i class="fa fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button @click="handleCreate" class="btn btn-success">Lưu</button>
+                                    <button @click="handleSave" class="btn btn-success">Lưu</button>
                                 </div>
                             </div>
                         </form>
@@ -130,58 +147,62 @@
 <script>
     export default {
         name: "input-warehouse-create",
-        // props: {
-        //     zone: { type: Array, required: true },
-        //     manufacturer:{ type: Array, required: true },
-        //     item_group:{ type: Array, required: true },
-        //     quality:{ type: Array, required: true },
-        //     calculation_unit:{ type: Array, required: true },
-        // },
+        props: {
+            employees: {type: Array, required: true},
+        },
         data() {
             return {
-                // product: {
-                //     product_code: '',
-                //     product_name: '',
-                //     product_price:'',
-                //     out_of_date:'',
-                //     zone: '',
-                //     group:'',
-                //     manufact:'',
-                //     unit:'',
-                //     quality:'',
-                // },
+                input: {
+                    input_code:'',
+                    employee:'',
+                    input_date:'',
+                    input_content:'',
+                },
+                product: [],
+                products: null,
                 errors: [],
             };
         },
-        methods: {
-            // handleCreate(){
-            //     var formData = new FormData();
-            //     //Add the form data we need to submit
-            //     formData.append('product_code', this.product.product_code);
-            //     formData.append('product_name', this.product.product_name);
-            //     formData.append('product_price', this.product.product_price);
-            //     formData.append('out_of_date', this.product.out_of_date);
-            //     formData.append("zone", this.product.zone);
-            //     formData.append("group", this.product.group);
-            //     formData.append("manufact", this.product.manufact);
-            //     formData.append("unit", this.product.unit);
-            //     formData.append("quality", this.product.quality);
-            //
-            //     //Make the request to the POST
-            //     axios({
-            //         method: 'post',
-            //         url: '/api/products',
-            //         data: formData,
-            //         headers: {'content-type': 'multipart/form-data'}
-            //     })
-            //         .then(res => {
-            //             localStorage.setItem(res.data.message.status, res.data.message.content);
-            //             window.location.href=res.data.url;
-            //         })
-            //         .catch((error) => {
-            //             this.errors = error.response.data.error;
-            //         });
-            // }
+        created(){
+            this.fetchProduct();
+        },
+        methods:{
+            fetchProduct(){
+                axios.get('/api/products')
+                    .then(res => {
+                        this.products = res.data.data;
+                    }).catch(error => {
+                    console.log(error);
+                });
+            },
+            removeProduct(index){
+                this.product.splice(index, 1);
+            },
+            addProduct(index){
+                this.product.push({product_code: '',estimate_quatity: ''});
+            },
+            handleSave(){
+                let formData = new FormData();
+                formData.append('input_code', this.input.input_code);
+                formData.append('input_content', this.input.input_content);
+                formData.append('input_date', this.input.input_date);
+                formData.append('user_id', this.input.employee);
+                for (let i = 0; i < this.product.length; i++) {
+                    formData.append('product_id[]', this.product[i].product_code);
+                    formData.append('estimate_quantity[]', this.product[i].estimate_quatity);
+                }
+
+
+                axios.post('/api/inputs', formData)
+                    .then(res => {
+                        localStorage.setItem(res.data.message.status, res.data.message.content);
+                        //window.location.href = res.data.url;
+                        this.errors = [];
+                    })
+                    .catch(error => {
+                        this.errors = error.response.data.error;
+                    });
+            },
         }
     }
 </script>
@@ -198,5 +219,8 @@
     }
     .form-control {
         width: 300px;
+    }
+    th{
+        text-align: center;
     }
 </style>

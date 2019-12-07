@@ -40,7 +40,7 @@ class Product extends Model
 
     public function qualities()
     {
-        return $this->belongsToMany('App\Models\Quality');
+        return $this->hasMany('App\Models\Quality');
     }
     public function zones()
     {

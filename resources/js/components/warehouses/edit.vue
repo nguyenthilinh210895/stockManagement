@@ -1,12 +1,12 @@
 <template>
     <section class="wrapper site-min-height">
         <section class="panel">
-            <header class="panel-heading">Edit Warehouse</header>
+            <header class="panel-heading">Chỉnh sửa kho</header>
             <div class="panel-body" v-if="warehouse">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="name" class="label-size-20">Area</label>
+                            <label for="name" class="label-size-20">Khu vực</label>
                         </div>
                         <div class="col-md-8">
                             <select
@@ -26,14 +26,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="name" class="label-size-20">Name</label>
+                            <label for="name" class="label-size-20">Tên kho</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="name"
                                 class="form-control label-size-19"
-                                name="warehouse_name" placeholder="Warehouse Name"
+                                name="warehouse_name" placeholder=""
                                 v-model="warehouse.warehouse_name" required
                             />
                             <p class="errMessage" v-if="errors.warehouse_name">{{ errors.name[0]}}</p>
@@ -45,14 +45,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="manager" class="label-size-20">Mangager</label>
+                            <label for="manager" class="label-size-20">Người quản lý</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="manager"
                                 class="form-control label-size-19"
-                                name="ware_manager"  placeholder="Manager"
+                                name="ware_manager"  placeholder=""
                                 v-model="warehouse.ware_manage"
                             />
                             <p class="errMessage" v-if="errors.ware_manage">{{ errors.ware_manage[0]}}</p>
@@ -63,14 +63,14 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="phone" class="label-size-20">Phone</label>
+                            <label for="phone" class="label-size-20">Điện thoại</label>
                         </div>
                         <div class="col-md-8">
                             <input
                                 type="text"
                                 id="phone"
                                 class="form-control label-size-19"
-                                name="ware_phone"  placeholder="Phone number"
+                                name="ware_phone"  placeholder=""
                                 v-model="warehouse.ware_phone"
                             />
                             <p class="errMessage" v-if="errors.ware_phone">{{ errors.ware_phone[0]}}</p>
@@ -88,7 +88,7 @@
                                 type="text"
                                 id="email"
                                 class="form-control label-size-19"
-                                name="ware_email"  placeholder="Email"
+                                name="ware_email"  placeholder=""
                                 v-model="warehouse.ware_email"
                             />
                             <p class="errMessage" v-if="errors.ware_email">{{ errors.ware_email[0]}}</p>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
-                        <button style="margin-left: 40%;" @click="handleCreate">Save</button>
+                        <button style="margin-left: 40%;" @click="handleCreate">Lưu</button>
                     </div>
                 </div>
 

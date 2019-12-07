@@ -3,7 +3,7 @@
         <section class="panel">
             <header class="panel-heading">
                 <notifications group="notifi" position="top left" margin-left="50px"/>
-                Zone
+                Danh sách Zone
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
@@ -11,7 +11,7 @@
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
                                 <a href="/manager/zones/create">
-                                    Add New <i class="fa fa-plus"></i>
+                                    Thêm mới <i class="fa fa-plus"></i>
                                 </a>
                             </button>
                         </div>
@@ -21,10 +21,10 @@
                         <thead>
                         <tr>
                             <th>Zone code</th>
-                            <th>Zone attribute</th>
-                            <th>Warehouse</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Tình trạng</th>
+                            <th>Kho</th>
+                            <th>Chỉnh sửa</th>
+                            <th>Xóa</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -127,7 +127,7 @@
         width: 30% !important;
     }
     .adv-table table tr :nth-child(4){
-        width: 3% !important;
+        width: 9% !important;
     }
     .adv-table table tr :nth-child(5){
         width: 3% !important;

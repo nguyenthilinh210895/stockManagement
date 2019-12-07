@@ -1,12 +1,12 @@
 <template>
     <section class="wrapper site-min-height">
         <section class="panel">
-            <header class="panel-heading">Add Zone</header>
+            <header class="panel-heading">Thêm Zone</header>
             <div class="panel-body">
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="warehouse" class="label-size-20">Warehouse</label>
+                            <label for="warehouse" class="label-size-20">Kho</label>
                         </div>
                         <div class="col-md-8">
                             <select
@@ -26,7 +26,7 @@
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">
-                            <label for="attribute" class="label-size-20">Attribute</label>
+                            <label for="attribute" class="label-size-20">Tình trạng</label>
                         </div>
                         <div class="col-md-8">
                             <select
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
-                        <button style="margin-left: 40%;" @click="handleCreate">Save</button>
+                        <button style="margin-left: 40%;" @click="handleCreate">Lưu</button>
                     </div>
                 </div>
             </div>

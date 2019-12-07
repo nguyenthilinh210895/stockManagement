@@ -118,15 +118,15 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Màu sắc</label>
+                                <label  class="col-lg-2 control-label">Số lượng</label>
                                 <div class="col-lg-6">
-                                    <input type="text" name="color" class="form-control" id="color" placeholder=" ">
+                                    <input type="text" name="quatity" v-model="product.quatity" class="form-control" id="quantity" placeholder=" ">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Khối lượng</label>
+                                <label  class="col-lg-2 control-label">Màu sắc</label>
                                 <div class="col-lg-6">
-                                    <input type="text" name="quantity" class="form-control" id="quantity" placeholder=" ">
+                                    <input type="text" name="color" class="form-control" id="color" placeholder=" ">
                                 </div>
                             </div>
 
@@ -168,6 +168,7 @@
                     manufact:'',
                    unit:'',
                    quality:'',
+                   quatity:'',
                 },
                 errors: [],
             };
@@ -185,7 +186,7 @@
                 formData.append("manufact", this.product.manufact ||'');
                 formData.append("unit", this.product.unit);
                 formData.append("quality", this.product.quality);
-
+                formData.append("quatity", this.product.quatity);
                 //Make the request to the POST
                 axios({
                     method: 'post',
