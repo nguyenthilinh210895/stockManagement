@@ -71,6 +71,8 @@ Vue.component('product-show-component', require('./components/product/product-sh
 Vue.component('product-edit-component', require('./components/product/product-edit.vue').default);
 //Input warehouse
 Vue.component('input-create-component', require('./components/inputWarehouse/input-warehouse-create.vue').default);
+Vue.component('input-purchase-component', require('./components/inputWarehouse/input-warehouse-purchase.vue').default);
+Vue.component('input-show-component', require('./components/inputWarehouse/input-ware-show.vue').default);
 
 
 /**

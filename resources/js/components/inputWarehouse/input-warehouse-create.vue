@@ -223,4 +223,13 @@
     th{
         text-align: center;
     }
+     .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        padding: 1px;
+    }
+    .form-control{
+        width: 250px;
+    }
+    /*.adv-table table tr :nth-child(2){*/
+    /*    width: 3% !important;*/
+    /*}*/
 </style>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\InputResource;
 use App\Models\InputWare;
 use App\Models\DetailInputWare;
 use App\Models\Product;
@@ -19,7 +20,11 @@ class InputWareApiController extends Controller
      */
     public function index()
     {
-        //
+        return response([
+            'data' => InputWare::all()->map(function ($input) {
+                return new InputResource($input);
+            })
+        ]);
     }
 
 
