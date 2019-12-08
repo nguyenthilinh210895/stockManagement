@@ -36,3 +36,5 @@ Route::get('showProfile/{email}', 'Api\UserApiController@showProfile')->name('ap
 
 Route::resource('products', 'Api\ProductApiController')->except(['create', 'edit']);
 Route::resource('inputs', 'Api\InputWareApiController')->except(['create', 'edit']);
+
+Route::resource('inputs', 'Api\OutputWareApiController')->except(['create', 'edit']);

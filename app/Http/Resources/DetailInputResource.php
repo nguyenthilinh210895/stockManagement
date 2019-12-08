@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Product;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ProductResource as ProductResource;
 
 class DetailInputResource extends JsonResource
 {
@@ -20,7 +22,12 @@ class DetailInputResource extends JsonResource
             'detail_estimate_quantity' => $this->detail_estimate_quantity,
             'detail_input_amount' => $this->detail_input_amount,
             'product_id' => $this->product_id,
-            'inputWare_id' => $this->detail_input_quantity,
+            'inputWare_id' => $this->inputWare_id,
+            //'products' => Product::where('id',$this->product_id)->first(),
+            'product' => $this->getProduct($this->product_id),
         ];
+    }
+    public function getProduct($id){
+        return (new ProductResource(Product::find($id)));
     }
 }

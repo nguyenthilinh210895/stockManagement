@@ -42,9 +42,9 @@ class InputWareController extends Controller
         //
     }
 
-    public function purchase()
+    public function purchase($input_id)
     {
-        return view('content.inputWahouse.input_wahouse_purchase');
+        return view('content.inputWahouse.input_wahouse_purchase',compact('input_id'));
     }
 
 

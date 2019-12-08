@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\InputResource;
+use App\Http\Resources\InputResource as InputResource;
 use App\Models\InputWare;
 use App\Models\DetailInputWare;
 use App\Models\Product;
@@ -83,11 +83,12 @@ class InputWareApiController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return InputResource
      */
-    public function show($id)
+    public function show($input_id)
     {
-        //
+        $input =InputWare::find($input_id);
+        return new InputResource( $input);
     }
 
     /**

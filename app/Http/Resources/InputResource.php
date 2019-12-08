@@ -2,7 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\Models\DetailInputWare;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\DetailInputResource as DetailInputResource;
 
 class InputResource extends JsonResource
 {
@@ -19,7 +22,12 @@ class InputResource extends JsonResource
             'input_code' => $this->input_code,
             'input_content' => $this->input_content,
             'input_date' => $this->input_date,
-            'input_total_money' => $this->total_money,
+            'input_total_money' => $this->input_total_money,
+            'status' =>$this->status,
+            'user_id' => $this->user_id,
+            'employee' =>User::where('id',$this->user_id)->first(),
+            'detail' => $this->detail_input_wares->map(function ($detail){return new DetailInputResource($detail);}),
         ];
     }
+
 }

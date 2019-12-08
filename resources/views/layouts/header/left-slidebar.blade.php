@@ -33,10 +33,10 @@
                       <a href="{{route('users.index')}}">Nhân viên</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="{{route('products.index')}}">Sản phẩm </a>
+                      <a href="{{route('products.index')}}">Vật tư </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Nhập kho</a>
+                      <a href="{{route('inputs.index')}}" >Nhập kho</a>
                   </li>
                   <li class="sub-menu">
                       <a href="#" >Xuất kho</a>

@@ -1,7 +1,7 @@
 <template>
     <section>
-        <div class="wrapper">
-<!--            <div class="panel-heading navyblue"> INVOICE</div>-->
+        <div class="wrapper site-min-height">
+            <div class="panel-heading navyblue"> </div>
             <div class="panel-body">
                 <div class="row invoice-list">
                     <div class="text-center corporate-id">
@@ -9,16 +9,18 @@
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <p>
-                      Mã phiếu nhập		: <strong>69626</strong><br>
-                      Ngày nhập		: 2013-03-17<br>
+                      Mã phiếu nhập		: <strong>{{inputs.input_code}}</strong><br>
+                      Ngày nhập		: {{inputs.input_date}}<br>
+                      Nhân viên phụ trách		: {{inputs.employee.fullname}}<br>
                         </p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <ul class="unstyled">
-                            <li>Nhân viên phụ trách		: Nguyễn Văn A</li>
-                            <li>Trạng thái		: Đang đợi</li>
+                            <li v-if="inputs.status == 0">Trạng thái		: Đang đợi</li>
+                            <li v-else>Trạng thái		: Hoàn thành </li>
+                            <li>Note		: {{inputs.input_content}}</li>
                         </ul>
                     </div>
                 </div>
@@ -32,31 +34,30 @@
                         <th class="">Kho</th>
                         <th class="">SL dự kiến</th>
                         <th class="">SL thực tế</th>
-                        <th>Tổng tiền</th>
+                        <th>Thành tiền</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>LCD Monitor</td>
-                        <td class="hidden-phone">20 inch Philips LCD Black color monitor</td>
-                        <td class="">$ 1000</td>
+                    <tr v-for="(detail,index) in inputs.detail">
+                        <td>{{index +1}}</td>
+                        <td>{{inputs.detail[index].product.product_code}}</td>
+                        <td class="hidden-phone">{{inputs.detail[index].product.unit}}</td>
+                        <td class="">{{inputs.detail[index].product.product_price}}</td>
                         <td class=""></td>
-                        <td class="">2</td>
-                        <td>$ 2000</td>
-                        <td>$ 2000</td>
-                        <td><input type="checkbox" id="checkbox" v-model="checked"></td>
+                        <td class="">{{inputs.detail[index].detail_estimate_quantity}}</td>
+                        <td><input type="text" name="quatity"></td>
+                        <td>2000000</td>
+                        <td><input type="checkbox" id="checkbox"></td>
+
+                        <!--                        <td><input type="checkbox" id="checkbox" v-model="checked"></td>-->
                     </tr>
                     </tbody>
                 </table>
                 <div class="row">
                     <div class="col-lg-4 invoice-block pull-right">
                         <ul class="unstyled amounts">
-                            <li><strong>Sub - Total amount :</strong> $6820</li>
-                            <li><strong>Discount :</strong> 10%</li>
-                            <li><strong>VAT :</strong> -----</li>
-                            <li><strong>Grand Total :</strong> $6138</li>
+                            <li><strong>Tổng tiền :</strong> 6000000820</li>
                         </ul>
                     </div>
                 </div>
@@ -71,7 +72,26 @@
 
 <script>
     export default {
-        name: "input-warehouse-purchase"
+        name: "input-warehouse-purchase",
+        props:{
+            input_id:{type:Number,require:true}
+        },
+        data(){
+          return {
+            inputs: [],
+          };
+        },
+        created(){
+          this.fetchInput();
+        },
+        methods: {
+            fetchInput(){
+                axios.get('/api/inputs/' +this.input_id)
+                    .then(res =>{
+                        this.inputs = res.data.data;
+                    })
+            }
+        },
     }
 </script>
 
@@ -84,4 +104,8 @@
         background-color: #ddd;
         color: black;
     }
+    input{
+        width: 85px;
+    }
+
 </style>

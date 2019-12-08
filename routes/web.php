@@ -52,7 +52,11 @@ $manageRoutes = function () {
         Route::resource('products', 'ProductController')->except(['store', 'update','destroy','show']);
 
         Route::resource('inputs', 'InputWareController')->except(['store', 'update','destroy','show']);
-        Route::get('inputs/purchase', 'InputWareController@purchase')->name('input.purchase');
+        Route::get('inputs/purchase/{id}', 'InputWareController@purchase')->name('input.purchase');
+
+        Route::resource('outputs', 'OutputWareController')->except(['store', 'update','destroy','show']);
+
+
         Route::get('/home', 'HomeController@index')->name('home');
     });
 };

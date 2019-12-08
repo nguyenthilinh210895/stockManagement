@@ -5,14 +5,14 @@
                 <notifications group="notifi" position="top left" />
             </div>
             <header class="panel-heading">
-                Danh sách khu vực
+                Quản lý nhập kho
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/manager/areas/create">
+                                <a href="/manager/inputs/create">
                                     Thêm mới <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -33,11 +33,12 @@
                         <tr v-for="(input, index) in inputs">
                             <td>{{input.input_code }}</td>
                             <td>{{input.input_date}}</td>
-                            <td>{{input.employee}}</td>
+                            <td>{{input.employee.fullname}}({{input.employee.employee_id}})</td>
                             <td>{{input.input_total_money}}</td>
-                            <td>{{input.status}}</td>
+                            <td v-if="input.status == 0"><button style="background-color: orangered;color: whitesmoke">Đang đợi</button></td>
+                            <td v-else><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
                             <td>
-                                <a :href="'/manager/inputs/'+ input.id+'/edit'">
+                                <a :href="'/manager/inputs/purchase/'+ input.id">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
                             <td>
@@ -76,10 +77,6 @@
         data(){
             return {
                 inputs: null,
-                // areas: {
-                //     area_code: '',
-                //     area_name: ''
-                // },
                 editButton: 'Edit',
                 deleteButton: 'Delete',
                 deleteClicked: false,
@@ -224,5 +221,8 @@
     }
     .cancel {
         width: 49%;
+    }
+    button {
+        width: 100px;
     }
 </style>

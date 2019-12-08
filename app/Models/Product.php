@@ -18,9 +18,9 @@ class Product extends Model
 
     public $timestamps = false;
 
-    public function detail_input_wares()
+    public function input_wares()
     {
-    return $this->belongsTo('App\Models\DetailInputWare');
+    return $this->belongsToMany('App\Models\InputWare');
     }
 
     public function detail_output_wares()

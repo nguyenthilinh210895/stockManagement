@@ -3120,15 +3120,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'input-ware-show',
   data: function data() {
     return {
       inputs: null,
-      // areas: {
-      //     area_code: '',
-      //     area_name: ''
-      // },
       editButton: 'Edit',
       deleteButton: 'Delete',
       deleteClicked: false,
@@ -3486,8 +3483,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "input-warehouse-purchase"
+  name: "input-warehouse-purchase",
+  props: {
+    input_id: {
+      type: Number,
+      require: true
+    }
+  },
+  data: function data() {
+    return {
+      inputs: []
+    };
+  },
+  created: function created() {
+    this.fetchInput();
+  },
+  methods: {
+    fetchInput: function fetchInput() {
+      var _this = this;
+
+      axios.get('/api/inputs/' + this.input_id).then(function (res) {
+        _this.inputs = res.data.data;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -11170,7 +11191,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".background[data-v-996c75c2] {\n  height: 750px;\n}\n.background h1[data-v-996c75c2] {\n  color: #43425D;\n}\n.content[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 2px 6px #0000000A;\n  height: 100%;\n  padding-top: 40px;\n}\n.content .header-content[data-v-996c75c2] {\n  padding-bottom: 60px;\n}\n.content .header-content button[data-v-996c75c2] {\n  background: #1492E6 0% 0% no-repeat padding-box;\n  border: 1px solid #E8E9EC;\n  border-radius: 5px;\n  width: 8em;\n  height: 2.5em;\n}\n.content .header-content button a[data-v-996c75c2] {\n  color: #FFFFFF;\n}\n.overflow[data-v-996c75c2] {\n  overflow: scroll;\n  border-bottom: 2px solid #707070;\n  height: 85%;\n}\ntable[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-collapse: inherit;\n  margin-bottom: 0;\n}\n.title[data-v-996c75c2] {\n  background: #E46A00 0% 0% no-repeat padding-box;\n}\n.title th[data-v-996c75c2] {\n  color: #FFFFFF;\n  font-size: 17px;\n  padding: 3px 10px;\n}\n.main-content[data-v-996c75c2] {\n  line-height: 15px;\n  font-size: 14px;\n}\n.main-content td button[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 1px 1px #00000029;\n  border-radius: 5px;\n}\n.main-content[data-v-996c75c2]:nth-child(2n-1) {\n  background: #E6D5CB 0% 0% no-repeat padding-box;\n  border: 1px solid #FFFFFF;\n}\n.main-content[data-v-996c75c2]:nth-child(2n) {\n  background: #F1F6F3 0% 0% no-repeat padding-box;\n  border: 1px solid #FFFFFF;\n}\n.notification-delete[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border: 1px solid #1492E6;\n  border-radius: 13px;\n  position: absolute;\n  z-index: 1;\n  bottom: 0px;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 65%;\n  height: 140px;\n  left: 255px;\n  top: 350px;\n  padding: 1em;\n  font-size: 15px;\n}\n.table-notify[data-v-996c75c2] {\n  width: 100%;\n  text-align: center;\n}\n.button-message button[data-v-996c75c2] {\n  border: none;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n}\n.accept[data-v-996c75c2] {\n  border-right: 1px solid #707070 !important;\n  width: 48%;\n}\n.cancel[data-v-996c75c2] {\n  width: 49%;\n}", ""]);
+exports.push([module.i, ".background[data-v-996c75c2] {\n  height: 750px;\n}\n.background h1[data-v-996c75c2] {\n  color: #43425D;\n}\n.content[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 2px 6px #0000000A;\n  height: 100%;\n  padding-top: 40px;\n}\n.content .header-content[data-v-996c75c2] {\n  padding-bottom: 60px;\n}\n.content .header-content button[data-v-996c75c2] {\n  background: #1492E6 0% 0% no-repeat padding-box;\n  border: 1px solid #E8E9EC;\n  border-radius: 5px;\n  width: 8em;\n  height: 2.5em;\n}\n.content .header-content button a[data-v-996c75c2] {\n  color: #FFFFFF;\n}\n.overflow[data-v-996c75c2] {\n  overflow: scroll;\n  border-bottom: 2px solid #707070;\n  height: 85%;\n}\ntable[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border-collapse: inherit;\n  margin-bottom: 0;\n}\n.title[data-v-996c75c2] {\n  background: #E46A00 0% 0% no-repeat padding-box;\n}\n.title th[data-v-996c75c2] {\n  color: #FFFFFF;\n  font-size: 17px;\n  padding: 3px 10px;\n}\n.main-content[data-v-996c75c2] {\n  line-height: 15px;\n  font-size: 14px;\n}\n.main-content td button[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  box-shadow: 0px 1px 1px #00000029;\n  border-radius: 5px;\n}\n.main-content[data-v-996c75c2]:nth-child(2n-1) {\n  background: #E6D5CB 0% 0% no-repeat padding-box;\n  border: 1px solid #FFFFFF;\n}\n.main-content[data-v-996c75c2]:nth-child(2n) {\n  background: #F1F6F3 0% 0% no-repeat padding-box;\n  border: 1px solid #FFFFFF;\n}\n.notification-delete[data-v-996c75c2] {\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n  border: 1px solid #1492E6;\n  border-radius: 13px;\n  position: absolute;\n  z-index: 1;\n  bottom: 0px;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 65%;\n  height: 140px;\n  left: 255px;\n  top: 350px;\n  padding: 1em;\n  font-size: 15px;\n}\n.table-notify[data-v-996c75c2] {\n  width: 100%;\n  text-align: center;\n}\n.button-message button[data-v-996c75c2] {\n  border: none;\n  background: #FFFFFF 0% 0% no-repeat padding-box;\n}\n.accept[data-v-996c75c2] {\n  border-right: 1px solid #707070 !important;\n  width: 48%;\n}\n.cancel[data-v-996c75c2] {\n  width: 49%;\n}\nbutton[data-v-996c75c2] {\n  width: 100px;\n}", ""]);
 
 // exports
 
@@ -11513,7 +11534,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.h2[data-v-91c6a32e], h2[data-v-91c6a32e] {\n    font-size: 20px;\n    font-weight: 600;\n}\n.table > thead:first-child > tr:first-child > th[data-v-91c6a32e] {\n    background-color: #ddd;\n    color: black;\n}\n", ""]);
+exports.push([module.i, "\n.h2[data-v-91c6a32e], h2[data-v-91c6a32e] {\n    font-size: 20px;\n    font-weight: 600;\n}\n.table > thead:first-child > tr:first-child > th[data-v-91c6a32e] {\n    background-color: #ddd;\n    color: black;\n}\ninput[data-v-91c6a32e]{\n    width: 85px;\n}\n\n", ""]);
 
 // exports
 
@@ -45890,7 +45911,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("header", { staticClass: "panel-heading" }, [
-        _vm._v("\n                Danh sách khu vực\n            ")
+        _vm._v("\n                Quản lý nhập kho\n            ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "panel-body" }, [
@@ -45916,18 +45937,49 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(input.input_date))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(input.employee))]),
+                    _c("td", [
+                      _vm._v(
+                        _vm._s(input.employee.fullname) +
+                          "(" +
+                          _vm._s(input.employee.employee_id) +
+                          ")"
+                      )
+                    ]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(input.input_total_money))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(input.status))]),
+                    input.status == 0
+                      ? _c("td", [
+                          _c(
+                            "button",
+                            {
+                              staticStyle: {
+                                "background-color": "orangered",
+                                color: "whitesmoke"
+                              }
+                            },
+                            [_vm._v("Đang đợi")]
+                          )
+                        ])
+                      : _c("td", [
+                          _c(
+                            "button",
+                            {
+                              staticStyle: {
+                                background: "forestgreen",
+                                color: "whitesmoke"
+                              }
+                            },
+                            [_vm._v("Hoàn thành")]
+                          )
+                        ]),
                     _vm._v(" "),
                     _c("td", [
                       _c(
                         "a",
                         {
                           attrs: {
-                            href: "/manager/inputs/" + input.id + "/edit"
+                            href: "/manager/inputs/purchase/" + input.id
                           }
                         },
                         [
@@ -45971,7 +46023,7 @@ var staticRenderFns = [
           "button",
           { staticClass: "btn green", attrs: { id: "editable-sample_new" } },
           [
-            _c("a", { attrs: { href: "/manager/areas/create" } }, [
+            _c("a", { attrs: { href: "/manager/inputs/create" } }, [
               _vm._v("\n                                    Thêm mới "),
               _c("i", { staticClass: "fa fa-plus" })
             ])
@@ -46551,79 +46603,89 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c("div", { staticClass: "wrapper" }, [
+    _c("div", { staticClass: "wrapper site-min-height" }, [
+      _c("div", { staticClass: "panel-heading navyblue" }),
+      _vm._v(" "),
       _c("div", { staticClass: "panel-body" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("table", { staticClass: "table table-striped table-hover" }, [
-          _vm._m(1),
+        _c("div", { staticClass: "row invoice-list" }, [
+          _vm._m(0),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("1")]),
+          _c("div", { staticClass: "col-lg-4 col-sm-4" }, [
+            _c("p", [
+              _vm._v("\n                  Mã phiếu nhập\t\t: "),
+              _c("strong", [_vm._v(_vm._s(_vm.inputs.input_code))]),
+              _c("br"),
+              _vm._v(
+                "\n                  Ngày nhập\t\t: " +
+                  _vm._s(_vm.inputs.input_date)
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                  Nhân viên phụ trách\t\t: " +
+                  _vm._s(_vm.inputs.employee.fullname)
+              ),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4 col-sm-4" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4 col-sm-4" }, [
+            _c("ul", { staticClass: "unstyled" }, [
+              _vm.inputs.status == 0
+                ? _c("li", [_vm._v("Trạng thái\t\t: Đang đợi")])
+                : _c("li", [_vm._v("Trạng thái\t\t: Hoàn thành ")]),
               _vm._v(" "),
-              _c("td", [_vm._v("LCD Monitor")]),
-              _vm._v(" "),
-              _c("td", { staticClass: "hidden-phone" }, [
-                _vm._v("20 inch Philips LCD Black color monitor")
-              ]),
-              _vm._v(" "),
-              _c("td", {}, [_vm._v("$ 1000")]),
-              _vm._v(" "),
-              _c("td", {}),
-              _vm._v(" "),
-              _c("td", {}, [_vm._v("2")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 2000")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$ 2000")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checked,
-                      expression: "checked"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.checked)
-                      ? _vm._i(_vm.checked, null) > -1
-                      : _vm.checked
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checked,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checked = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checked = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checked = $$c
-                      }
-                    }
-                  }
-                })
+              _c("li", [
+                _vm._v("Note\t\t: " + _vm._s(_vm.inputs.input_content))
               ])
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2),
+        _c("table", { staticClass: "table table-striped table-hover" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.inputs.detail, function(detail, index) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(index + 1))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(_vm.inputs.detail[index].product.product_code))
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "hidden-phone" }, [
+                  _vm._v(_vm._s(_vm.inputs.detail[index].product.unit))
+                ]),
+                _vm._v(" "),
+                _c("td", {}, [
+                  _vm._v(_vm._s(_vm.inputs.detail[index].product.product_price))
+                ]),
+                _vm._v(" "),
+                _c("td", {}),
+                _vm._v(" "),
+                _c("td", {}, [
+                  _vm._v(
+                    _vm._s(_vm.inputs.detail[index].detail_estimate_quantity)
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(2, true),
+                _vm._v(" "),
+                _c("td", [_vm._v("2000000")]),
+                _vm._v(" "),
+                _vm._m(3, true)
+              ])
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
-        _vm._m(3)
+        _vm._m(4),
+        _vm._v(" "),
+        _vm._m(5)
       ])
     ])
   ])
@@ -46633,30 +46695,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row invoice-list" }, [
-      _c("div", { staticClass: "text-center corporate-id" }, [
-        _c("h2", [_vm._v("Bản kê chi tiết nhập vật tư")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4 col-sm-4" }, [
-        _c("p", [
-          _vm._v("\n                      Mã phiếu nhập\t\t: "),
-          _c("strong", [_vm._v("69626")]),
-          _c("br"),
-          _vm._v("\n                      Ngày nhập\t\t: 2013-03-17"),
-          _c("br")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4 col-sm-4" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4 col-sm-4" }, [
-        _c("ul", { staticClass: "unstyled" }, [
-          _c("li", [_vm._v("Nhân viên phụ trách\t\t: Nguyễn Văn A")]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Trạng thái\t\t: Đang đợi")])
-        ])
-      ])
+    return _c("div", { staticClass: "text-center corporate-id" }, [
+      _c("h2", [_vm._v("Bản kê chi tiết nhập vật tư")])
     ])
   },
   function() {
@@ -46679,10 +46719,24 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", {}, [_vm._v("SL thực tế")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Tổng tiền")]),
+        _c("th", [_vm._v("Thành tiền")]),
         _vm._v(" "),
         _c("th")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("input", { attrs: { type: "text", name: "quatity" } })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("input", { attrs: { type: "checkbox", id: "checkbox" } })
     ])
   },
   function() {
@@ -46693,15 +46747,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-4 invoice-block pull-right" }, [
         _c("ul", { staticClass: "unstyled amounts" }, [
           _c("li", [
-            _c("strong", [_vm._v("Sub - Total amount :")]),
-            _vm._v(" $6820")
-          ]),
-          _vm._v(" "),
-          _c("li", [_c("strong", [_vm._v("Discount :")]), _vm._v(" 10%")]),
-          _vm._v(" "),
-          _c("li", [_c("strong", [_vm._v("VAT :")]), _vm._v(" -----")]),
-          _vm._v(" "),
-          _c("li", [_c("strong", [_vm._v("Grand Total :")]), _vm._v(" $6138")])
+            _c("strong", [_vm._v("Tổng tiền :")]),
+            _vm._v(" 6000000820")
+          ])
         ])
       ])
     ])
