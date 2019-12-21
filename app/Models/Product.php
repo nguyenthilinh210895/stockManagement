@@ -23,9 +23,9 @@ class Product extends Model
     return $this->belongsToMany('App\Models\InputWare');
     }
 
-    public function detail_output_wares()
+    public function output_wares()
     {
-    return $this->belongsTo('App\Models\DetailOutputWare');
+    return $this->belongsToMany('App\Models\OutputWare');
     }
 
     public function item_groups()

@@ -5,22 +5,22 @@
             <div class="panel-body">
                 <div class="row invoice-list">
                     <div class="text-center corporate-id">
-                        <h2>Bản kê chi tiết nhập vật tư</h2>
+                        <h2>Bản kê chi tiết xuất vật tư</h2>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <p>
-                      Mã phiếu nhập		: <strong>{{inputs.input_code}}</strong><br>
-                      Ngày nhập		: {{inputs.input_date}}<br>
-                      Nhân viên phụ trách		: {{inputs.employee.fullname}}<br>
+                            Mã phiếu xuất		: <strong>{{outputs.output_code}}</strong><br>
+                            Ngày xuất		: {{outputs.output_date}}<br>
+                            Nhân viên phụ trách		: {{outputs.employee.fullname}}<br>
                         </p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <ul class="unstyled">
-                            <li v-if="inputs.status == 0">Trạng thái		: Đang đợi</li>
+                            <li v-if="outputs.status == 0">Trạng thái		: Đang đợi</li>
                             <li v-else>Trạng thái		: Hoàn thành </li>
-                            <li>Note		: {{inputs.input_content}}</li>
+                            <li>Note		: {{outputs.output_content}}</li>
                         </ul>
                     </div>
                 </div>
@@ -30,35 +30,37 @@
                         <th>#</th>
                         <th>Mã Vật tư</th>
                         <th class="hidden-phone">ĐVT</th>
-<!--                        <th class="">Giá</th>-->
+                        <th class="">Giá</th>
                         <th class="">Zone</th>
                         <th class="">SL dự kiến</th>
                         <th class="">SL thực tế</th>
+                        <th>Thành tiền</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="(detail,index) in inputs.detail">
+                    <tr v-for="(detail,index) in outputs.detail">
                         <td>{{index +1}}</td>
-                        <td>{{inputs.detail[index].product.product_code}}</td>
-                        <td class="hidden-phone">{{inputs.detail[index].product.unit}}</td>
-<!--                        <td class="">{{inputs.detail[index].product.product_price}}</td>-->
-                        <td class="">{{inputs.detail[index].product.zone[0].zone_code}}</td>
-                        <td class="">{{inputs.detail[index].detail_estimate_quantity}}</td>
+                        <td>{{outputs.detail[index].product.product_code}}</td>
+                        <td class="hidden-phone">{{outputs.detail[index].product.unit}}</td>
+                        <td class="">{{outputs.detail[index].product.product_price}}</td>
+                        <td class="">{{outputs.detail[index].zone.zone_code}}</td>
+                        <td class="">{{outputs.detail[index].detail_estimate_quantity}}</td>
                         <td><input type="text" name="quatity"></td>
+                        <td>2000000</td>
                         <td><input type="checkbox" id="checkbox"></td>
 
                         <!--                        <td><input type="checkbox" id="checkbox" v-model="checked"></td>-->
                     </tr>
                     </tbody>
                 </table>
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-4 invoice-block pull-right">-->
-<!--                        <ul class="unstyled amounts">-->
-<!--                            <li><strong>Tổng tiền :</strong> 6000000820</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="row">
+                    <div class="col-lg-4 invoice-block pull-right">
+                        <ul class="unstyled amounts">
+                            <li><strong>Tổng tiền :</strong> 6000000820</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="text-center invoice-btn">
                     <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Submit Invoice </a>
                     <a class="btn btn-info btn-lg" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print </a>
@@ -70,23 +72,23 @@
 
 <script>
     export default {
-        name: "input-warehouse-purchase",
+        name: "output-checklist",
         props:{
-            input_id:{type:Number,require:true}
+            output_id:{type:Number,require:true}
         },
         data(){
-          return {
-            inputs: [],
-          };
+            return {
+                outputs: [],
+            };
         },
         created(){
-          this.fetchInput();
+            this.fetchOutput();
         },
         methods: {
-            fetchInput(){
-                axios.get('/api/inputs/' +this.input_id)
+            fetchOutput(){
+                axios.get('/api/outputs/1')
                     .then(res =>{
-                        this.inputs = res.data.data;
+                        this.outputs = res.data.data;
                     })
             }
         },

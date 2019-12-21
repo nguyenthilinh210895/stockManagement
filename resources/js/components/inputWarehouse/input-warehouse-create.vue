@@ -79,8 +79,10 @@
                                 <tbody>
                                 <tr>
                                     <th>Vật tư</th>
-                                    <th>Giá</th>
+<!--                                    <th>Giá</th>-->
                                     <th>Đơn vị tính</th>
+<!--                                    <th>Chất lượng</th>-->
+                                    <th>Zone</th>
                                     <th>Số lượng</th>
                                 </tr>
                                 <tr v-for="(i, index) in product">
@@ -91,19 +93,28 @@
                                         v-model="product.product_code=i.product_code">
                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
                                     </select></td>
-                                    <td>  <select
-                                        class="form-control cs-select-form"
-                                        id="price"
-                                        name="product_price"
-                                        v-model="product.product_code=i.product_code">
-                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_price }}</option>
-                                    </select></td>
+<!--
+-->
                                     <td> <select
                                         class="form-control cs-select-form"
                                         id="unit"
                                         name="unit"
                                         v-model="product.product_code=i.product_code">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
+                                    </select></td>
+<!--                                    <td> <select-->
+<!--                                        class="form-control cs-select-form"-->
+<!--                                        id="quality"-->
+<!--                                        name="quality"-->
+<!--                                        v-model="product.product_code=i.product_code">-->
+<!--                                        <option v-for="pro in products" :value="pro.id">{{ pro.quality }}</option>-->
+<!--                                    </select></td>-->
+                                    <td>  <select
+                                        class="form-control cs-select-form"
+                                        id="zone"
+                                        name="zone"
+                                        v-model="product.zone=i.zone">
+                                        <option v-for="zone in zones" :value="zone.id">{{ zone.zone_code }}</option>
                                     </select></td>
                                     <td>
                                         <input
@@ -149,6 +160,7 @@
         name: "input-warehouse-create",
         props: {
             employees: {type: Array, required: true},
+            zones: {type: Array, required: true},
         },
         data() {
             return {
@@ -179,7 +191,7 @@
                 this.product.splice(index, 1);
             },
             addProduct(index){
-                this.product.push({product_code: '',estimate_quatity: ''});
+                this.product.push({product_code: '',estimate_quatity: '',zone:''});
             },
             handleSave(){
                 let formData = new FormData();
@@ -190,6 +202,7 @@
                 for (let i = 0; i < this.product.length; i++) {
                     formData.append('product_id[]', this.product[i].product_code);
                     formData.append('estimate_quantity[]', this.product[i].estimate_quatity);
+                    formData.append('zone_id[]', this.product[i].zone);
                 }
 
 

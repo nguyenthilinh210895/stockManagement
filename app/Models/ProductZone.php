@@ -16,4 +16,5 @@ class ProductZone extends Model
         'quantity_stock',
         'zone-id',
     ];
+    public $timestamps = false;
 }

@@ -19,6 +19,7 @@ class CreateDetailInputWaresTable extends Migration
             $table->integer('detail_estimate_quantity')->nullable();
             $table->integer('detail_input_amount')->nullable();
             $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('zone_id')->nullable();
             $table->unsignedBigInteger('inputWare_id');
             $table->timestamps();
 

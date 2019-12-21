@@ -42,30 +42,30 @@
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
                             <td>
-                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(area,index)"></i>
+                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
-<!--                <div class="deleteContainer" v-if="deleteClicked"></div>-->
-<!--                <div class="notification-delete" v-if="deleteClicked">-->
-<!--                    <span>Bạn thực sự muốn xóa khu vực này？</span>-->
-<!--                    <div>-->
-<!--                        <table class="table-notify">-->
-<!--                            <tr class="show-infor">-->
-<!--                                <td >Mã khu vực：{{item.area_code || ''}}</td>-->
-<!--                                <td>Tên khu vực：{{item.area_name || ''}}</td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                        <hr>-->
-<!--                    </div>-->
-<!--                    <div class="button-message">-->
-<!--                        <button class="accept" @click="DeleteArea">Xóa</button>-->
-<!--                        <button class="cancel" @click="cancelDelete">Hủy</button>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="deleteContainer" v-if="deleteClicked"></div>
+                <div class="notification-delete" v-if="deleteClicked">
+                    <span>Bạn thực sự muốn xóa ？</span>
+                    <div>
+                        <table class="table-notify">
+                            <tr class="show-infor">
+                                <td >Mã phiếu：{{item.input_code || ''}}</td>
+                                <td>Ngày nhập：{{item.input_date || ''}}</td>
+                            </tr>
+                        </table>
+                        <hr>
+                    </div>
+                    <div class="button-message">
+                        <button class="accept" @click="Delete">Xóa</button>
+                        <button class="cancel" @click="cancelDelete">Hủy</button>
+                    </div>
+                </div>
             </div>
         </section>
     </section>
@@ -107,21 +107,21 @@
             cancelDelete(){
                 return this.deleteClicked = false;
             },
-            // DeleteArea(index){
-            //     axios.delete('/api/areas/'+this.item.id)
-            //         .then(res => {
-            //             this.areas.splice(this.index, 1)
-            //             this.$notify({
-            //                 group: "notifi",
-            //                 type: 'success',
-            //                 text: res.data.message.content,
-            //                 duration: 6000
-            //             });
-            //             this.deleteClicked = false;
-            //         }).catch(error => {
-            //         console.log(error);
-            //     });
-           // }
+            Delete(index){
+                axios.delete('/api/inputs/'+this.item.id)
+                    .then(res => {
+                        this.areas.splice(this.index, 1)
+                        this.$notify({
+                            group: "notifi",
+                            type: 'success',
+                            text: res.data.message.content,
+                            duration: 6000
+                        });
+                        this.deleteClicked = false;
+                    }).catch(error => {
+                    console.log(error);
+                });
+           }
         }
 
     }

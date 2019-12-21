@@ -106,30 +106,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Giá</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="product_price" v-model="product.product_price"  class="form-control" id="price" placeholder=" ">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label  class="col-lg-2 control-label">Ngày hết hạn</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="out_of_date" v-model="product.out_of_date"  class="form-control" id="out_of_date" placeholder=" ">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Số lượng</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="quatity" v-model="product.quatity" class="form-control" id="quantity" placeholder=" ">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Màu sắc</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="color" class="form-control" id="color" placeholder=" ">
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button @click="handleCreate" class="btn btn-success">Lưu</button>
@@ -168,7 +149,6 @@
                     manufact:'',
                    unit:'',
                    quality:'',
-                   quatity:'',
                 },
                 errors: [],
             };
@@ -179,14 +159,12 @@
                 //Add the form data we need to submit
                 formData.append('product_code', this.product.product_code);
                 formData.append('product_name', this.product.product_name);
-                formData.append('product_price', this.product.product_price);
                 formData.append('out_of_date', this.product.out_of_date);
                 formData.append("zone", this.product.zone);
                 formData.append("group", this.product.group);
                 formData.append("manufact", this.product.manufact ||'');
                 formData.append("unit", this.product.unit);
                 formData.append("quality", this.product.quality);
-                formData.append("quatity", this.product.quatity);
                 //Make the request to the POST
                 axios({
                     method: 'post',

@@ -48,20 +48,21 @@ class InputWareApiController extends Controller
                   $getProduct = Product::where('id', $product_id)->first();
                   $product->product_id = $product_id;
                   $product->detail_estimate_quantity = $request->estimate_quantity[$index];
-                  $product->detail_input_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
+//                  $product->detail_input_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
                   $product->inputWare_id = $input->id;
+                  $product->zone_id =  $request->zone_id[$index];
                   $product->save();
-                  $zone = $getProduct->zones()->get();
+                  //$zone = $getProduct->zones()->get();
                   $proz = DB::table('product_zone')
                     ->where('product_id',$product_id)
-                    ->where('zone_id',$zone[0]->id)
+                    ->where('zone_id',$request->zone_id[$index])
                     ->first();
-                  $productZone = ProductZone::where('product_id',$product_id)->first();
-                  $proz =  $productZone->where('zone_id',$zone[0]->id)->first();
+//                  $productZone = ProductZone::where('product_id',$product_id)->first();
+//                  $proz =  $productZone->where('zone_id',$zone[0]->id)->first();
             if (!is_null($proz)) {
                 DB::table('product_zone')
                     ->where('product_id',$product_id)
-                    ->where('zone_id',$zone[0]->id)
+                    ->where('zone_id',$request->zone_id[$index])
                     ->update([
                         'quantity_input' =>$proz->quantity_input + $request->estimate_quantity[$index],
                         'quantity_stock' => $proz->quantity_stock + $request->estimate_quantity[$index],
@@ -70,7 +71,7 @@ class InputWareApiController extends Controller
             } else {
                 $quantity = new ProductZone;
                 $quantity->product_id = $product_id;
-                $quantity->zone_id = $zone[0]->id;
+                $quantity->zone_id = $request->zone_id[$index];
                 $quantity->quantity_input = $request->estimate_quantity[$index];
                 $quantity->quantity_stock = $request->estimate_quantity[$index];
                 $quantity->save();
@@ -111,6 +112,8 @@ class InputWareApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        InputWare::find($id)->delete();
+        $message = ['status' => 'success', 'content' => 'Phiếu nhập kho đã bị xóa'];
+        return response()->json(['url'=> route('inputs.index'), 'message' => $message], 200);
     }
 }

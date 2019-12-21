@@ -22,7 +22,6 @@
                         <tr>
                             <th>Tên vật tư</th>
                             <th>Mã vật tư</th>
-                            <th>Giá</th>
                             <th>Ngày hết hạn</th>
                             <th>Đơn vị</th>
                             <th>Chất lượng</th>
@@ -36,7 +35,6 @@
                         <tr v-for="(product, index) in products">
                             <td>{{product.product_name}}</td>
                             <td>{{product.product_code}}</td>
-                            <td>{{product.product_price}}</td>
                             <td>{{product.out_of_date}}</td>
                             <td>{{product.unit}}</td>
                             <td>{{product.quality}}</td>

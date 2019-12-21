@@ -34,9 +34,17 @@
                             <i class="fa fa-shopping-cart"></i>
                         </div>
                         <div class="value">
-                            <h1 class=" count3">
-                               100
-                            </h1>
+<!--                            <h1 class=" count3">-->
+<!--                               100-->
+<!--                            </h1>-->
+                            <number
+                                animationPaused
+                                ref="number2"
+                                :to="10000"
+                                :duration="5"
+                                easing="Back.easeIn"
+                                @complete="completed"
+                                @click="playAnimation"/>
                             <p>New Order</p>
                         </div>
                     </section>
@@ -676,29 +684,44 @@
             </div>
 
         </section>
-    </section>
+<!--    </section>-->
 </template>
 
 <script>
     export default {
-        name: "index.vue"
+        name: "index.vue",
+        created() {
+            this.playAnimation();
+        },
+        methods: {
+            theFormat(number) {
+                return number.toFixed(2);
+            },
+            // completed() {
+            //     console.log('Animation ends!');
+            // },
+            playAnimation() {
+                this.$refs.number2.play()
+            }
+        }
     }
-    $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-            navigation : true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            singleItem : true,
-            autoPlay:true
-
-        });
-    });
+    // $(document).ready(function() {
+    //     $("#owl-demo").owlCarousel({
+    //         navigation : true,
+    //         slideSpeed : 300,
+    //         paginationSpeed : 400,
+    //         singleItem : true,
+    //         autoPlay:true
+    //
+    //     });
+    // });
 
     //custom select box
 
-    $(function(){
-        $('select.styled').customSelect();
-    });
+    // $(function(){
+    //     $('select.styled').customSelect();
+    // });
+
 </script>
 
 <style scoped>

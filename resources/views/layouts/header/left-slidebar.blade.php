@@ -41,12 +41,6 @@
                   <li class="sub-menu">
                       <a href="#" >Xuất kho</a>
                   </li>
-                  <li class="sub-menu">
-                      <a href="#" >Detail Output Warehouse</a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="#" >Detail Output Warehouse</a>
-                  </li>
                   <!-- <li>
                       <a href="google_maps.html" > Google Maps </a>
                   </li> -->

@@ -15,6 +15,7 @@ class DetailInputWare extends Model
         'input_date',
         'user_id',
         'input_content',
+        'zone_id',
     ];
 
     public $timestamps = true;

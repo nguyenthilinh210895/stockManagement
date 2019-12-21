@@ -35,7 +35,7 @@ class EditAccountRequest extends FormRequest
             'email' => 'bail|required|email|unique:users,email,' .$this->id.",id",
             'birthday' => 'nullable|date',
             'employee_id' => 'bail|required|max:10',
-            'warehouse_id' => 'required',
+//            'warehouse_id' => 'required',
             'new_password'     => 'same:retype_password|max:32|min:8',
 
         ];

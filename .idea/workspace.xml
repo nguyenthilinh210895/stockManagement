@@ -4,15 +4,39 @@
     <list default="true" id="08b28ffc-5592-4c4a-8c42-785f3a94403d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/InputWareApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/InputWareApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/OutputApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OutputApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/invoice.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InputWareController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OutputWareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OutputWareController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditAccountRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditAccountRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/DetailInputResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DetailInputResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/InputResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/InputResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/InputWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/InputWare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DetailInputWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DetailInputWare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OutputWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OutputWare.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductZone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductZone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_151618_create_detail_input_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_07_152005_create_detail_output_wares_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontba72.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontba72.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontba72.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontba72.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontd41d.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/font-awesome/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-ware-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-ware-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-purchase.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/inputWarehouse/input-warehouse-purchase.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_purchase.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_purchase.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/outputWare/output-warehouse-create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/outputWare/output-warehouse-create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/create-product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/product/product-show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/users/user-profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/inputWahouse/input_wahouse_create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/left-slidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -232,7 +256,12 @@
       <workItem from="1575551887585" duration="11115000" />
       <workItem from="1575589313580" duration="1548000" />
       <workItem from="1575679094553" duration="42957000" />
-      <workItem from="1575763688752" duration="13849000" />
+      <workItem from="1575763688752" duration="22473000" />
+      <workItem from="1575851155519" duration="4142000" />
+      <workItem from="1575936674119" duration="110000" />
+      <workItem from="1576506251622" duration="601000" />
+      <workItem from="1576586578604" duration="1056000" />
+      <workItem from="1576885051111" duration="22482000" />
     </task>
     <servers />
   </component>

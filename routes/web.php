@@ -55,6 +55,7 @@ $manageRoutes = function () {
         Route::get('inputs/purchase/{id}', 'InputWareController@purchase')->name('input.purchase');
 
         Route::resource('outputs', 'OutputWareController')->except(['store', 'update','destroy','show']);
+        Route::get('outputs/picklist/{id}', 'OutputWareController@picklist')->name('output.picklist');
 
 
         Route::get('/home', 'HomeController@index')->name('home');

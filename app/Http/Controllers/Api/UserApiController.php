@@ -115,7 +115,7 @@ class UserApiController extends Controller
             'address' => $request->address,
             'birthday' =>  date("Y-m-d", strtotime(request('birthday'))),
             'email' => $request->email,
-            'warehouse_id' => $request->warehouse_id,
+//            'warehouse_id' => $request->warehouse_id,
         ]);
         // create image
         if ($request->hasFile('image_url'))

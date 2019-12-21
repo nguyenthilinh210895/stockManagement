@@ -35,8 +35,7 @@ class ProductRequest extends FormRequest
                 'quality' => 'required',
                 'product_code' => 'bail|required|max:12',
                 'product_name' =>  'bail|required|max:32',
-                'product_price'     => 'required',
-                'out_of_date' => 'required',
+                'out_of_date' => 'bail|max:12',
 
             ];
     }

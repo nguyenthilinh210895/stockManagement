@@ -1,7 +1,7 @@
 <template>
     <section class="wrapper">
         <!-- page start-->
-        <div class="row">
+        <div class="row" v-if="product">
             <aside class="profile-info col-lg-9">
                 <section class="panel">
                     <div class="bio-graph-heading">
@@ -106,30 +106,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-lg-2 control-label">Giá</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="product_price" v-model="product.product_price"  class="form-control" id="price" placeholder=" ">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label  class="col-lg-2 control-label">Ngày hết hạn</label>
                                 <div class="col-lg-6">
                                     <input type="text" name="out_of_date" v-model="product.out_of_date"  class="form-control" id="out_of_date" placeholder=" ">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Màu sắc</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="color" class="form-control" id="color" placeholder=" ">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Khối lượng</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="quantity" class="form-control" id="quantity" placeholder=" ">
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button @click="handleCreate" class="btn btn-success">Lưu</button>
@@ -175,6 +156,7 @@
                         this.product.group = this.product.item_group_id;
                         this.product.unit = this.product.calculation_unit_id;
                         this.product.quality = this.product.quality_id;
+                        this.product.zone = this.product.zone[0].id;
                     })
                     .catch(error => {
                         console.log(error);
@@ -185,14 +167,12 @@
                 //Add the form data we need to submit
                 formData.append('product_code', this.product.product_code);
                 formData.append('product_name', this.product.product_name);
-                formData.append('product_price', this.product.product_price);
                 formData.append('out_of_date', this.product.out_of_date);
                 formData.append("zone", this.product.zone);
                 formData.append("group", this.product.group);
                 formData.append("manufact", this.product.manufact);
                 formData.append("unit", this.product.unit);
                 formData.append("quality", this.product.quality);
-
                 //Make the request to the POST
                 axios({
                     method: 'post',

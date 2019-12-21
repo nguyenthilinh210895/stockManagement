@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\InputWare;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Zone;
 use Illuminate\Http\Request;
 
 class InputWareController extends Controller
@@ -27,7 +28,8 @@ class InputWareController extends Controller
     public function create()
     {
         $employee =User::all();
-        return view('content.inputWahouse.input_wahouse_create',compact('employee'));
+        $zones = Zone::all();
+        return view('content.inputWahouse.input_wahouse_create',compact('employee','zones'));
     }
 
 

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\OutputResource as OutputResource;
+use App\Models\DetailOutputWare;
+use App\Models\OutputWare;
+use App\Models\Product;
+use App\Models\ProductZone;
 use Illuminate\Http\Request;
 
 class OutputApiController extends Controller
@@ -17,15 +22,6 @@ class OutputApiController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +31,41 @@ class OutputApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $output = new OutputWare();
+        $output->output_code = $request->output_code;
+        $output->output_content=isset($request->output_content) ? $request->output_content : '';
+        $output->output_date= date("Y-m-d", strtotime(request('output_date')));
+        $output->user_id= $request->user_id;
+        $output->save();
+        if ($request->get('product_id')) {
+            foreach ($request->get('product_id') as $index=>$product_id) {
+                $product = new DetailOutputWare();
+                $getProduct = Product::where('id', $product_id)->first();
+                $product->product_id = $product_id;
+                $product->detail_estimate_quantity = $request->estimate_quantity[$index];
+                $product->detail_output_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
+                $product->outputWare_id = $output->id;
+               // $product->zone_id =  $request->zone_id[$index];
+                $product->save();
+                //$zone = $getProduct->zones()->get();
+//                $proz = DB::table('product_zone')
+//                    ->where('product_id',$product_id)
+//                    ->where('zone_id',$request->zone_id[$index])
+//                    ->first();
+////                  $productZone = ProductZone::where('product_id',$product_id)->first();
+////                  $proz =  $productZone->where('zone_id',$zone[0]->id)->first();
+//                if (!is_null($proz)) {
+//                    DB::table('product_zone')
+//                        ->where('product_id',$product_id)
+//                        ->where('zone_id',$request->zone_id[$index])
+//                        ->update([
+//                            'quantity_output' =>$proz->quantity_output + $request->estimate_quantity[$index],
+//                            'quantity_stock' => $proz->quantity_stock - $request->estimate_quantity[$index],
+//                        ]);
+//
+//                }
+            };
+        };
     }
 
     /**
@@ -44,9 +74,10 @@ class OutputApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($output_id)
     {
-        //
+        $output =OutputWare::find($output_id);
+        return new OutputResource($output);
     }
 
     /**
