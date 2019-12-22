@@ -24,7 +24,8 @@ class DetailOutputResource extends JsonResource
             'detail_output_amount' => $this->detail_output_amount,
             'product_id' => $this->product_id,
             'outputWare_id' => $this->outputWare_id,
-//            'zone' => Zone::where('id',$this->zone_id)->first(),
+            'zone_id'=> $this->zone_id,
+            'zone' => Zone::where('id',$this->zone_id)->first(),
             //'products' => Product::where('id',$this->product_id)->first(),
             'product' => $this->getProduct($this->product_id),
         ];

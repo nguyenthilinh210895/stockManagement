@@ -19,7 +19,11 @@ class OutputApiController extends Controller
      */
     public function index()
     {
-        //
+        return response([
+            'data' => OutputWare::all()->map(function ($output) {
+                return new OutputResource($output);
+            })
+        ]);
     }
 
 

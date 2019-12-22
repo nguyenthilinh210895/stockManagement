@@ -43,12 +43,11 @@
                                     <label for="output_date" class="label-size-20">Ngày lập</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input
-                                        class="form-control cs-select-form"
-                                        id="output_date"
-                                        name="output_date"
-                                        v-model="output.output_date"
+                                    <date-picker v-model="output.output_date"
+                                                 id="output_date"
+                                                 valueType="format"
                                     >
+                                    </date-picker>
                                 </div>
                             </div>
                             <div class="bio-row">
@@ -79,7 +78,7 @@
                                 <tbody>
                                 <tr>
                                     <th>Vật tư</th>
-                                    <th>Giá</th>
+<!--                                    <th>Giá</th>-->
                                     <th>Đơn vị tính</th>
                                     <th>Số lượng</th>
                                 </tr>
@@ -91,13 +90,13 @@
                                         v-model="product.product_code=i.product_code">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
                                     </select></td>
-                                    <td>  <select
-                                        class="form-control cs-select-form"
-                                        id="price"
-                                        name="product_price"
-                                        v-model="product.product_code=i.product_code">
-                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_price }}</option>
-                                    </select></td>
+<!--                                    <td>  <select-->
+<!--                                        class="form-control cs-select-form"-->
+<!--                                        id="price"-->
+<!--                                        name="product_price"-->
+<!--                                        v-model="product.product_code=i.product_code">-->
+<!--                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_price }}</option>-->
+<!--                                    </select></td>-->
                                     <td> <select
                                         class="form-control cs-select-form"
                                         id="unit"
@@ -145,13 +144,17 @@
 </template>
 
 <script>
+    import DatePicker from 'vue2-datepicker';
+    import 'vue2-datepicker/index.css';
     export default {
         name: "output-warehouse-create",
+        components: {DatePicker},
         props: {
             employees: {type: Array, required: true},
         },
         data() {
             return {
+                format: 'yyyy-MM-dd',
                 output: {
                     output_code:'',
                     employee:'',

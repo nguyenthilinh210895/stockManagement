@@ -80,6 +80,7 @@ Vue.component('input-edit-component', require('./components/inputWarehouse/input
 //Output Warehouse
 Vue.component('output-create-component', require('./components/outputWare/output-warehouse-create.vue').default);
 Vue.component('output-checklist-component', require('./components/outputWare/output-checklist.vue').default);
+Vue.component('output-show-component', require('./components/outputWare/output-show.vue').default);
 
 
 /**

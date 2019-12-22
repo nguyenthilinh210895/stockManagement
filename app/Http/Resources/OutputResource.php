@@ -25,8 +25,8 @@ class OutputResource extends JsonResource
             'output_date' => $this->output_date,
             'output_total_money' => $this->output_total_money,
             'status' =>$this->status,
-            'user_id' => $this->user_id,
-            'employee' =>User::where('id',$this->user_id)->first(),
+            'employee' => $this->user_id,
+            'getEmployee' =>User::where('id',$this->user_id)->first(),
             'detail' => $this->detail_output_wares->map(function ($detail){return new DetailOutputResource($detail);}),
         ];
     }

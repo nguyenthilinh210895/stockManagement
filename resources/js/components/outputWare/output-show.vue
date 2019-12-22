@@ -5,14 +5,14 @@
                 <notifications group="notifi" position="top left" />
             </div>
             <header class="panel-heading">
-                Quản lý nhập kho
+                Quản lý xuất kho
             </header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                <a href="/manager/inputs/create">
+                                <a href="/manager/outputs/create">
                                     Thêm mới <i class="fa fa-plus"></i>
                                 </a>
                             </button>
@@ -25,28 +25,28 @@
                             <th>Mã phiếu</th>
                             <th>Ngày nhập</th>
                             <th>Nhân viên</th>
-<!--                            <th>Tổng tiền</th>-->
+                            <!--                            <th>Tổng tiền</th>-->
                             <th>Trạng thái</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="(input, index) in inputs">
-                            <td>{{input.input_code }}</td>
-                            <td>{{input.input_date}}</td>
-                            <td>{{input.getEmployee.fullname}}({{input.getEmployee.employee_id}})</td>
-<!--                            <td>{{input.input_total_money}}</td>-->
-                            <td v-if="input.status == 0"><button style="background-color: orangered;color: whitesmoke">Đang đợi</button></td>
+                        <tr v-for="(output, index) in outputs">
+                            <td>{{output.output_code }}</td>
+                            <td>{{output.output_date}}</td>
+                            <td>{{output.getEmployee.fullname}}({{output.getEmployee.employee_id}})</td>
+                            <!--                            <td>{{input.input_total_money}}</td>-->
+                            <td v-if="output.status == 0"><button style="background-color: orangered;color: whitesmoke">Đang đợi</button></td>
                             <td v-else><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
                             <td>
-                                <a v-if="input.status == 0" :href="'/manager/inputs/purchase/'+ input.id">
+                                <a v-if="output.status == 0" :href="'/manager/outputs/picklist/'+ output.id">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
-                                <a v-if="input.status == 2" :href="'/manager/inputs/'+ input.id +'/edit'">
+                                <a v-if="output.status == 2" :href="'/manager/outputs/'+ output.id +'/edit'">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
                             <td>
-                                <i v-if="input.status == 0" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
-                                <i v-if="input.status == 2" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
+                                <i v-if="output.status == 0" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(output,index)"></i>
+                                <i v-if="output.status == 2" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(output,index)"></i>
                             </td>
                         </tr>
                         </tbody>
@@ -59,8 +59,8 @@
                     <div>
                         <table class="table-notify">
                             <tr class="show-infor">
-                                <td >Mã phiếu：{{item.input_code || ''}}</td>
-                                <td>Ngày nhập：{{item.input_date || ''}}</td>
+                                <td >Mã phiếu：{{item.output_code || ''}}</td>
+                                <td>Ngày xuất：{{item.output_date || ''}}</td>
                             </tr>
                         </table>
                         <hr>
@@ -77,10 +77,10 @@
 </template>
 <script>
     export default {
-        name: 'input-ware-show',
+        name: 'output-show',
         data(){
             return {
-                inputs: null,
+                outputs: null,
                 editButton: 'Edit',
                 deleteButton: 'Delete',
                 deleteClicked: false,
@@ -90,9 +90,9 @@
             }
         },
         created(){
-            axios.get('/api/inputs')
+            axios.get('/api/outputs')
                 .then(res => {
-                    this.inputs = res.data.data;
+                    this.outputs = res.data.data;
                 }).catch(error => {
                 console.log(error);
             });
@@ -112,7 +112,7 @@
                 return this.deleteClicked = false;
             },
             Delete(index){
-                axios.delete('/api/inputs/'+this.item.id)
+                axios.delete('/api/outputs/'+this.item.id)
                     .then(res => {
                         this.areas.splice(this.index, 1)
                         this.$notify({
@@ -125,7 +125,7 @@
                     }).catch(error => {
                     console.log(error);
                 });
-           }
+            }
         }
 
     }

@@ -14,7 +14,7 @@ class OutputWareController extends Controller
      */
     public function index()
     {
-        //
+        return view('content.outputWare.output_show');
     }
 
     /**

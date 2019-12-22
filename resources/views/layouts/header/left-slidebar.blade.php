@@ -39,7 +39,7 @@
                       <a href="{{route('inputs.index')}}" >Nhập kho</a>
                   </li>
                   <li class="sub-menu">
-                      <a href="#" >Xuất kho</a>
+                      <a href="{{route('outputs.index')}}" >Xuất kho</a>
                   </li>
                   <!-- <li>
                       <a href="google_maps.html" > Google Maps </a>

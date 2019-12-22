@@ -46,15 +46,6 @@
                                     <label for="input_date" class="label-size-20">Ngày lập</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <!--                                    <datepicker :language="vi" form-->
-                                    <!--                                                id="input_date"-->
-                                    <!--                                                name="input_date"-->
-                                    <!--                                                valueType = " format "-->
-                                    <!--                                                v-model="input.input_date"-->
-                                    <!--                                                :format="dateFormat"-->
-                                    <!--                                               >-->
-
-                                    <!--                                    </datepicker>-->
                                     <date-picker v-model="input.input_date"
                                                  id="input_date"
                                                  valueType="format"
