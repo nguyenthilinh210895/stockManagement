@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductZone;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Carbon;
 
 class InputWareApiController extends Controller
 {
@@ -27,18 +28,17 @@ class InputWareApiController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+public function store(Request $request)
     {
         $input = new InputWare();
         $input->input_code = $request->input_code;
-         $input->input_content=isset($request->input_content) ? $request->input_content : '';
+        $input->input_content=isset($request->input_content) ? $request->input_content : '';
         $input->input_date= date("Y-m-d", strtotime(request('input_date')));
         $input->user_id= $request->user_id;
         $input->save();
@@ -101,7 +101,7 @@ class InputWareApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

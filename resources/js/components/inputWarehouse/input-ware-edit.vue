@@ -1,11 +1,11 @@
 <template>
     <section class="wrapper">
         <!-- page start-->
-        <div class="row">
+        <div class="row" v-if="this.input">
             <aside class="profile-info col-lg-9">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                        Nhập kho
+                        Chỉnh sửa nhập kho
                     </div>
                     <div class="panel-body bio-graph-info">
                         <h1>Thông tin phiếu nhập</h1>
@@ -37,7 +37,6 @@
                                         <option v-for="employ in employees" :value="employ.id">
                                             {{employ.fullname}}({{employ.employee_id}})
                                         </option>
-                                        -->
                                     </select>
                                 </div>
                             </div>
@@ -46,15 +45,6 @@
                                     <label for="input_date" class="label-size-20">Ngày lập</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <!--                                    <datepicker :language="vi" form-->
-                                    <!--                                                id="input_date"-->
-                                    <!--                                                name="input_date"-->
-                                    <!--                                                valueType = " format "-->
-                                    <!--                                                v-model="input.input_date"-->
-                                    <!--                                                :format="dateFormat"-->
-                                    <!--                                               >-->
-
-                                    <!--                                    </datepicker>-->
                                     <date-picker v-model="input.input_date"
                                                  id="input_date"
                                                  valueType="format"
@@ -101,7 +91,7 @@
                                         class="form-control cs-select-form"
                                         id="product"
                                         name="product"
-                                        v-model="product.product_code=i.product_code">
+                                        v-model="product.product_id=i.product_id">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
                                     </select></td>
                                     <!--
@@ -110,7 +100,7 @@
                                         class="form-control cs-select-form"
                                         id="unit"
                                         name="unit"
-                                        v-model="product.product_code=i.product_code">
+                                        v-model="product.product_id=i.product_id">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
                                     </select></td>
                                     <!--                                    <td> <select-->
@@ -124,7 +114,7 @@
                                         class="form-control cs-select-form"
                                         id="zone"
                                         name="zone"
-                                        v-model="product.zone=i.zone">
+                                        v-model="product.zone_id=i.zone_id">
                                         <option v-for="zone in zones" :value="zone.id">{{ zone.zone_code }}</option>
                                     </select></td>
                                     <td>
@@ -133,7 +123,7 @@
                                             id="quatity"
                                             class="form-control label-size-19"
                                             name="estimate_quatity" placeholder="Số lượng"
-                                            v-model="product.estimate_quatity = i.estimate_quatity"
+                                            v-model="product.detail_estimate_quantity = i.detail_estimate_quantity"
                                         />
                                     </td>
                                     <td>
@@ -172,21 +162,17 @@
     import 'vue2-datepicker/index.css';
 
     export default {
-        name: "input-warehouse-create",
+        name: "input-ware-edit",
         components: {DatePicker},
         props: {
             employees: {type: Array, required: true},
             zones: {type: Array, required: true},
+            input_id: {type: Number, required:true},
         },
         data() {
             return {
                 format: 'yyyy-MM-dd',
-                input: {
-                    input_code: '',
-                    employee: '',
-                    input_date: 'yyyy-MM-dd',
-                    input_content: '',
-                },
+                input: null,
                 product: [],
                 products: null,
                 errors: [],
@@ -194,8 +180,31 @@
         },
         created() {
             this.fetchProduct();
+            this.fetchInputWare();
         },
         methods: {
+            fetchInputWare() {
+                axios.get('/api/inputs/'+this.input_id)
+                    .then(res => {
+                        this.input = res.data.data;
+                        let objectToArray = [];
+                        let getPro = [];
+                        this.getProduct = res.data.data.detail;
+                        objectToArray =  Object.assign(objectToArray, this.getProduct);
+                        if (objectToArray.length > 0) {
+                            for (let i = 0; i < objectToArray.length; i++) {
+                                if(objectToArray[i] != null) {
+                                    getPro.push(objectToArray[i])
+                                }
+                            }
+                        }
+                        console.log('getPro',getPro)
+                        this.product = JSON.parse(JSON.stringify(getPro))
+                        console.log(this.product)
+                    }).catch(error => {
+                    console.log(error);
+                });
+            },
             fetchProduct() {
                 axios.get('/api/products')
                     .then(res => {
@@ -208,7 +217,7 @@
                 this.product.splice(index, 1);
             },
             addProduct(index) {
-                this.product.push({product_code: '', estimate_quatity: '', zone: ''});
+                this.product.push({product_id: '', detail_estimate_quantity: '', zone_id: ''});
             },
             handleSave() {
                 let formData = new FormData();
@@ -217,9 +226,9 @@
                 formData.append('input_date', this.input.input_date);
                 formData.append('user_id', this.input.employee);
                 for (let i = 0; i < this.product.length; i++) {
-                    formData.append('product_id[]', this.product[i].product_code);
-                    formData.append('estimate_quantity[]', this.product[i].estimate_quatity);
-                    formData.append('zone_id[]', this.product[i].zone);
+                    formData.append('product_id[]', this.product[i].product_id);
+                    formData.append('detail_estimate_quantity[]', this.product[i].detail_estimate_quantity);
+                    formData.append('zone_id[]', this.product[i].zone_id);
                 }
 
                 axios.post('/api/inputs', formData)

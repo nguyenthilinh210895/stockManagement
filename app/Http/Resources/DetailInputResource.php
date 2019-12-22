@@ -24,6 +24,7 @@ class DetailInputResource extends JsonResource
             'detail_input_amount' => $this->detail_input_amount,
             'product_id' => $this->product_id,
             'inputWare_id' => $this->inputWare_id,
+            'zone_id'=> $this->zone_id,
             'zone' => Zone::where('id',$this->zone_id)->first(),
             //'products' => Product::where('id',$this->product_id)->first(),
             'product' => $this->getProduct($this->product_id),

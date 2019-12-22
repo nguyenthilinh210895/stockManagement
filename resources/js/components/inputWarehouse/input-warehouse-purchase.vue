@@ -11,7 +11,7 @@
                         <p>
                       Mã phiếu nhập		: <strong>{{inputs.input_code}}</strong><br>
                       Ngày nhập		: {{inputs.input_date}}<br>
-                      Nhân viên phụ trách		: {{inputs.employee.fullname}}<br>
+                      Nhân viên phụ trách		: {{inputs.getEmployee.fullname}}<br>
                         </p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
@@ -19,7 +19,7 @@
                     <div class="col-lg-4 col-sm-4">
                         <ul class="unstyled">
                             <li v-if="inputs.status == 0">Trạng thái		: Đang đợi</li>
-                            <li v-else>Trạng thái		: Hoàn thành </li>
+                            <li v-if="inputs.status == 1">Trạng thái		: Hoàn thành </li>
                             <li>Note		: {{inputs.input_content}}</li>
                         </ul>
                     </div>

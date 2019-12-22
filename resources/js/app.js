@@ -75,6 +75,8 @@ Vue.component('product-edit-component', require('./components/product/product-ed
 Vue.component('input-create-component', require('./components/inputWarehouse/input-warehouse-create.vue').default);
 Vue.component('input-purchase-component', require('./components/inputWarehouse/input-warehouse-purchase.vue').default);
 Vue.component('input-show-component', require('./components/inputWarehouse/input-ware-show.vue').default);
+Vue.component('input-edit-component', require('./components/inputWarehouse/input-ware-edit.vue').default);
+
 //Output Warehouse
 Vue.component('output-create-component', require('./components/outputWare/output-warehouse-create.vue').default);
 Vue.component('output-checklist-component', require('./components/outputWare/output-checklist.vue').default);

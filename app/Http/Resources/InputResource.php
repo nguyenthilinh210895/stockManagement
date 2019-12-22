@@ -24,8 +24,8 @@ class InputResource extends JsonResource
             'input_date' => $this->input_date,
             'input_total_money' => $this->input_total_money,
             'status' =>$this->status,
-            'user_id' => $this->user_id,
-            'employee' =>User::where('id',$this->user_id)->first(),
+            'employee' => $this->user_id,
+            'getEmployee' =>User::where('id',$this->user_id)->first(),
             'detail' => $this->detail_input_wares->map(function ($detail){return new DetailInputResource($detail);}),
         ];
     }

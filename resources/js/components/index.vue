@@ -34,17 +34,17 @@
                             <i class="fa fa-shopping-cart"></i>
                         </div>
                         <div class="value">
-<!--                            <h1 class=" count3">-->
-<!--                               100-->
-<!--                            </h1>-->
-                            <number
-                                animationPaused
-                                ref="number2"
-                                :to="10000"
-                                :duration="5"
-                                easing="Back.easeIn"
-                                @complete="completed"
-                                @click="playAnimation"/>
+                            <h1 >
+                                <number
+                                    animationPaused
+                                    ref="number2"
+                                    :to="10000"
+                                    :duration="5"
+                                    easing="Back.easeIn"
+                                    @complete="completed"
+                                    @click="playAnimation"/>
+                            </h1>
+
                             <p>New Order</p>
                         </div>
                     </section>
@@ -690,9 +690,9 @@
 <script>
     export default {
         name: "index.vue",
-        created() {
-            this.playAnimation();
-        },
+        // created() {
+        //     this.playAnimation();
+        // },
         methods: {
             theFormat(number) {
                 return number.toFixed(2);

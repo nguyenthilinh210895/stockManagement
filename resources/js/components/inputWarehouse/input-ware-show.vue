@@ -25,7 +25,7 @@
                             <th>Mã phiếu</th>
                             <th>Ngày nhập</th>
                             <th>Nhân viên</th>
-                            <th>Tổng tiền</th>
+<!--                            <th>Tổng tiền</th>-->
                             <th>Trạng thái</th>
                         </tr>
                         </thead>
@@ -33,16 +33,20 @@
                         <tr v-for="(input, index) in inputs">
                             <td>{{input.input_code }}</td>
                             <td>{{input.input_date}}</td>
-                            <td>{{input.employee.fullname}}({{input.employee.employee_id}})</td>
-                            <td>{{input.input_total_money}}</td>
+                            <td>{{input.getEmployee.fullname}}({{input.getEmployee.employee_id}})</td>
+<!--                            <td>{{input.input_total_money}}</td>-->
                             <td v-if="input.status == 0"><button style="background-color: orangered;color: whitesmoke">Đang đợi</button></td>
                             <td v-else><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
                             <td>
-                                <a :href="'/manager/inputs/purchase/'+ input.id">
+                                <a v-if="input.status == 0" :href="'/manager/inputs/purchase/'+ input.id">
+                                    <i class="fa fa-edit" style="color:blue"></i>
+                                </a>
+                                <a v-if="input.status == 2" :href="'/manager/inputs/'+ input.id +'/edit'">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
                             <td>
-                                <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
+                                <i v-if="input.status == 0" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
+                                <i v-if="input.status == 2" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(input,index)"></i>
                             </td>
                         </tr>
                         </tbody>
@@ -128,6 +132,9 @@
 </script>
 
 <style lang="scss" scoped>
+    .adv-table table tr :nth-child(4){
+        width: 3% !important;
+    }
     .background {
         height: 750px;
         h1 {

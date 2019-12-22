@@ -39,9 +39,11 @@ class InputWareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($input_id)
     {
-        //
+        $employee =User::all();
+        $zones = Zone::all();
+        return view('content.inputWahouse.input_ware_edit',compact('input_id','employee', 'zones'));
     }
 
     public function purchase($input_id)

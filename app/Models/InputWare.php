@@ -16,7 +16,6 @@ class InputWare extends Model
         'input_total_money',
         'status',
     ];
-
     public $timestamps = false;
 
     public function detail_input_wares()
