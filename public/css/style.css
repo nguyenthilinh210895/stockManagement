@@ -228,8 +228,13 @@ a, a:hover, a:focus {
 }
 
 ul.sidebar-menu , ul.sidebar-menu li ul.sub{
+    background: #00868B;
     margin: -2px 0 0;
     padding: 0;
+}
+
+a.dcjq-parent + ul.sub {
+    background: #00a2a8 !important;
 }
 
 ul.sidebar-menu {
@@ -245,7 +250,6 @@ ul.sidebar-menu {
 }
 
 ul.sidebar-menu li ul.sub li{
-    background: #35404D;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -257,7 +261,7 @@ ul.sidebar-menu li ul.sub li:last-child{
 }
 
 ul.sidebar-menu li ul.sub li a {
-    font-size: 12px;
+    font-size: 14px;
     padding: 6px 0;
     line-height: 35px;
     height: 35px;
@@ -266,7 +270,6 @@ ul.sidebar-menu li ul.sub li a {
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    color: #aeb2b7;
 }
 
 ul.sidebar-menu li ul.sub li a:hover, ul.sidebar-menu li ul.sub li.active a {

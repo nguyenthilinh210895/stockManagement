@@ -1,8 +1,8 @@
 <template>
     <section class="wrapper site-min-height" id="app">
-        <notifications group="notifi" position="top left" />
               <section class="panel">
                   <header class="panel-heading">
+                    <notifications group="notifi" position="top left" margin-left="50px"/>
                     Danh sách kho hàng
                   </header>
                   <div class="panel-body">
@@ -21,7 +21,7 @@
                               <thead>
                               <tr>
                                   <th>Tên kho</th>
-                                  <th>Người quản lý</th>
+<!--                                  <th>Người quản lý</th>-->
                                   <th>Điện thoại</th>
                                    <th>Email</th>
                                   <th>Chỉnh sửa</th>
@@ -31,13 +31,12 @@
                               <tbody>
                              <tr v-for="(ware, index) in warehouses">
                                   <td>{{ware. warehouse_name}}</td>
-                                  <td>{{ware.ware_manage}}</td>
+<!--                                  <td>{{ware.ware_manage}}</td>-->
                                    <td>{{ware.ware_phone}}</td>
                                    <td>{{ware.ware_email}}</td>
                                   <td><a :href="'/manager/warehouses/'+ ware.id+'/edit'"><i class="fa fa-edit" style="color:blue"></i> </a></td>
                                   <td>
                                       <i class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(ware,index)"></i>
-
                                   </td>
                               </tr>
                               </tbody>
@@ -61,9 +60,9 @@
             </div>
         </div>
 
-                  </div>
-              </section>
-          </section>
+      </div>
+    </section>
+</section>
 </template>
 <script>
     export default {

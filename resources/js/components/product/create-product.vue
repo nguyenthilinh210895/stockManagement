@@ -105,12 +105,12 @@
                                     <input type="text" name="product_code" v-model="product.product_code" class="form-control" id="code" placeholder=" ">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label">Ngày hết hạn</label>
-                                <div class="col-lg-6">
-                                    <input type="text" name="out_of_date" v-model="product.out_of_date"  class="form-control" id="out_of_date" placeholder=" ">
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label  class="col-lg-2 control-label">Ngày hết hạn</label>-->
+<!--                                <div class="col-lg-6">-->
+<!--                                    <input type="text" name="out_of_date" v-model="product.out_of_date"  class="form-control" id="out_of_date" placeholder=" ">-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button @click="handleCreate" class="btn btn-success">Lưu</button>
@@ -143,7 +143,7 @@
                     product_code: '',
                     product_name: '',
                     product_price:'',
-                    out_of_date:'',
+                    // out_of_date:'',
                     zone: '',
                     group:'',
                     manufact:'',
@@ -159,7 +159,7 @@
                 //Add the form data we need to submit
                 formData.append('product_code', this.product.product_code);
                 formData.append('product_name', this.product.product_name);
-                formData.append('out_of_date', this.product.out_of_date);
+                // formData.append('out_of_date', this.product.out_of_date);
                 formData.append("zone", this.product.zone);
                 formData.append("group", this.product.group);
                 formData.append("manufact", this.product.manufact ||'');

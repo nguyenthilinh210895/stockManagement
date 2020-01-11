@@ -42,24 +42,24 @@
                     </div>
                 </div>
 
-                <div class="col-md-11 offset-1 clearfix">
-                    <div class="form-group-cs d-flex">
-                        <div class="col-md-2">
-                            <label for="manager" class="label-size-20">Người quản lý</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input
-                                type="text"
-                                id="manager"
-                                class="form-control label-size-19"
-                                name="ware_manager"  placeholder=""
-                                v-model="warehouse.ware_manage"
-                            />
-                            <p class="errMessage" v-if="errors.ware_manage">{{ errors.ware_manage[0]}}</p>
+<!--                <div class="col-md-11 offset-1 clearfix">-->
+<!--                    <div class="form-group-cs d-flex">-->
+<!--                        <div class="col-md-2">-->
+<!--                            <label for="manager" class="label-size-20">Người quản lý</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8">-->
+<!--                            <input-->
+<!--                                type="text"-->
+<!--                                id="manager"-->
+<!--                                class="form-control label-size-19"-->
+<!--                                name="ware_manager"  placeholder=""-->
+<!--                                v-model="warehouse.ware_manage"-->
+<!--                            />-->
+<!--                            <p class="errMessage" v-if="errors.ware_manage">{{ errors.ware_manage[0]}}</p>-->
 
-                        </div>
-                    </div>
-                </div>
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="col-md-11 offset-1 clearfix">
                     <div class="form-group-cs d-flex">
                         <div class="col-md-2">

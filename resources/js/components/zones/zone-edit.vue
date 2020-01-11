@@ -33,9 +33,9 @@
                                 id="attribute"
                                 name="attribute" v-model="zones.attribute"
                             >
-                                <option value="empty">empty</option>
-                                <option value="full">full</option>
-                                <option value="not_full">not full</option>
+                                <option value="1">Sử dụng</option>
+                                <option value="2">Dừng xuất/nhập</option>
+                                <option value="3">Thi công</option>
                             </select>
                         </div>
                     </div>

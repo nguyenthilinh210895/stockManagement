@@ -23,7 +23,7 @@ class OutputResource extends JsonResource
             'output_code' => $this->output_code,
             'output_content' => $this->output_content,
             'output_date' => $this->output_date,
-            'output_total_money' => $this->output_total_money,
+//            'output_total_money' => $this->output_total_money,
             'status' =>$this->status,
             'employee' => $this->user_id,
             'getEmployee' =>User::where('id',$this->user_id)->first(),

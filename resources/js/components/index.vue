@@ -9,9 +9,9 @@
                         </div>
                         <div class="value">
                             <h1 class="count">
-                                100
+                                {{usercount}}
                             </h1>
-                            <p>New Users</p>
+                            <p>Nhân viên</p>
                         </div>
                     </section>
                 </div>
@@ -22,9 +22,9 @@
                         </div>
                         <div class="value">
                             <h1 class=" count2">
-                                100
+                                {{productstock}}
                             </h1>
-                            <p>Sales</p>
+                            <p>Tồn kho</p>
                         </div>
                     </section>
                 </div>
@@ -35,17 +35,12 @@
                         </div>
                         <div class="value">
                             <h1 >
-                                <number
-                                    animationPaused
-                                    ref="number2"
-                                    :to="10000"
-                                    :duration="5"
-                                    easing="Back.easeIn"
-                                    @complete="completed"
-                                    @click="playAnimation"/>
+                                <h1 class="count">
+                                {{inputcount}}
+                            </h1>
                             </h1>
 
-                            <p>New Order</p>
+                            <p>Đơn nhập kho</p>
                         </div>
                     </section>
                 </div>
@@ -56,9 +51,9 @@
                         </div>
                         <div class="value">
                             <h1 class=" count4">
-                                100
+                                {{outputcount}}
                             </h1>
-                            <p>Total Profit</p>
+                            <p>Số lượng đơn xuất kho</p>
                         </div>
                     </section>
                 </div>
@@ -69,7 +64,7 @@
                 <div class="col-lg-8">
                     <!--custom chart start-->
                     <div class="border-head">
-                        <h3>Earning Graph</h3>
+                        <h3>Đồ thị kho thống kê.</h3>
                     </div>
                     <div class="custom-bar-chart">
                         <ul class="y-axis">
@@ -688,12 +683,25 @@
 </template>
 
 <script>
+    import { Line } from 'vue-chartjs';
+import { type } from 'os';
     export default {
         name: "index.vue",
+        props: {
+                usercount: {type: Number},
+                inputcount: {type: Number, required: true},
+                outputcount: {type: Number, required: true},
+                productstock: {type: Number,required: true},
+        },
         // created() {
-        //     this.playAnimation();
+        //     usercount = this.usercount;
         // },
         methods: {
+            data() {
+                return {
+                    usercount: '',
+                }
+            },
             theFormat(number) {
                 return number.toFixed(2);
             },
@@ -705,23 +713,6 @@
             }
         }
     }
-    // $(document).ready(function() {
-    //     $("#owl-demo").owlCarousel({
-    //         navigation : true,
-    //         slideSpeed : 300,
-    //         paginationSpeed : 400,
-    //         singleItem : true,
-    //         autoPlay:true
-    //
-    //     });
-    // });
-
-    //custom select box
-
-    // $(function(){
-    //     $('select.styled').customSelect();
-    // });
-
 </script>
 
 <style scoped>

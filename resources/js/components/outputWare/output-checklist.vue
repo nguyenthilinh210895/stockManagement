@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="wrapper site-min-height">
+        <div class="wrapper site-min-height" v-if="this.outputs">
             <div class="panel-heading navyblue"> </div>
             <div class="panel-body">
                 <div class="row invoice-list">
@@ -11,7 +11,7 @@
                         <p>
                             Mã phiếu xuất		: <strong>{{outputs.output_code}}</strong><br>
                             Ngày xuất		: {{outputs.output_date}}<br>
-                            Nhân viên phụ trách		: {{outputs.employee.fullname}}<br>
+                            Nhân viên phụ trách		: {{outputs.getEmployee.fullname}}<br>
                         </p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
@@ -30,11 +30,9 @@
                         <th>#</th>
                         <th>Mã Vật tư</th>
                         <th class="hidden-phone">ĐVT</th>
-                        <th class="">Giá</th>
-                        <th class="">Zone</th>
+<!--                        <th class="">Zone</th>-->
                         <th class="">SL dự kiến</th>
                         <th class="">SL thực tế</th>
-                        <th>Thành tiền</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -43,26 +41,22 @@
                         <td>{{index +1}}</td>
                         <td>{{outputs.detail[index].product.product_code}}</td>
                         <td class="hidden-phone">{{outputs.detail[index].product.unit}}</td>
-                        <td class="">{{outputs.detail[index].product.product_price}}</td>
-                        <td class="">{{outputs.detail[index].zone.zone_code}}</td>
+<!--                        <td class="">{{outputs.detail[index].zone.zone_code}}</td>-->
                         <td class="">{{outputs.detail[index].detail_estimate_quantity}}</td>
                         <td><input type="text" name="quatity"></td>
-                        <td>2000000</td>
                         <td><input type="checkbox" id="checkbox"></td>
-
-                        <!--                        <td><input type="checkbox" id="checkbox" v-model="checked"></td>-->
                     </tr>
                     </tbody>
                 </table>
                 <div class="row">
                     <div class="col-lg-4 invoice-block pull-right">
                         <ul class="unstyled amounts">
-                            <li><strong>Tổng tiền :</strong> 6000000820</li>
+<!--                            <li><strong>Tổng tiền :</strong> 6000000820</li>-->
                         </ul>
                     </div>
                 </div>
                 <div class="text-center invoice-btn">
-                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Submit Invoice </a>
+                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Lưu phiếu xuất </a>
                     <a class="btn btn-info btn-lg" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print </a>
                 </div>
             </div>
@@ -86,9 +80,10 @@
         },
         methods: {
             fetchOutput(){
-                axios.get('/api/outputs/1')
+                axios.get('/api/outputs/'+ this.output_id)
                     .then(res =>{
                         this.outputs = res.data.data;
+                        console.log(res.data.data);
                     })
             }
         },

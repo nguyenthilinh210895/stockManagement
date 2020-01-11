@@ -68,13 +68,13 @@
     <!--common script for all pages-->
    <script src="{{ asset('js/common-scripts.js')}}"></script>
 
-  <script src="{{ asset('js/jquery.sparkline.js')}}" type="text/javascript"></script>
-  <script src="{{ asset('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')}}"></script>
+  <!-- <script src="{{ asset('js/jquery.sparkline.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js')}}"></script> -->
   <script defer src="{{ asset('js/owl.carousel.js')}}" ></script>
   <script defer src="{{ asset('js/jquery.customSelect.min.js')}}" ></script>
   <!--script for home page-->
-  <script src="{{ asset('js/sparkline-chart.js')}}"></script>
-  <script src="{{ asset('js/easy-pie-chart.js')}}"></script>
+  <!-- <script src="{{ asset('js/sparkline-chart.js')}}"></script>
+  <script src="{{ asset('js/easy-pie-chart.js')}}"></script> -->
   <script src="{{ asset('js/count.js')}}"></script>
 
   </body>

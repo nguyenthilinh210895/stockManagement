@@ -31,9 +31,9 @@ class WarehouseRequest extends FormRequest
     {
         return [
             'warehouse_name' => 'required|max:25',
-            'ware_manage' => 'required|max:20',
+//            'ware_manage' => 'required|max:20',
             'ware_phone' => 'required|numeric|max:1000000000000',
-            'ware_email' => 'required|email|unique:warehouses,ware_email,'. $this->route('warehouse').",id",
+            'ware_email' => 'email|unique:warehouses,ware_email,'. $this->route('warehouse').",id",
             'area' =>'required',
         ];
     }

@@ -60,7 +60,7 @@
 <!--                    </div>-->
 <!--                </div>-->
                 <div class="text-center invoice-btn">
-                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Submit Invoice </a>
+                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Lưu phiếu nhập </a>
                     <a class="btn btn-info btn-lg" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print </a>
                 </div>
             </div>

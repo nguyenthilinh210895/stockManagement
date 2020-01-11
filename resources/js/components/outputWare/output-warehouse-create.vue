@@ -90,13 +90,6 @@
                                         v-model="product.product_code=i.product_code">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
                                     </select></td>
-<!--                                    <td>  <select-->
-<!--                                        class="form-control cs-select-form"-->
-<!--                                        id="price"-->
-<!--                                        name="product_price"-->
-<!--                                        v-model="product.product_code=i.product_code">-->
-<!--                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_price }}</option>-->
-<!--                                    </select></td>-->
                                     <td> <select
                                         class="form-control cs-select-form"
                                         id="unit"

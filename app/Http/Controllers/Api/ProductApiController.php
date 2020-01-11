@@ -37,7 +37,7 @@ class ProductApiController extends Controller
         $product->product_name = $request->product_name;
         $product->product_code = $request->product_code;
        // $product->product_price = $request->product_price;
-        $product->out_of_date =  date("Y-m-d", strtotime(request('out_of_date')));
+//        $product->out_of_date =  date("Y-m-d", strtotime(request('out_of_date')));
         $product->manufacturer_id  = $request->manufact;
         $product->calculation_unit_id = $request->unit;
         $product->quality_id = $request->quality;

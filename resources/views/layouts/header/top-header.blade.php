@@ -1,7 +1,7 @@
  <!--header start-->
  <header class="header white-bg">
           <div class="sidebar-toggle-box">
-              <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+              <div data-original-title="Toggle Navigation" data-placement="right" class="#"></div>
           </div>
           <!--logo start-->
           <a href="#" class="logo" >Manage<span>Stock</span></a>
@@ -65,12 +65,12 @@
                   <!-- user login dropdown start-->
                   <li class="dropdown">
                       <a href="{{ route('user.profile') }}">
-                          <img alt="" src="{{ asset('img/account.png')}}">
+                          <img alt="" src="">
                       </a>
                   </li>
                   <!-- user login dropdown end -->
                   <li class="dropdown">
-                  <a href="{{ route('api.adminLogout') }}"> Logout <i class="fa fa-sign-out"></i></a>
+                  <a href="{{ route('api.adminLogout') }}"> Đăng xuất <i class="fa fa-sign-out"></i></a>
                   </li>
               </ul>
               @endif
