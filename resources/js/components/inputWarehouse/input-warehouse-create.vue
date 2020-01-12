@@ -81,9 +81,7 @@
                                 <tbody>
                                 <tr>
                                     <th>Vật tư</th>
-                                    <!--                                    <th>Giá</th>-->
                                     <th>Đơn vị tính</th>
-                                    <!--                                    <th>Chất lượng</th>-->
                                     <th>Zone</th>
                                     <th>Số lượng</th>
                                 </tr>
@@ -104,13 +102,6 @@
                                         v-model="product.product_code=i.product_code">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
                                     </select></td>
-                                    <!--                                    <td> <select-->
-                                    <!--                                        class="form-control cs-select-form"-->
-                                    <!--                                        id="quality"-->
-                                    <!--                                        name="quality"-->
-                                    <!--                                        v-model="product.product_code=i.product_code">-->
-                                    <!--                                        <option v-for="pro in products" :value="pro.id">{{ pro.quality }}</option>-->
-                                    <!--                                    </select></td>-->
                                     <td><select
                                         class="form-control cs-select-form"
                                         id="zone"
@@ -216,7 +207,7 @@
                 axios.post('/api/inputs', formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
-                        //window.location.href = res.data.url;
+                        window.location.href = res.data.url;
                         this.errors = [];
                     })
                     .catch(error => {

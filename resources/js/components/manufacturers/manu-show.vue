@@ -101,7 +101,8 @@
                 this.item = item;
                 this.index = index
             },
-            classObject: function () {isActive
+            classObject: function () {
+                isActive
                 return {
                     active: this.isActive,
                 }
