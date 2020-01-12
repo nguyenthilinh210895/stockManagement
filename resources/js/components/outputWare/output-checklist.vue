@@ -9,9 +9,10 @@
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <p>
-                            Mã phiếu xuất		: <strong>{{outputs.output_code}}</strong><br>
-                            Ngày xuất		: {{outputs.output_date}}<br>
-                            Nhân viên phụ trách		: {{outputs.getEmployee.fullname}}<br>
+                            Mã phiếu xuất		: <strong>
+                                 <qr-code :text="outputs.output_code" :size="55" level="L">
+                                     </qr-code></strong><br>
+        
                         </p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
@@ -21,6 +22,8 @@
                             <li v-if="outputs.status == 0">Trạng thái		: Đang đợi</li>
                             <li v-else>Trạng thái		: Hoàn thành </li>
                             <li>Note		: {{outputs.output_content}}</li>
+                             <li>Ngày xuất		: {{outputs.output_date}}</li>
+                            <li>Nhân viên phụ trách		: {{outputs.getEmployee.fullname}}</li>
                         </ul>
                     </div>
                 </div>
@@ -39,9 +42,14 @@
                     <tbody>
                     <tr v-for="(detail,index) in outputs.detail">
                         <td>{{index +1}}</td>
-                        <td>{{outputs.detail[index].product.product_code}}</td>
+                        <td>
+                            <qr-code :text="outputs.detail[index].product.product_code" :size="35" level="L"></qr-code>
+                            <!-- {{outputs.detail[index].product.product_code}} -->
+                            </td>
                         <td class="hidden-phone">{{outputs.detail[index].product.unit}}</td>
-                       <td class="">{{outputs.detail[index].zone.zone_code}}</td>
+                       <td class="">
+                            <qr-code :text="outputs.detail[index].zone.zone_code" :size="35" level="L">
+                            </qr-code>
                         <td class="">{{outputs.detail[index].detail_estimate_quantity}}</td>
                         <td><input type="text" name="quatity" @onchange="addQuantity"
                             v-model="outputs.detail.detail_output_quantity= detail.detail_output_quantity"></td>
@@ -65,8 +73,12 @@
 </template>
 
 <script>
+    import VueQRCodeComponent from 'vue-qrcode-component'
     export default {
         name: "output-checklist",
+        components: {
+            qrCode: VueQRCodeComponent
+        },
         props:{
             output_id:{type:Number,require:true}
         },

@@ -14,6 +14,16 @@
                                     Thêm mới<i class="fa fa-plus"></i>
                                 </a>
                             </button>
+                            <!-- <input
+                            id="search"
+                            type="text"
+                            name="search"
+                            placeholder="search code"
+                            autoComplete="off"
+                            v-model="search_keyword"
+                            @onchange=search()
+                            /> -->
+
                         </div>
                     </div>
                     <div class="space15"></div>
@@ -88,6 +98,7 @@
                     item_group:'',
                     calculation_unit:'',
                 },
+                search_keyword: '',
                 deleteClicked: false,
                 item:'',
                 index: 0,

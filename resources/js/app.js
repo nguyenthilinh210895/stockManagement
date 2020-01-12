@@ -7,6 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import 'fullcalendar/dist/fullcalendar.css';
+import FullCalendar from 'vue-full-calendar'; //Import Full-calendar
+Vue.use(FullCalendar);
 
 /**
  * The following block of code may be used to automatically register your

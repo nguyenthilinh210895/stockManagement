@@ -31,7 +31,10 @@
                         </thead>
                         <tbody>
                         <tr v-for="(output, index) in outputs">
-                            <td>{{output.output_code }}</td>
+                            <td>
+                            <qr-code :text="output.output_code" :size="35" level="L"
+                            style="display: block; margin-left: 45px">
+                            </qr-code>
                             <td>{{output.output_date}}</td>
                             <td>{{output.getEmployee.fullname}}({{output.getEmployee.employee_id}})</td>
                             <!-- <td v-if="output.status == 0"><button style="background-color: blue;color: whitesmoke">Đang soạn</button></td> -->
@@ -76,8 +79,12 @@
 
 </template>
 <script>
+    import VueQRCodeComponent from 'vue-qrcode-component'
     export default {
         name: 'output-show',
+        components: {
+            qrCode: VueQRCodeComponent
+        },
         data(){
             return {
                 outputs: null,
