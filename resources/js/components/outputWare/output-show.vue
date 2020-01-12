@@ -34,19 +34,19 @@
                             <td>{{output.output_code }}</td>
                             <td>{{output.output_date}}</td>
                             <td>{{output.getEmployee.fullname}}({{output.getEmployee.employee_id}})</td>
-                            <!--                            <td>{{input.input_total_money}}</td>-->
+                            <!-- <td v-if="output.status == 0"><button style="background-color: blue;color: whitesmoke">Đang soạn</button></td> -->
+
                             <td v-if="output.status == 0"><button style="background-color: orangered;color: whitesmoke">Đang đợi</button></td>
-                            <td v-else><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
+                            <td v-if="output.status == 1"><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
                             <td>
-                                <a v-if="output.status == 0" :href="'/manager/outputs/picklist/'+ output.id">
+                                <a  :href="'/manager/outputs/picklist/'+ output.id">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
-                                <a v-if="output.status == 2" :href="'/manager/outputs/'+ output.id +'/edit'">
-                                    <i class="fa fa-edit" style="color:blue"></i>
+                                <!-- <a v-if="output.status == 0" :href="'/manager/outputs/'+ output.id +'/edit'">
+                                    <i class="fa fa-edit" style="color:blue"></i> -->
                                 </a>
                             <td>
                                 <i v-if="output.status == 0" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(output,index)"></i>
-                                <i v-if="output.status == 2" class="fa fa-trash-o"  style="color:red; cursor:pointer" @click="handleDelete(output,index)"></i>
                             </td>
                         </tr>
                         </tbody>
@@ -114,7 +114,7 @@
             Delete(index){
                 axios.delete('/api/outputs/'+this.item.id)
                     .then(res => {
-                        this.areas.splice(this.index, 1)
+                        this.outputs.splice(this.index, 1)
                         this.$notify({
                             group: "notifi",
                             type: 'success',

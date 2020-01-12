@@ -104,6 +104,7 @@ public function store(Request $request)
         $input->input_content=isset($request->input_content) ? $request->input_content : '';
         $input->input_date= date("Y-m-d", strtotime(request('input_date')));
         $input->user_id= $request->user_id;
+        $input->status= $request->status;
         $input->save();
         $detail = $input->detail_input_wares()->delete();
         if ($request->get('product_id')) {

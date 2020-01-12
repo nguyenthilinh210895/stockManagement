@@ -9,6 +9,7 @@ use App\Models\OutputWare;
 use App\Models\Product;
 use App\Models\ProductZone;
 use Illuminate\Http\Request;
+use DB;
 
 class OutputApiController extends Controller
 {
@@ -47,29 +48,14 @@ class OutputApiController extends Controller
                 $getProduct = Product::where('id', $product_id)->first();
                 $product->product_id = $product_id;
                 $product->detail_estimate_quantity = $request->estimate_quantity[$index];
-                // $product->detail_output_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
                 $product->outputWare_id = $output->id;
-               // $product->zone_id =  $request->zone_id[$index];
+               $product->zone_id =  $request->zone_id[$index];
                 $product->save();
-                //$zone = $getProduct->zones()->get();
-//                $proz = DB::table('product_zone')
-//                    ->where('product_id',$product_id)
-//                    ->where('zone_id',$request->zone_id[$index])
-//                    ->first();
-////                  $productZone = ProductZone::where('product_id',$product_id)->first();
-////                  $proz =  $productZone->where('zone_id',$zone[0]->id)->first();
-//                if (!is_null($proz)) {
-//                    DB::table('product_zone')
-//                        ->where('product_id',$product_id)
-//                        ->where('zone_id',$request->zone_id[$index])
-//                        ->update([
-//                            'quantity_output' =>$proz->quantity_output + $request->estimate_quantity[$index],
-//                            'quantity_stock' => $proz->quantity_stock - $request->estimate_quantity[$index],
-//                        ]);
-//
-//                }
             };
         };
+        $message = ['status' => 'success', 'content' => 'Phiếu xuất kho được tạo thành công'];
+        return response()->json(['url'=> route('outputs.index'), 'message' => $message], 200);
+
     }
 
     /**
@@ -104,7 +90,38 @@ class OutputApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $output = OutputWare::find($id);
+        $output->status= 1;
+        $output->save();
+        $detail = $output->detail_output_wares()->delete();
+        if ($request->get('product_id')) {
+            foreach ($request->get('product_id') as $index=>$product_id) {
+                  $product = new DetailOutputWare();
+                  $product->product_id = $product_id;
+                  $product->detail_estimate_quantity = $request->detail_estimate_quantity[$index];
+                  $product->detail_output_quantity = $request->quantity[$index];
+                  $product->outputWare_id = $output->id;
+                  $product->zone_id =  $request->zone_id[$index];
+                  $product->save();
+                  $proz = DB::table('product_zone')
+                    ->where('product_id',$product_id)
+                    ->where('zone_id',$request->zone_id[$index])
+                    ->first();
+                if (!is_null($proz)) {
+                    DB::table('product_zone')
+                        ->where('product_id',$product_id)
+                        ->where('zone_id',$request->zone_id[$index])
+                        ->update([
+                            'quantity_output' =>$proz->quantity_output + $request->quantity[$index],
+                            'quantity_stock' => $proz->quantity_stock - $request->quantity[$index],
+                        ]);
+
+                    }
+            };
+        };
+        $message = ['status' => 'success', 'content' => 'Đã hoàn thành việc xuất hàng'];
+        return response()->json(['url'=> route('outputs.index'), 'message' => $message], 200);
+
     }
 
     /**
@@ -113,8 +130,16 @@ class OutputApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($output_id)
     {
-        //
+        $output = OutputWare::find($output_id);
+        $detail = $output->detail_output_wares()->get();
+        foreach ($detail as $detail) {
+            $detail->delete();
+        }
+        $output->delete();
+
+        $message = ['status' => 'success', 'content' => 'Phiếu xuất kho đã bị xóa'];
+        return response()->json(['url'=> route('outputs.index'), 'message' => $message], 200);
     }
 }

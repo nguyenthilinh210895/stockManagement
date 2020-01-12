@@ -87,31 +87,34 @@
                                         class="form-control cs-select-form"
                                         id="product"
                                         name="product"
-                                        v-model="product.product_id=i.product_code">
-                                        <option v-for="pro in products" :value="{id: pro.id, zone: pro.zone}">{{ pro.product_code }}</option>
+                                        @change="onChange($event)"
+                                        v-model="product.product_id=i.product_id">
+                                        <option v-for="pro in products" :value="{id: pro.id, zone: pro.zone}">
+                                            {{ pro.product_code }}
+                                        </option>
                                     </select></td>
                                     <td>
                                         <input
                                             type="text"
-                                            id="quatity"
+                                            id="estimate"
                                             class="form-control label-size-19"
-                                            name="estimate_quatity"  placeholder="Số lượng"
-                                            v-model="product.estimate_quatity = i.estimate_quatity"
+                                            name="estimate"  placeholder="Tổng số lượng"
+                                            v-model="product.sum =i.sum"
                                         />
                                     </td>
-                                     <!-- <td> <select
+                                     <td> <select
                                         class="form-control cs-select-form"
-                                        id="product"
-                                        name="product"
+                                        id="zone"
+                                        name="zone_id"
                                         v-model="product.zone_id=i.zone_id">
-                                        <option >{{ showText(product.product_id) }}</option>
-                                    </select></td> -->
+                                        <option v-for="zon in zones" :value="zon.id">{{zon.zone_code }}</option>
+                                    </select></td>
                                      <td>
                                         <input
                                             type="text"
-                                            id="quatity"
+                                            id="quatity_zone"
                                             class="form-control label-size-19"
-                                            name="estimate_quatity"  placeholder="Số lượng"
+                                            name="quatity_zone"  placeholder="Số lượng"
                                             v-model="product.estimate_quatity = i.estimate_quatity"
                                         />
                                     </td>
@@ -166,6 +169,7 @@
                 product: [],
                 products: null,
                 errors: [],
+                zones: '',
             };
         },
         created(){
@@ -176,16 +180,19 @@
                 axios.get('/api/products')
                     .then(res => {
                         this.products = res.data.data;
-                        console.log(this.products[0].zone);
                     }).catch(error => {
                     console.log(error);
                 });
+            },
+            onChange(event){
+                this.zones = this.product.product_id.product_id.zone;
+                JSON.stringify(this.product.product_id.product_id.zone);
             },
             removeProduct(index){
                 this.product.splice(index, 1);
             },
             addProduct(index){
-                this.product.push({product_id: '',estimate_quatity: '', zone_id: ''});
+                this.product.push({product_id: '',estimate_quatity: '', zone_id: '',sum: ''});
             },
             handleSave(){
                 let formData = new FormData();
@@ -194,15 +201,14 @@
                 formData.append('output_date', this.output.output_date);
                 formData.append('user_id', this.output.employee);
                 for (let i = 0; i < this.product.length; i++) {
-                    formData.append('product_id[]', this.product[i].product_id);
+                    formData.append('product_id[]', this.product[i].product_id.id);
                     formData.append('estimate_quantity[]', this.product[i].estimate_quatity);
+                    formData.append('zone_id[]', this.product[i].zone_id);
                 }
-
-
                 axios.post('/api/outputs', formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
-                        //window.location.href = res.data.url;
+                        window.location.href = res.data.url;
                         this.errors = [];
                     })
                     .catch(error => {

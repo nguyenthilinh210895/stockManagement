@@ -30,7 +30,7 @@
                         <th>#</th>
                         <th>Mã Vật tư</th>
                         <th class="hidden-phone">ĐVT</th>
-<!--                        <th class="">Zone</th>-->
+                       <th class="">Zone</th>
                         <th class="">SL dự kiến</th>
                         <th class="">SL thực tế</th>
                         <th></th>
@@ -41,9 +41,10 @@
                         <td>{{index +1}}</td>
                         <td>{{outputs.detail[index].product.product_code}}</td>
                         <td class="hidden-phone">{{outputs.detail[index].product.unit}}</td>
-<!--                        <td class="">{{outputs.detail[index].zone.zone_code}}</td>-->
+                       <td class="">{{outputs.detail[index].zone.zone_code}}</td>
                         <td class="">{{outputs.detail[index].detail_estimate_quantity}}</td>
-                        <td><input type="text" name="quatity"></td>
+                        <td><input type="text" name="quatity" @onchange="addQuantity"
+                            v-model="outputs.detail.detail_output_quantity= detail.detail_output_quantity"></td>
                         <td><input type="checkbox" id="checkbox"></td>
                     </tr>
                     </tbody>
@@ -51,12 +52,11 @@
                 <div class="row">
                     <div class="col-lg-4 invoice-block pull-right">
                         <ul class="unstyled amounts">
-<!--                            <li><strong>Tổng tiền :</strong> 6000000820</li>-->
                         </ul>
                     </div>
                 </div>
                 <div class="text-center invoice-btn">
-                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Lưu phiếu xuất </a>
+                    <button  v-if="outputs.status == 0" class="btn btn-danger btn-lg" @click="handleSave">Lưu phiếu nhập </button>
                     <a class="btn btn-info btn-lg" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print </a>
                 </div>
             </div>
@@ -85,7 +85,32 @@
                         this.outputs = res.data.data;
                         console.log(res.data.data);
                     })
-            }
+            },
+             addQuantity(index) {
+                this.outputs.detail.push({detail_output_quantity: ''});
+            },
+
+            handleSave() {
+                let formData = new FormData();
+                 formData.append('_method', 'PATCH');
+                for (let i = 0; i < this.outputs.detail.length; i++) {
+                    formData.append('product_id[]', this.outputs.detail[i].product_id);
+                    formData.append('detail_estimate_quantity[]', this.outputs.detail[i].detail_estimate_quantity);
+                    formData.append('zone_id[]', this.outputs.detail[i].zone_id);
+                    formData.append('quantity[]', this.outputs.detail[i].detail_output_quantity || '');
+                }
+
+                axios.post('/api/outputs/'+ this.output_id, formData)
+                    .then(res => {
+                        localStorage.setItem(res.data.message.status, res.data.message.content);
+                        window.location.href = res.data.url;
+                        this.errors = [];
+                    })
+                    .catch(error => {
+
+                        this.errors = error.response.data.error;
+                    });
+            },
         },
     }
 </script>

@@ -39,7 +39,7 @@
                             <td v-if="input.status == 2"><button style="background: forestgreen;color:whitesmoke;">Hoàn thành</button></td>
                             <td v-if="input.status == 0"><button style="background-color: blue;color:whitesmoke;">Đang soạn</button></td>
                             <td>
-                                <a v-if="input.status == 1" :href="'/manager/inputs/purchase/'+ input.id">
+                                <a v-if="input.status !== 0" :href="'/manager/inputs/purchase/'+ input.id">
                                     <i class="fa fa-edit" style="color:blue"></i>
                                 </a>
                                 <a v-if="input.status == 0" :href="'/manager/inputs/'+ input.id +'/edit'">

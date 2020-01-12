@@ -19,6 +19,7 @@
                     <div class="col-lg-4 col-sm-4">
                         <ul class="unstyled">
                             <li v-if="inputs.status == 1">Trạng thái		: Đang đợi</li>
+                            <li v-if="inputs.status == 1">Trạng thái		: Đaang soạn</li>
                             <li v-if="inputs.status == 2">Trạng thái		: Hoàn thành </li>
                             <li>Note		: {{inputs.input_content}}</li>
                         </ul>

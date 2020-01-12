@@ -128,8 +128,14 @@
                                             id="editable-sample_new" class="btn green">
                                         Thêm mới <i class="fa fa-plus"></i>
                                     </button>
+                                
+                                     <input style="margin-left:80px !important" class="radio-edit" type="radio" name="status" v-model="input.status"
+                                           :value="1" checked> Đang đợi
+                                    <input style="margin-left: 110px !important" class="radio-edit" type="radio" name="status" v-model="input.status"
+                                           :value="0"> Đang soạn
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button @click="handleSave" class="btn btn-success">Lưu</button>
@@ -212,6 +218,7 @@
                 formData.append('input_content', this.input.input_content);
                 formData.append('input_date', this.input.input_date);
                 formData.append('user_id', this.input.employee);
+                formData.append('status',  this.input.status);
                  formData.append('_method', 'PATCH');
                 for (let i = 0; i < this.product.length; i++) {
                     formData.append('product_id[]', this.product[i].product_id);

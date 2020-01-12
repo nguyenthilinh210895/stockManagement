@@ -10,9 +10,12 @@ class DetailOutputWare extends Model
     
     protected $fillable = [
         'id',
-        'detail_output_quantity',   
-        'detail_output_amount',  
-        'detail_output_quantity_fact',
+        'detail_output_quantity',
+        'detail_output_amount',
+        'output_date',
+        'user_id',
+        'output_content',
+        'zone_id',
 
     ];
 
