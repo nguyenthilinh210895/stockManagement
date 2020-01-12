@@ -78,8 +78,8 @@
                                 <tbody>
                                 <tr>
                                     <th>Vật tư</th>
-<!--                                    <th>Giá</th>-->
-                                    <th>Đơn vị tính</th>
+                                    <th>Số lượng tổng</th>
+                                    <th>Zone</th>
                                     <th>Số lượng</th>
                                 </tr>
                                 <tr v-for="(i, index) in product">
@@ -87,17 +87,26 @@
                                         class="form-control cs-select-form"
                                         id="product"
                                         name="product"
-                                        v-model="product.product_code=i.product_code">
-                                        <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
-                                    </select></td>
-                                    <td> <select
-                                        class="form-control cs-select-form"
-                                        id="unit"
-                                        name="unit"
-                                        v-model="product.product_code=i.product_code">
-                                        <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
+                                        v-model="product.product_id=i.product_code">
+                                        <option v-for="pro in products" :value="{id: pro.id, zone: pro.zone}">{{ pro.product_code }}</option>
                                     </select></td>
                                     <td>
+                                        <input
+                                            type="text"
+                                            id="quatity"
+                                            class="form-control label-size-19"
+                                            name="estimate_quatity"  placeholder="Số lượng"
+                                            v-model="product.estimate_quatity = i.estimate_quatity"
+                                        />
+                                    </td>
+                                     <!-- <td> <select
+                                        class="form-control cs-select-form"
+                                        id="product"
+                                        name="product"
+                                        v-model="product.zone_id=i.zone_id">
+                                        <option >{{ showText(product.product_id) }}</option>
+                                    </select></td> -->
+                                     <td>
                                         <input
                                             type="text"
                                             id="quatity"
@@ -167,6 +176,7 @@
                 axios.get('/api/products')
                     .then(res => {
                         this.products = res.data.data;
+                        console.log(this.products[0].zone);
                     }).catch(error => {
                     console.log(error);
                 });
@@ -175,7 +185,7 @@
                 this.product.splice(index, 1);
             },
             addProduct(index){
-                this.product.push({product_code: '',estimate_quatity: ''});
+                this.product.push({product_id: '',estimate_quatity: '', zone_id: ''});
             },
             handleSave(){
                 let formData = new FormData();
@@ -184,7 +194,7 @@
                 formData.append('output_date', this.output.output_date);
                 formData.append('user_id', this.output.employee);
                 for (let i = 0; i < this.product.length; i++) {
-                    formData.append('product_id[]', this.product[i].product_code);
+                    formData.append('product_id[]', this.product[i].product_id);
                     formData.append('estimate_quantity[]', this.product[i].estimate_quatity);
                 }
 
@@ -213,9 +223,9 @@
     .bio-graph-heading {
         font-weight: 600;
     }
-    .form-control {
+    /* .form-control {
         width: 300px;
-    }
+    } */
     th{
         text-align: center;
     }
@@ -225,7 +235,10 @@
     .form-control{
         width: 250px;
     }
-    /*.adv-table table tr :nth-child(2){*/
-    /*    width: 3% !important;*/
-    /*}*/
+    /* .adv-table table tr :nth-child(2){
+       width: 10% !important;
+    }
+     .adv-table table tr :nth-child(1){
+       width: 10% !important;
+    } */
 </style>

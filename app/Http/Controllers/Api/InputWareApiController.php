@@ -99,6 +99,70 @@ public function store(Request $request)
      */
     public function update(Request $request, $id)
     {
+        $input = InputWare::find($id);
+        $input->input_code = $request->input_code;
+        $input->input_content=isset($request->input_content) ? $request->input_content : '';
+        $input->input_date= date("Y-m-d", strtotime(request('input_date')));
+        $input->user_id= $request->user_id;
+        $input->save();
+        $detail = $input->detail_input_wares()->delete();
+        if ($request->get('product_id')) {
+            foreach ($request->get('product_id') as $index=>$product_id) {
+                  $product = new DetailInputWare();
+                  $product->product_id = $product_id;
+                  $product->detail_estimate_quantity = $request->detail_estimate_quantity[$index];
+                  $product->inputWare_id = $input->id;
+                  $product->zone_id =  $request->zone_id[$index];
+                  $product->save();
+            };
+        };
+                
+        $message = ['status' => 'success', 'content' => 'Phiếu nhập kho được cập nhật thành công'];
+        return response()->json(['url'=> route('inputs.index'), 'message' => $message], 200);
+
+    }
+
+
+    public function updateInput(Request $request, $id)
+    {
+        $input = InputWare::find($id);
+        $input->status= 2;
+        $input->save();
+        $detail = $input->detail_input_wares()->delete();
+        if ($request->get('product_id')) {
+            foreach ($request->get('product_id') as $index=>$product_id) {
+                  $product = new DetailInputWare();
+                  $product->product_id = $product_id;
+                  $product->detail_estimate_quantity = $request->detail_estimate_quantity[$index];
+                  $product->detail_input_quantity = $request->quantity[$index];
+                  $product->inputWare_id = $input->id;
+                  $product->zone_id =  $request->zone_id[$index];
+                  $product->save();
+                  $proz = DB::table('product_zone')
+                    ->where('product_id',$product_id)
+                    ->where('zone_id',$request->zone_id[$index])
+                    ->first();
+                if (!is_null($proz)) {
+                    DB::table('product_zone')
+                        ->where('product_id',$product_id)
+                        ->where('zone_id',$request->zone_id[$index])
+                        ->update([
+                            'quantity_input' =>$proz->quantity_input + $request->quantity[$index],
+                            'quantity_stock' => $proz->quantity_stock + $request->quantity[$index],
+                        ]);
+
+                    } else {
+                        $quantity = new ProductZone;
+                        $quantity->product_id = $product_id;
+                        $quantity->zone_id = $request->zone_id[$index];
+                        $quantity->quantity_input = $request->quantity[$index];
+                        $quantity->quantity_stock = $request->quantity[$index];
+                        $quantity->save();
+                    }
+            };
+        };
+        $message = ['status' => 'success', 'content' => 'Phiếu nhập kho được tạo thành công'];
+        return response()->json(['url'=> route('inputs.index'), 'message' => $message], 200);
 
     }
 

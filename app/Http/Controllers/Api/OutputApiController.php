@@ -47,7 +47,7 @@ class OutputApiController extends Controller
                 $getProduct = Product::where('id', $product_id)->first();
                 $product->product_id = $product_id;
                 $product->detail_estimate_quantity = $request->estimate_quantity[$index];
-                $product->detail_output_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
+                // $product->detail_output_amount = $request->estimate_quantity[$index] * $getProduct['product_price'];
                 $product->outputWare_id = $output->id;
                // $product->zone_id =  $request->zone_id[$index];
                 $product->save();

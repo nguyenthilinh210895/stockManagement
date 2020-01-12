@@ -18,8 +18,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <ul class="unstyled">
-                            <li v-if="inputs.status == 0">Trạng thái		: Đang đợi</li>
-                            <li v-if="inputs.status == 1">Trạng thái		: Hoàn thành </li>
+                            <li v-if="inputs.status == 1">Trạng thái		: Đang đợi</li>
+                            <li v-if="inputs.status == 2">Trạng thái		: Hoàn thành </li>
                             <li>Note		: {{inputs.input_content}}</li>
                         </ul>
                     </div>
@@ -45,22 +45,13 @@
 <!--                        <td class="">{{inputs.detail[index].product.product_price}}</td>-->
                         <td class="">{{inputs.detail[index].product.zone[0].zone_code}}</td>
                         <td class="">{{inputs.detail[index].detail_estimate_quantity}}</td>
-                        <td><input type="text" name="quatity"></td>
+                        <td><input type="text" @onchange="addQuantity" name="quatity" v-model="inputs.detail.detail_input_quantity= detail.detail_input_quantity"></td>
                         <td><input type="checkbox" id="checkbox"></td>
-
-                        <!--                        <td><input type="checkbox" id="checkbox" v-model="checked"></td>-->
                     </tr>
                     </tbody>
                 </table>
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-4 invoice-block pull-right">-->
-<!--                        <ul class="unstyled amounts">-->
-<!--                            <li><strong>Tổng tiền :</strong> 6000000820</li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
                 <div class="text-center invoice-btn">
-                    <a class="btn btn-danger btn-lg"><i class="fa fa-check"></i> Lưu phiếu nhập </a>
+                    <button  v-if="inputs.status == 1" class="btn btn-danger btn-lg" @click="handleSave">Lưu phiếu nhập </button>
                     <a class="btn btn-info btn-lg" onclick="javascript:window.print();"><i class="fa fa-print"></i> Print </a>
                 </div>
             </div>
@@ -77,6 +68,7 @@
         data(){
           return {
             inputs: [],
+            input: [],
           };
         },
         created(){
@@ -88,7 +80,33 @@
                     .then(res =>{
                         this.inputs = res.data.data;
                     })
-            }
+            },
+
+             addQuantity(index) {
+                this.inputs.detail.push({detail_input_quantity: ''});
+            },
+
+            handleSave() {
+                let formData = new FormData();
+                 formData.append('_method', 'PATCH');
+                for (let i = 0; i < this.inputs.detail.length; i++) {
+                    formData.append('product_id[]', this.inputs.detail[i].product_id);
+                    formData.append('detail_estimate_quantity[]', this.inputs.detail[i].detail_estimate_quantity);
+                    formData.append('zone_id[]', this.inputs.detail[i].zone_id);
+                    formData.append('quantity[]', this.inputs.detail[i].detail_input_quantity || '');
+                }
+
+                axios.post('/api/inputs/update/'+ this.input_id, formData)
+                    .then(res => {
+                        localStorage.setItem(res.data.message.status, res.data.message.content);
+                        window.location.href = res.data.url;
+                        this.errors = [];
+                    })
+                    .catch(error => {
+
+                        this.errors = error.response.data.error;
+                    });
+            },
         },
     }
 </script>

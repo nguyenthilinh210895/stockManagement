@@ -80,9 +80,7 @@
                                 <tbody>
                                 <tr>
                                     <th>Vật tư</th>
-                                    <!--                                    <th>Giá</th>-->
                                     <th>Đơn vị tính</th>
-                                    <!--                                    <th>Chất lượng</th>-->
                                     <th>Zone</th>
                                     <th>Số lượng</th>
                                 </tr>
@@ -94,8 +92,6 @@
                                         v-model="product.product_id=i.product_id">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.product_code }}</option>
                                     </select></td>
-                                    <!--
-                                    -->
                                     <td><select
                                         class="form-control cs-select-form"
                                         id="unit"
@@ -103,13 +99,6 @@
                                         v-model="product.product_id=i.product_id">
                                         <option v-for="pro in products" :value="pro.id">{{ pro.unit }}</option>
                                     </select></td>
-                                    <!--                                    <td> <select-->
-                                    <!--                                        class="form-control cs-select-form"-->
-                                    <!--                                        id="quality"-->
-                                    <!--                                        name="quality"-->
-                                    <!--                                        v-model="product.product_code=i.product_code">-->
-                                    <!--                                        <option v-for="pro in products" :value="pro.id">{{ pro.quality }}</option>-->
-                                    <!--                                    </select></td>-->
                                     <td><select
                                         class="form-control cs-select-form"
                                         id="zone"
@@ -198,9 +187,7 @@
                                 }
                             }
                         }
-                        console.log('getPro',getPro)
                         this.product = JSON.parse(JSON.stringify(getPro))
-                        console.log(this.product)
                     }).catch(error => {
                     console.log(error);
                 });
@@ -225,16 +212,17 @@
                 formData.append('input_content', this.input.input_content);
                 formData.append('input_date', this.input.input_date);
                 formData.append('user_id', this.input.employee);
+                 formData.append('_method', 'PATCH');
                 for (let i = 0; i < this.product.length; i++) {
                     formData.append('product_id[]', this.product[i].product_id);
                     formData.append('detail_estimate_quantity[]', this.product[i].detail_estimate_quantity);
                     formData.append('zone_id[]', this.product[i].zone_id);
                 }
 
-                axios.post('/api/inputs', formData)
+                axios.post('/api/inputs/'+ this.input_id, formData)
                     .then(res => {
                         localStorage.setItem(res.data.message.status, res.data.message.content);
-                        //window.location.href = res.data.url;
+                        window.location.href = res.data.url;
                         this.errors = [];
                     })
                     .catch(error => {
