@@ -10,9 +10,13 @@
                                 <div class="pseudo-table label-size-22">
                                     <div class="feature-image float-right">
                                         <div class="icon-link">
-                                            <img src="/img/account.png" alt="Update Avatar" class="default_avatar"/>
+                                            <div >
+                                                <img  v-if="user.image_url" :src="'http://stock-management.local/storage/'+ user.image_url" alt="Avatar" class="default_avatar"/>
+                                                <img  v-else src="/img/account.png" alt="Update Avatar" class="default_avatar"/>
+
+                                            </div>
+                                            
                                             <img :src="user.image_url" class="preview" v-show="showPreview">
-<!--                                            <span class="label-size-33 label-add-new-image">写真 追加</span>-->
                                             <label for="file" class="btn btn-primary btn-block btn-outlined">Thay đổi Avatar</label>
                                             <input type="file" name="photo" id="file" ref="file"
                                                    @change=" previewImage" style="display: none">
@@ -146,6 +150,7 @@
 
 </template>
 <script>
+import { log } from 'util';
     export default {
         props: {
             users: {type: Object, required: true},
@@ -153,6 +158,8 @@
         name: "user-profile",
         data() {
             return {
+                img:'',
+                imge_link: '',
                 email: '',
                 showPreview: false,
                 file: '',
@@ -170,7 +177,6 @@
             axios.get('/api/showProfile/' + this.users.email)
                 .then(res => {
                     this.user = res.data.data;
-                    console.log(this.user);
                 });
         },
         methods: {

@@ -43,22 +43,22 @@
                           </table>
                       </div>
 
-        <div class="deleteContainer" v-if="deleteClicked"></div>
-        <div class="notification-delete" v-if="deleteClicked">
-            <span>Do you want delete warehouse？</span>
-            <div>
-                <table class="table-notify">
-                    <tr class="show-infor">
-                        <td>Warehouse Name：{{item.warehouse_name || ''}}</td>
-                    </tr>
-                </table>
-                <hr>
-            </div>
-            <div class="button-message">
-                <button class="accept" @click="DeleteWare">Delete</button>
-                <button class="cancel" @click="cancelDelete">Cancel</button>
-            </div>
-        </div>
+                        <div class="deleteContainer" v-if="deleteClicked"></div>
+                        <div class="notification-delete" v-if="deleteClicked">
+                            <span>Do you want delete warehouse？</span>
+                            <div>
+                                <table class="table-notify">
+                                    <tr class="show-infor">
+                                        <td>Warehouse Name：{{item.warehouse_name || ''}}</td>
+                                    </tr>
+                                </table>
+                                <hr>
+                            </div>
+                            <div class="button-message">
+                                <button class="accept" @click="DeleteWare">Delete</button>
+                                <button class="cancel" @click="cancelDelete">Cancel</button>
+                            </div>
+                        </div>
 
       </div>
     </section>

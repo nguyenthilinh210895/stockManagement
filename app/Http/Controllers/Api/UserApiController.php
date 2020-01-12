@@ -10,6 +10,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Mail;
+use Intervention\Image\Facades\Image as Image;
 use Hash;
 use Illuminate\Support\Facades\Storage;
 use  Illuminate\Support\Str;
@@ -17,12 +18,6 @@ use App\Http\Resources\UserResource as UserResource;
 
 class UserApiController extends Controller
 {
-    protected $SERVER_NAME;
-
-    public function __construct()
-    {
-        $this->SERVER_NAME = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : env('MANAGE_APP_URL', 'local');
-    }
 
     /**
      * Display a listing of the resource.
@@ -70,6 +65,7 @@ class UserApiController extends Controller
      */
     public function show($user_id)
     {
+        
         $user = User::find($user_id);
         return new UserResource($user);
     }
@@ -117,23 +113,15 @@ class UserApiController extends Controller
             'email' => $request->email,
 //            'warehouse_id' => $request->warehouse_id,
         ]);
+
         // create image
         if ($request->hasFile('image_url'))
         {
-            if ($user->image_url) {
-                $fullSrc = $this->SERVER_NAME . '/uploads/' . $user->image_url;
-                if (Storage::disk('s3')->exists($fullSrc)) {
-                    Storage::disk('s3')->delete($fullSrc);
-                }
-
-            }
-            $file = $request->file('image_url');
-            $fileName = str_replace(' ', '-', $file->getClientOriginalName());
-            $filename_hash = substr(hash('md5', date("mdYhms")), 0, 10) . '-' . $fileName;
-
-            $fullpath = $this->SERVER_NAME . '/uploads/' . $filename_hash;
-            Storage::disk('local')->put($fullpath, file_get_contents($file), 'public');
-            $user->image_url = $filename_hash;
+            $imagePath = $request->file('image_url')->store('public');
+            $url_image = explode('/',  $imagePath , 2);
+            $image = Image::make(Storage::get($imagePath))->resize(320,240)->encode();
+            Storage::put($imagePath,$image);
+            $user->image_url = $url_image[1];
             $user->save();
         }
 

@@ -65,7 +65,7 @@
                   <!-- user login dropdown start-->
                   <li class="dropdown">
                       <a href="{{ route('user.profile') }}">
-                          <img alt="" src="">
+                          <img alt="" src="{{ url('/storage/'.auth::user()->image_url) }}" style="width: 30px; height: 30px;">
                       </a>
                   </li>
                   <!-- user login dropdown end -->
